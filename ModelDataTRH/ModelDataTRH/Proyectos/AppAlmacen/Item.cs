@@ -9,6 +9,5 @@ namespace ModelDataTRH.Proyectos
     class Item
     {
         
-        public int keyKarajo { get; set; }
     }
 }
