@@ -46,6 +46,7 @@
     <Compile Include="Proyectos\AppAlmacen\Empleados.cs" />
     <Compile Include="Proyectos\AppAlmacen\EntragaDeEpis.cs" />
     <Compile Include="Proyectos\AppAlmacen\Item.cs" />
+    <Compile Include="Proyectos\AppBascula\Matriculas.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
