@@ -37,7 +37,7 @@ namespace ModelDataTRH.Proyectos
         public string Cod_Barco { get; set; }
         public bool Cost_is_Adjusted { get; set; }
         public bool Cost_is_AdjustedSpecified { get; set; }
-        public ModelDataTRH.ServiceReference1.Costing_Method Costing_Method { get; set; }
+        public string  Costing_Method { get; set; }
         public bool Costing_MethodSpecified { get; set; }
         public string Country_Region_Calidad { get; set; }
         public string Description { get; set; }
@@ -45,7 +45,7 @@ namespace ModelDataTRH.Proyectos
         public decimal Descuento_Comercial { get; set; }
         public string Designacion { get; set; }
         public decimal Diametro { get; set; }
-        public ModelDataTRH.ServiceReference1.Diámetro_Alambrón Diámetro_Alambrón { get; set; }
+        public decimal Diámetro_Alambrón { get; set; }
         public bool Diámetro_AlambrónSpecified { get; set; }
         public string Diametro_Grafil { get; set; }
         public decimal Diametro_Long { get; set; }
@@ -74,7 +74,7 @@ namespace ModelDataTRH.Proyectos
         public bool Fecha_EmbarqueSpecified { get; set; }
         public System.DateTime Fecha_Planilla { get; set; }
         public bool Fecha_PlanillaSpecified { get; set; }
-        public ModelDataTRH.ServiceReference1.Flushing_Method Flushing_Method { get; set; }
+
         public bool Flushing_MethodSpecified { get; set; }
         public bool Fuera_de_gama { get; set; }
         public bool Fuera_de_gamaSpecified { get; set; }
@@ -118,7 +118,7 @@ namespace ModelDataTRH.Proyectos
         public bool m2_PaqueteSpecified { get; set; }
         public bool Malla_Estandar { get; set; }
         public bool Malla_EstandarSpecified { get; set; }
-        public ModelDataTRH.ServiceReference1.Manufacturing_Policy Manufacturing_Policy { get; set; }
+
         public bool Manufacturing_PolicySpecified { get; set; }
         public decimal Minimum_Order_Quantity { get; set; }
         public bool Minimum_Order_QuantitySpecified { get; set; }
@@ -153,11 +153,11 @@ namespace ModelDataTRH.Proyectos
         public bool Proveerdor_UnicoSpecified { get; set; }
         public string Purch_Unit_of_Measure { get; set; }
         public string Put_away_Unit_of_Measure_Code { get; set; }
-        public ModelDataTRH.ServiceReference1.Reordering_Policy Reordering_Policy { get; set; }
+
         public bool Reordering_PolicySpecified { get; set; }
-        public ModelDataTRH.ServiceReference1.Replenishment_System Replenishment_System { get; set; }
+
         public bool Replenishment_SystemSpecified { get; set; }
-        public ModelDataTRH.ServiceReference1.Reserve Reserve { get; set; }
+
         public bool ReserveSpecified { get; set; }
         public decimal Rounding_Precision { get; set; }
         public bool Rounding_PrecisionSpecified { get; set; }
@@ -176,7 +176,7 @@ namespace ModelDataTRH.Proyectos
         public bool Separacion_BL_Ahorro_PASpecified { get; set; }
         public int Separacion_BT_Ahorro_PA { get; set; }
         public bool Separacion_BT_Ahorro_PASpecified { get; set; }
-        public ModelDataTRH.ServiceReference1.Subtipo Subtipo { get; set; }
+        public string Subtipo { get; set; }
         public bool SubtipoSpecified { get; set; }
         public decimal Tamaño_Barra_Grafil { get; set; }
         public bool Tamaño_Barra_GrafilSpecified { get; set; }
