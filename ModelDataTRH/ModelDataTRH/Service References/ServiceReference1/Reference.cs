@@ -108,375 +108,109 @@ namespace ModelDataTRH.ServiceReference1 {
         
         private string noField;
         
-        private string descriptionField;
+        private string buy_from_Vendor_NoField;
         
-        private string search_DescriptionField;
+        private string buy_from_Vendor_NameField;
         
-        private string description_2Field;
+        private decimal cantidad_Pdt_FacturarField;
         
-        private string base_Unit_of_MeasureField;
+        private bool cantidad_Pdt_FacturarFieldSpecified;
         
-        private string inventory_Posting_GroupField;
+        private decimal cantidad_a_RecibirField;
         
-        private bool allow_Invoice_DiscField;
+        private bool cantidad_a_RecibirFieldSpecified;
         
-        private bool allow_Invoice_DiscFieldSpecified;
+        private System.DateTime posting_DateField;
         
-        private Costing_Method costing_MethodField;
+        private bool posting_DateFieldSpecified;
         
-        private bool costing_MethodFieldSpecified;
+        private string codigoPedidoCabeceraField;
         
-        private decimal unit_CostField;
+        private string ref_BarcoField;
         
-        private bool unit_CostFieldSpecified;
+        private bool firma_DireccionField;
         
-        private decimal last_Direct_CostField;
+        private bool firma_DireccionFieldSpecified;
         
-        private bool last_Direct_CostFieldSpecified;
+        private System.DateTime fecha_FirmaField;
         
-        private bool cost_is_AdjustedField;
+        private bool fecha_FirmaFieldSpecified;
         
-        private bool cost_is_AdjustedFieldSpecified;
+        private Status statusField;
         
-        private bool allow_Online_AdjustmentField;
+        private bool statusFieldSpecified;
         
-        private bool allow_Online_AdjustmentFieldSpecified;
+        private string vendor_Invoice_NoField;
         
-        private decimal gross_WeightField;
+        private string buy_from_Post_CodeField;
         
-        private bool gross_WeightFieldSpecified;
+        private string buy_from_Country_Region_CodeField;
         
-        private decimal net_WeightField;
+        private string buy_from_ContactField;
         
-        private bool net_WeightFieldSpecified;
+        private string pay_to_Vendor_NoField;
         
-        private string tariff_NoField;
+        private string ship_to_CityField;
         
-        private bool blockedField;
+        private string shortcut_Dimension_1_CodeField;
         
-        private bool blockedFieldSpecified;
+        private string shortcut_Dimension_2_CodeField;
         
-        private System.DateTime last_Date_ModifiedField;
+        private string location_CodeField;
         
-        private bool last_Date_ModifiedFieldSpecified;
+        private string purchaser_CodeField;
         
-        private string gen_Prod_Posting_GroupField;
+        private string assigned_User_IDField;
         
-        private string no_SeriesField;
+        private string currency_CodeField;
         
-        private string vAT_Prod_Posting_GroupField;
+        private System.DateTime due_DateField;
         
-        private Reserve reserveField;
-        
-        private bool reserveFieldSpecified;
-        
-        private string global_Dimension_1_CodeField;
-        
-        private int low_Level_CodeField;
-        
-        private bool low_Level_CodeFieldSpecified;
-        
-        private decimal minimum_Order_QuantityField;
-        
-        private bool minimum_Order_QuantityFieldSpecified;
-        
-        private Flushing_Method flushing_MethodField;
-        
-        private bool flushing_MethodFieldSpecified;
-        
-        private Replenishment_System replenishment_SystemField;
-        
-        private bool replenishment_SystemFieldSpecified;
-        
-        private decimal rounding_PrecisionField;
-        
-        private bool rounding_PrecisionFieldSpecified;
-        
-        private string sales_Unit_of_MeasureField;
-        
-        private string purch_Unit_of_MeasureField;
-        
-        private Reordering_Policy reordering_PolicyField;
-        
-        private bool reordering_PolicyFieldSpecified;
-        
-        private bool include_InventoryField;
-        
-        private bool include_InventoryFieldSpecified;
-        
-        private Manufacturing_Policy manufacturing_PolicyField;
-        
-        private bool manufacturing_PolicyFieldSpecified;
-        
-        private string item_Category_CodeField;
-        
-        private string product_Group_CodeField;
-        
-        private string put_away_Unit_of_Measure_CodeField;
-        
-        private System.DateTime last_Counting_Period_UpdateField;
-        
-        private bool last_Counting_Period_UpdateFieldSpecified;
-        
-        private decimal long_RejillaField;
-        
-        private bool long_RejillaFieldSpecified;
-        
-        private decimal trans_RejillaField;
-        
-        private bool trans_RejillaFieldSpecified;
-        
-        private decimal diametro_LongField;
-        
-        private bool diametro_LongFieldSpecified;
-        
-        private decimal diametro_TransField;
-        
-        private bool diametro_TransFieldSpecified;
-        
-        private decimal long_BarraField;
-        
-        private bool long_BarraFieldSpecified;
-        
-        private decimal trans_BarraField;
-        
-        private bool trans_BarraFieldSpecified;
-        
-        private decimal nº_Barras_LongField;
-        
-        private bool nº_Barras_LongFieldSpecified;
-        
-        private bool malla_EstandarField;
-        
-        private bool malla_EstandarFieldSpecified;
-        
-        private decimal kGxM2Field;
-        
-        private bool kGxM2FieldSpecified;
-        
-        private decimal paños_x_PaqueteField;
-        
-        private bool paños_x_PaqueteFieldSpecified;
-        
-        private decimal m2_PañoField;
-        
-        private bool m2_PañoFieldSpecified;
-        
-        private decimal kgs_PañoField;
-        
-        private bool kgs_PañoFieldSpecified;
-        
-        private decimal m2_PaqueteField;
-        
-        private bool m2_PaqueteFieldSpecified;
-        
-        private decimal kgs_PaqueteField;
-        
-        private bool kgs_PaqueteFieldSpecified;
-        
-        private decimal euros_m2Field;
-        
-        private bool euros_m2FieldSpecified;
-        
-        private decimal euros_KgField;
-        
-        private bool euros_KgFieldSpecified;
-        
-        private decimal euros_PañoField;
-        
-        private bool euros_PañoFieldSpecified;
-        
-        private decimal diametroField;
-        
-        private bool diametroFieldSpecified;
-        
-        private decimal nº_Barras_TransField;
-        
-        private bool nº_Barras_TransFieldSpecified;
-        
-        private Diámetro_Alambrón diámetro_AlambrónField;
-        
-        private bool diámetro_AlambrónFieldSpecified;
-        
-        private string cod_BarcoField;
+        private bool due_DateFieldSpecified;
         
         private System.DateTime fecha_EmbarqueField;
         
         private bool fecha_EmbarqueFieldSpecified;
         
-        private decimal peso_Medio_TeóricoField;
+        private string last_Receiving_NoField;
         
-        private bool peso_Medio_TeóricoFieldSpecified;
+        private System.DateTime fecha_LLegadaField;
         
-        private int paquetes_por_CamiónField;
+        private bool fecha_LLegadaFieldSpecified;
         
-        private bool paquetes_por_CamiónFieldSpecified;
+        private string order_Address_CodeField;
         
-        private bool barras_DoblesField;
+        private decimal cantidad_TotalField;
         
-        private bool barras_DoblesFieldSpecified;
+        private bool cantidad_TotalFieldSpecified;
         
-        private decimal nº_Barras_DoblesField;
+        private decimal importe_Total_PedidoField;
         
-        private bool nº_Barras_DoblesFieldSpecified;
+        private bool importe_Total_PedidoFieldSpecified;
         
-        private decimal m_LongitudinalField;
+        private int nº_Ped_Venta_AsignadosField;
         
-        private bool m_LongitudinalFieldSpecified;
+        private bool nº_Ped_Venta_AsignadosFieldSpecified;
         
-        private decimal m_TransversalField;
+        private string vendor_Authorization_NoField;
         
-        private bool m_TransversalFieldSpecified;
+        private string pay_to_NameField;
         
-        private bool ePIField;
+        private string pay_to_Post_CodeField;
         
-        private bool ePIFieldSpecified;
+        private string pay_to_Country_Region_CodeField;
         
-        private decimal nº_RolloField;
+        private string pay_to_ContactField;
         
-        private bool nº_RolloFieldSpecified;
+        private string ship_to_CodeField;
         
-        private decimal nº_PuntadasField;
+        private string ship_to_NameField;
         
-        private bool nº_PuntadasFieldSpecified;
+        private string ship_to_Post_CodeField;
         
-        private decimal inventario_PesoField;
+        private string ship_to_Country_Region_CodeField;
         
-        private bool inventario_PesoFieldSpecified;
-        
-        private decimal tamaño_Barra_GrafilField;
-        
-        private bool tamaño_Barra_GrafilFieldSpecified;
-        
-        private decimal tamaño_Carrete_GrafilField;
-        
-        private bool tamaño_Carrete_GrafilFieldSpecified;
-        
-        private string cod_AntiguoField;
-        
-        private decimal baseField;
-        
-        private bool baseFieldSpecified;
-        
-        private decimal cantidadField;
-        
-        private bool cantidadFieldSpecified;
-        
-        private decimal kg_M2_ComercialField;
-        
-        private bool kg_M2_ComercialFieldSpecified;
-        
-        private decimal descuento_ComercialField;
-        
-        private bool descuento_ComercialFieldSpecified;
-        
-        private System.DateTime fecha_DescuentoField;
-        
-        private bool fecha_DescuentoFieldSpecified;
-        
-        private bool proveerdor_UnicoField;
-        
-        private bool proveerdor_UnicoFieldSpecified;
-        
-        private string unidad_BaseField;
-        
-        private decimal altura_PaqueteField;
-        
-        private bool altura_PaqueteFieldSpecified;
-        
-        private string country_Region_CalidadField;
-        
-        private string alias_2Field;
-        
-        private bool aENORField;
-        
-        private bool aENORFieldSpecified;
-        
-        private bool cARESField;
-        
-        private bool cARESFieldSpecified;
-        
-        private string diametro_GrafilField;
-        
-        private bool fuera_de_gamaField;
-        
-        private bool fuera_de_gamaFieldSpecified;
-        
-        private int saliente_Long_U1Field;
-        
-        private bool saliente_Long_U1FieldSpecified;
-        
-        private int saliente_Trans_U3Field;
-        
-        private bool saliente_Trans_U3FieldSpecified;
-        
-        private int barras_Ahorro_LongField;
-        
-        private bool barras_Ahorro_LongFieldSpecified;
-        
-        private int barras_Ahorro_TransField;
-        
-        private bool barras_Ahorro_TransFieldSpecified;
-        
-        private Subtipo subtipoField;
-        
-        private bool subtipoFieldSpecified;
-        
-        private System.DateTime fecha_PlanillaField;
-        
-        private bool fecha_PlanillaFieldSpecified;
-        
-        private string designacionField;
-        
-        private int saliente_Long_U2Field;
-        
-        private bool saliente_Long_U2FieldSpecified;
-        
-        private int saliente_Trans_U4Field;
-        
-        private bool saliente_Trans_U4FieldSpecified;
-        
-        private int separacion_BL_Ahorro_PAField;
-        
-        private bool separacion_BL_Ahorro_PAFieldSpecified;
-        
-        private int separacion_BT_Ahorro_PAField;
-        
-        private bool separacion_BT_Ahorro_PAFieldSpecified;
-        
-        private bool permite_stock_negativoField;
-        
-        private bool permite_stock_negativoFieldSpecified;
-        
-        private string nombre_CategoríaField;
-        
-        private string nombre_GrupoField;
-        
-        private bool eHE08Field;
-        
-        private bool eHE08FieldSpecified;
-        
-        private bool uNE36092Field;
-        
-        private bool uNE36092FieldSpecified;
-        
-        private bool estandarField;
-        
-        private bool estandarFieldSpecified;
-        
-        private bool especialField;
-        
-        private bool especialFieldSpecified;
-        
-        private string cliente_EtiquetaField;
-        
-        private string envio_Malla_MM_ClienteField;
-        
-        private string nombreDescripcionGrupoContableField;
-        
-        private string routing_NoField;
-        
-        private string production_BOM_NoField;
+        private string ship_to_ContactField;
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -504,1158 +238,366 @@ namespace ModelDataTRH.ServiceReference1 {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Description {
+        public string Buy_from_Vendor_No {
             get {
-                return this.descriptionField;
+                return this.buy_from_Vendor_NoField;
             }
             set {
-                this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
+                this.buy_from_Vendor_NoField = value;
+                this.RaisePropertyChanged("Buy_from_Vendor_No");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Search_Description {
+        public string Buy_from_Vendor_Name {
             get {
-                return this.search_DescriptionField;
+                return this.buy_from_Vendor_NameField;
             }
             set {
-                this.search_DescriptionField = value;
-                this.RaisePropertyChanged("Search_Description");
+                this.buy_from_Vendor_NameField = value;
+                this.RaisePropertyChanged("Buy_from_Vendor_Name");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string Description_2 {
+        public decimal Cantidad_Pdt_Facturar {
             get {
-                return this.description_2Field;
+                return this.cantidad_Pdt_FacturarField;
             }
             set {
-                this.description_2Field = value;
-                this.RaisePropertyChanged("Description_2");
+                this.cantidad_Pdt_FacturarField = value;
+                this.RaisePropertyChanged("Cantidad_Pdt_Facturar");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Cantidad_Pdt_FacturarSpecified {
+            get {
+                return this.cantidad_Pdt_FacturarFieldSpecified;
+            }
+            set {
+                this.cantidad_Pdt_FacturarFieldSpecified = value;
+                this.RaisePropertyChanged("Cantidad_Pdt_FacturarSpecified");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string Base_Unit_of_Measure {
+        public decimal Cantidad_a_Recibir {
             get {
-                return this.base_Unit_of_MeasureField;
+                return this.cantidad_a_RecibirField;
             }
             set {
-                this.base_Unit_of_MeasureField = value;
-                this.RaisePropertyChanged("Base_Unit_of_Measure");
+                this.cantidad_a_RecibirField = value;
+                this.RaisePropertyChanged("Cantidad_a_Recibir");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string Inventory_Posting_Group {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Cantidad_a_RecibirSpecified {
             get {
-                return this.inventory_Posting_GroupField;
+                return this.cantidad_a_RecibirFieldSpecified;
             }
             set {
-                this.inventory_Posting_GroupField = value;
-                this.RaisePropertyChanged("Inventory_Posting_Group");
+                this.cantidad_a_RecibirFieldSpecified = value;
+                this.RaisePropertyChanged("Cantidad_a_RecibirSpecified");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=6)]
+        public System.DateTime Posting_Date {
+            get {
+                return this.posting_DateField;
+            }
+            set {
+                this.posting_DateField = value;
+                this.RaisePropertyChanged("Posting_Date");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Posting_DateSpecified {
+            get {
+                return this.posting_DateFieldSpecified;
+            }
+            set {
+                this.posting_DateFieldSpecified = value;
+                this.RaisePropertyChanged("Posting_DateSpecified");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public bool Allow_Invoice_Disc {
+        public string CodigoPedidoCabecera {
             get {
-                return this.allow_Invoice_DiscField;
+                return this.codigoPedidoCabeceraField;
             }
             set {
-                this.allow_Invoice_DiscField = value;
-                this.RaisePropertyChanged("Allow_Invoice_Disc");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Allow_Invoice_DiscSpecified {
-            get {
-                return this.allow_Invoice_DiscFieldSpecified;
-            }
-            set {
-                this.allow_Invoice_DiscFieldSpecified = value;
-                this.RaisePropertyChanged("Allow_Invoice_DiscSpecified");
+                this.codigoPedidoCabeceraField = value;
+                this.RaisePropertyChanged("CodigoPedidoCabecera");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public Costing_Method Costing_Method {
+        public string Ref_Barco {
             get {
-                return this.costing_MethodField;
+                return this.ref_BarcoField;
             }
             set {
-                this.costing_MethodField = value;
-                this.RaisePropertyChanged("Costing_Method");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Costing_MethodSpecified {
-            get {
-                return this.costing_MethodFieldSpecified;
-            }
-            set {
-                this.costing_MethodFieldSpecified = value;
-                this.RaisePropertyChanged("Costing_MethodSpecified");
+                this.ref_BarcoField = value;
+                this.RaisePropertyChanged("Ref_Barco");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public decimal Unit_Cost {
+        public bool Firma_Direccion {
             get {
-                return this.unit_CostField;
+                return this.firma_DireccionField;
             }
             set {
-                this.unit_CostField = value;
-                this.RaisePropertyChanged("Unit_Cost");
+                this.firma_DireccionField = value;
+                this.RaisePropertyChanged("Firma_Direccion");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Unit_CostSpecified {
+        public bool Firma_DireccionSpecified {
             get {
-                return this.unit_CostFieldSpecified;
+                return this.firma_DireccionFieldSpecified;
             }
             set {
-                this.unit_CostFieldSpecified = value;
-                this.RaisePropertyChanged("Unit_CostSpecified");
+                this.firma_DireccionFieldSpecified = value;
+                this.RaisePropertyChanged("Firma_DireccionSpecified");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public decimal Last_Direct_Cost {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=10)]
+        public System.DateTime Fecha_Firma {
             get {
-                return this.last_Direct_CostField;
+                return this.fecha_FirmaField;
             }
             set {
-                this.last_Direct_CostField = value;
-                this.RaisePropertyChanged("Last_Direct_Cost");
+                this.fecha_FirmaField = value;
+                this.RaisePropertyChanged("Fecha_Firma");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Last_Direct_CostSpecified {
+        public bool Fecha_FirmaSpecified {
             get {
-                return this.last_Direct_CostFieldSpecified;
+                return this.fecha_FirmaFieldSpecified;
             }
             set {
-                this.last_Direct_CostFieldSpecified = value;
-                this.RaisePropertyChanged("Last_Direct_CostSpecified");
+                this.fecha_FirmaFieldSpecified = value;
+                this.RaisePropertyChanged("Fecha_FirmaSpecified");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=11)]
-        public bool Cost_is_Adjusted {
+        public Status Status {
             get {
-                return this.cost_is_AdjustedField;
+                return this.statusField;
             }
             set {
-                this.cost_is_AdjustedField = value;
-                this.RaisePropertyChanged("Cost_is_Adjusted");
+                this.statusField = value;
+                this.RaisePropertyChanged("Status");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Cost_is_AdjustedSpecified {
+        public bool StatusSpecified {
             get {
-                return this.cost_is_AdjustedFieldSpecified;
+                return this.statusFieldSpecified;
             }
             set {
-                this.cost_is_AdjustedFieldSpecified = value;
-                this.RaisePropertyChanged("Cost_is_AdjustedSpecified");
+                this.statusFieldSpecified = value;
+                this.RaisePropertyChanged("StatusSpecified");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=12)]
-        public bool Allow_Online_Adjustment {
+        public string Vendor_Invoice_No {
             get {
-                return this.allow_Online_AdjustmentField;
+                return this.vendor_Invoice_NoField;
             }
             set {
-                this.allow_Online_AdjustmentField = value;
-                this.RaisePropertyChanged("Allow_Online_Adjustment");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Allow_Online_AdjustmentSpecified {
-            get {
-                return this.allow_Online_AdjustmentFieldSpecified;
-            }
-            set {
-                this.allow_Online_AdjustmentFieldSpecified = value;
-                this.RaisePropertyChanged("Allow_Online_AdjustmentSpecified");
+                this.vendor_Invoice_NoField = value;
+                this.RaisePropertyChanged("Vendor_Invoice_No");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=13)]
-        public decimal Gross_Weight {
+        public string Buy_from_Post_Code {
             get {
-                return this.gross_WeightField;
+                return this.buy_from_Post_CodeField;
             }
             set {
-                this.gross_WeightField = value;
-                this.RaisePropertyChanged("Gross_Weight");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Gross_WeightSpecified {
-            get {
-                return this.gross_WeightFieldSpecified;
-            }
-            set {
-                this.gross_WeightFieldSpecified = value;
-                this.RaisePropertyChanged("Gross_WeightSpecified");
+                this.buy_from_Post_CodeField = value;
+                this.RaisePropertyChanged("Buy_from_Post_Code");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public decimal Net_Weight {
+        public string Buy_from_Country_Region_Code {
             get {
-                return this.net_WeightField;
+                return this.buy_from_Country_Region_CodeField;
             }
             set {
-                this.net_WeightField = value;
-                this.RaisePropertyChanged("Net_Weight");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Net_WeightSpecified {
-            get {
-                return this.net_WeightFieldSpecified;
-            }
-            set {
-                this.net_WeightFieldSpecified = value;
-                this.RaisePropertyChanged("Net_WeightSpecified");
+                this.buy_from_Country_Region_CodeField = value;
+                this.RaisePropertyChanged("Buy_from_Country_Region_Code");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=15)]
-        public string Tariff_No {
+        public string Buy_from_Contact {
             get {
-                return this.tariff_NoField;
+                return this.buy_from_ContactField;
             }
             set {
-                this.tariff_NoField = value;
-                this.RaisePropertyChanged("Tariff_No");
+                this.buy_from_ContactField = value;
+                this.RaisePropertyChanged("Buy_from_Contact");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=16)]
-        public bool Blocked {
+        public string Pay_to_Vendor_No {
             get {
-                return this.blockedField;
+                return this.pay_to_Vendor_NoField;
             }
             set {
-                this.blockedField = value;
-                this.RaisePropertyChanged("Blocked");
+                this.pay_to_Vendor_NoField = value;
+                this.RaisePropertyChanged("Pay_to_Vendor_No");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool BlockedSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string Ship_to_City {
             get {
-                return this.blockedFieldSpecified;
+                return this.ship_to_CityField;
             }
             set {
-                this.blockedFieldSpecified = value;
-                this.RaisePropertyChanged("BlockedSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=17)]
-        public System.DateTime Last_Date_Modified {
-            get {
-                return this.last_Date_ModifiedField;
-            }
-            set {
-                this.last_Date_ModifiedField = value;
-                this.RaisePropertyChanged("Last_Date_Modified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Last_Date_ModifiedSpecified {
-            get {
-                return this.last_Date_ModifiedFieldSpecified;
-            }
-            set {
-                this.last_Date_ModifiedFieldSpecified = value;
-                this.RaisePropertyChanged("Last_Date_ModifiedSpecified");
+                this.ship_to_CityField = value;
+                this.RaisePropertyChanged("Ship_to_City");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=18)]
-        public string Gen_Prod_Posting_Group {
+        public string Shortcut_Dimension_1_Code {
             get {
-                return this.gen_Prod_Posting_GroupField;
+                return this.shortcut_Dimension_1_CodeField;
             }
             set {
-                this.gen_Prod_Posting_GroupField = value;
-                this.RaisePropertyChanged("Gen_Prod_Posting_Group");
+                this.shortcut_Dimension_1_CodeField = value;
+                this.RaisePropertyChanged("Shortcut_Dimension_1_Code");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=19)]
-        public string No_Series {
+        public string Shortcut_Dimension_2_Code {
             get {
-                return this.no_SeriesField;
+                return this.shortcut_Dimension_2_CodeField;
             }
             set {
-                this.no_SeriesField = value;
-                this.RaisePropertyChanged("No_Series");
+                this.shortcut_Dimension_2_CodeField = value;
+                this.RaisePropertyChanged("Shortcut_Dimension_2_Code");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=20)]
-        public string VAT_Prod_Posting_Group {
+        public string Location_Code {
             get {
-                return this.vAT_Prod_Posting_GroupField;
+                return this.location_CodeField;
             }
             set {
-                this.vAT_Prod_Posting_GroupField = value;
-                this.RaisePropertyChanged("VAT_Prod_Posting_Group");
+                this.location_CodeField = value;
+                this.RaisePropertyChanged("Location_Code");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=21)]
-        public Reserve Reserve {
+        public string Purchaser_Code {
             get {
-                return this.reserveField;
+                return this.purchaser_CodeField;
             }
             set {
-                this.reserveField = value;
-                this.RaisePropertyChanged("Reserve");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ReserveSpecified {
-            get {
-                return this.reserveFieldSpecified;
-            }
-            set {
-                this.reserveFieldSpecified = value;
-                this.RaisePropertyChanged("ReserveSpecified");
+                this.purchaser_CodeField = value;
+                this.RaisePropertyChanged("Purchaser_Code");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=22)]
-        public string Global_Dimension_1_Code {
+        public string Assigned_User_ID {
             get {
-                return this.global_Dimension_1_CodeField;
+                return this.assigned_User_IDField;
             }
             set {
-                this.global_Dimension_1_CodeField = value;
-                this.RaisePropertyChanged("Global_Dimension_1_Code");
+                this.assigned_User_IDField = value;
+                this.RaisePropertyChanged("Assigned_User_ID");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=23)]
-        public int Low_Level_Code {
+        public string Currency_Code {
             get {
-                return this.low_Level_CodeField;
+                return this.currency_CodeField;
             }
             set {
-                this.low_Level_CodeField = value;
-                this.RaisePropertyChanged("Low_Level_Code");
+                this.currency_CodeField = value;
+                this.RaisePropertyChanged("Currency_Code");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Low_Level_CodeSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=24)]
+        public System.DateTime Due_Date {
             get {
-                return this.low_Level_CodeFieldSpecified;
+                return this.due_DateField;
             }
             set {
-                this.low_Level_CodeFieldSpecified = value;
-                this.RaisePropertyChanged("Low_Level_CodeSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
-        public decimal Minimum_Order_Quantity {
-            get {
-                return this.minimum_Order_QuantityField;
-            }
-            set {
-                this.minimum_Order_QuantityField = value;
-                this.RaisePropertyChanged("Minimum_Order_Quantity");
+                this.due_DateField = value;
+                this.RaisePropertyChanged("Due_Date");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Minimum_Order_QuantitySpecified {
+        public bool Due_DateSpecified {
             get {
-                return this.minimum_Order_QuantityFieldSpecified;
+                return this.due_DateFieldSpecified;
             }
             set {
-                this.minimum_Order_QuantityFieldSpecified = value;
-                this.RaisePropertyChanged("Minimum_Order_QuantitySpecified");
+                this.due_DateFieldSpecified = value;
+                this.RaisePropertyChanged("Due_DateSpecified");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
-        public Flushing_Method Flushing_Method {
-            get {
-                return this.flushing_MethodField;
-            }
-            set {
-                this.flushing_MethodField = value;
-                this.RaisePropertyChanged("Flushing_Method");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Flushing_MethodSpecified {
-            get {
-                return this.flushing_MethodFieldSpecified;
-            }
-            set {
-                this.flushing_MethodFieldSpecified = value;
-                this.RaisePropertyChanged("Flushing_MethodSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
-        public Replenishment_System Replenishment_System {
-            get {
-                return this.replenishment_SystemField;
-            }
-            set {
-                this.replenishment_SystemField = value;
-                this.RaisePropertyChanged("Replenishment_System");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Replenishment_SystemSpecified {
-            get {
-                return this.replenishment_SystemFieldSpecified;
-            }
-            set {
-                this.replenishment_SystemFieldSpecified = value;
-                this.RaisePropertyChanged("Replenishment_SystemSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
-        public decimal Rounding_Precision {
-            get {
-                return this.rounding_PrecisionField;
-            }
-            set {
-                this.rounding_PrecisionField = value;
-                this.RaisePropertyChanged("Rounding_Precision");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Rounding_PrecisionSpecified {
-            get {
-                return this.rounding_PrecisionFieldSpecified;
-            }
-            set {
-                this.rounding_PrecisionFieldSpecified = value;
-                this.RaisePropertyChanged("Rounding_PrecisionSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
-        public string Sales_Unit_of_Measure {
-            get {
-                return this.sales_Unit_of_MeasureField;
-            }
-            set {
-                this.sales_Unit_of_MeasureField = value;
-                this.RaisePropertyChanged("Sales_Unit_of_Measure");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
-        public string Purch_Unit_of_Measure {
-            get {
-                return this.purch_Unit_of_MeasureField;
-            }
-            set {
-                this.purch_Unit_of_MeasureField = value;
-                this.RaisePropertyChanged("Purch_Unit_of_Measure");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
-        public Reordering_Policy Reordering_Policy {
-            get {
-                return this.reordering_PolicyField;
-            }
-            set {
-                this.reordering_PolicyField = value;
-                this.RaisePropertyChanged("Reordering_Policy");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Reordering_PolicySpecified {
-            get {
-                return this.reordering_PolicyFieldSpecified;
-            }
-            set {
-                this.reordering_PolicyFieldSpecified = value;
-                this.RaisePropertyChanged("Reordering_PolicySpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
-        public bool Include_Inventory {
-            get {
-                return this.include_InventoryField;
-            }
-            set {
-                this.include_InventoryField = value;
-                this.RaisePropertyChanged("Include_Inventory");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Include_InventorySpecified {
-            get {
-                return this.include_InventoryFieldSpecified;
-            }
-            set {
-                this.include_InventoryFieldSpecified = value;
-                this.RaisePropertyChanged("Include_InventorySpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
-        public Manufacturing_Policy Manufacturing_Policy {
-            get {
-                return this.manufacturing_PolicyField;
-            }
-            set {
-                this.manufacturing_PolicyField = value;
-                this.RaisePropertyChanged("Manufacturing_Policy");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Manufacturing_PolicySpecified {
-            get {
-                return this.manufacturing_PolicyFieldSpecified;
-            }
-            set {
-                this.manufacturing_PolicyFieldSpecified = value;
-                this.RaisePropertyChanged("Manufacturing_PolicySpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
-        public string Item_Category_Code {
-            get {
-                return this.item_Category_CodeField;
-            }
-            set {
-                this.item_Category_CodeField = value;
-                this.RaisePropertyChanged("Item_Category_Code");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
-        public string Product_Group_Code {
-            get {
-                return this.product_Group_CodeField;
-            }
-            set {
-                this.product_Group_CodeField = value;
-                this.RaisePropertyChanged("Product_Group_Code");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
-        public string Put_away_Unit_of_Measure_Code {
-            get {
-                return this.put_away_Unit_of_Measure_CodeField;
-            }
-            set {
-                this.put_away_Unit_of_Measure_CodeField = value;
-                this.RaisePropertyChanged("Put_away_Unit_of_Measure_Code");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=36)]
-        public System.DateTime Last_Counting_Period_Update {
-            get {
-                return this.last_Counting_Period_UpdateField;
-            }
-            set {
-                this.last_Counting_Period_UpdateField = value;
-                this.RaisePropertyChanged("Last_Counting_Period_Update");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Last_Counting_Period_UpdateSpecified {
-            get {
-                return this.last_Counting_Period_UpdateFieldSpecified;
-            }
-            set {
-                this.last_Counting_Period_UpdateFieldSpecified = value;
-                this.RaisePropertyChanged("Last_Counting_Period_UpdateSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
-        public decimal Long_Rejilla {
-            get {
-                return this.long_RejillaField;
-            }
-            set {
-                this.long_RejillaField = value;
-                this.RaisePropertyChanged("Long_Rejilla");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Long_RejillaSpecified {
-            get {
-                return this.long_RejillaFieldSpecified;
-            }
-            set {
-                this.long_RejillaFieldSpecified = value;
-                this.RaisePropertyChanged("Long_RejillaSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
-        public decimal Trans_Rejilla {
-            get {
-                return this.trans_RejillaField;
-            }
-            set {
-                this.trans_RejillaField = value;
-                this.RaisePropertyChanged("Trans_Rejilla");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Trans_RejillaSpecified {
-            get {
-                return this.trans_RejillaFieldSpecified;
-            }
-            set {
-                this.trans_RejillaFieldSpecified = value;
-                this.RaisePropertyChanged("Trans_RejillaSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
-        public decimal Diametro_Long {
-            get {
-                return this.diametro_LongField;
-            }
-            set {
-                this.diametro_LongField = value;
-                this.RaisePropertyChanged("Diametro_Long");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Diametro_LongSpecified {
-            get {
-                return this.diametro_LongFieldSpecified;
-            }
-            set {
-                this.diametro_LongFieldSpecified = value;
-                this.RaisePropertyChanged("Diametro_LongSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
-        public decimal Diametro_Trans {
-            get {
-                return this.diametro_TransField;
-            }
-            set {
-                this.diametro_TransField = value;
-                this.RaisePropertyChanged("Diametro_Trans");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Diametro_TransSpecified {
-            get {
-                return this.diametro_TransFieldSpecified;
-            }
-            set {
-                this.diametro_TransFieldSpecified = value;
-                this.RaisePropertyChanged("Diametro_TransSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
-        public decimal Long_Barra {
-            get {
-                return this.long_BarraField;
-            }
-            set {
-                this.long_BarraField = value;
-                this.RaisePropertyChanged("Long_Barra");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Long_BarraSpecified {
-            get {
-                return this.long_BarraFieldSpecified;
-            }
-            set {
-                this.long_BarraFieldSpecified = value;
-                this.RaisePropertyChanged("Long_BarraSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
-        public decimal Trans_Barra {
-            get {
-                return this.trans_BarraField;
-            }
-            set {
-                this.trans_BarraField = value;
-                this.RaisePropertyChanged("Trans_Barra");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Trans_BarraSpecified {
-            get {
-                return this.trans_BarraFieldSpecified;
-            }
-            set {
-                this.trans_BarraFieldSpecified = value;
-                this.RaisePropertyChanged("Trans_BarraSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
-        public decimal Nº_Barras_Long {
-            get {
-                return this.nº_Barras_LongField;
-            }
-            set {
-                this.nº_Barras_LongField = value;
-                this.RaisePropertyChanged("Nº_Barras_Long");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Nº_Barras_LongSpecified {
-            get {
-                return this.nº_Barras_LongFieldSpecified;
-            }
-            set {
-                this.nº_Barras_LongFieldSpecified = value;
-                this.RaisePropertyChanged("Nº_Barras_LongSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
-        public bool Malla_Estandar {
-            get {
-                return this.malla_EstandarField;
-            }
-            set {
-                this.malla_EstandarField = value;
-                this.RaisePropertyChanged("Malla_Estandar");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Malla_EstandarSpecified {
-            get {
-                return this.malla_EstandarFieldSpecified;
-            }
-            set {
-                this.malla_EstandarFieldSpecified = value;
-                this.RaisePropertyChanged("Malla_EstandarSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
-        public decimal KGxM2 {
-            get {
-                return this.kGxM2Field;
-            }
-            set {
-                this.kGxM2Field = value;
-                this.RaisePropertyChanged("KGxM2");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool KGxM2Specified {
-            get {
-                return this.kGxM2FieldSpecified;
-            }
-            set {
-                this.kGxM2FieldSpecified = value;
-                this.RaisePropertyChanged("KGxM2Specified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
-        public decimal Paños_x_Paquete {
-            get {
-                return this.paños_x_PaqueteField;
-            }
-            set {
-                this.paños_x_PaqueteField = value;
-                this.RaisePropertyChanged("Paños_x_Paquete");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Paños_x_PaqueteSpecified {
-            get {
-                return this.paños_x_PaqueteFieldSpecified;
-            }
-            set {
-                this.paños_x_PaqueteFieldSpecified = value;
-                this.RaisePropertyChanged("Paños_x_PaqueteSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
-        public decimal m2_Paño {
-            get {
-                return this.m2_PañoField;
-            }
-            set {
-                this.m2_PañoField = value;
-                this.RaisePropertyChanged("m2_Paño");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool m2_PañoSpecified {
-            get {
-                return this.m2_PañoFieldSpecified;
-            }
-            set {
-                this.m2_PañoFieldSpecified = value;
-                this.RaisePropertyChanged("m2_PañoSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
-        public decimal Kgs_Paño {
-            get {
-                return this.kgs_PañoField;
-            }
-            set {
-                this.kgs_PañoField = value;
-                this.RaisePropertyChanged("Kgs_Paño");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Kgs_PañoSpecified {
-            get {
-                return this.kgs_PañoFieldSpecified;
-            }
-            set {
-                this.kgs_PañoFieldSpecified = value;
-                this.RaisePropertyChanged("Kgs_PañoSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
-        public decimal m2_Paquete {
-            get {
-                return this.m2_PaqueteField;
-            }
-            set {
-                this.m2_PaqueteField = value;
-                this.RaisePropertyChanged("m2_Paquete");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool m2_PaqueteSpecified {
-            get {
-                return this.m2_PaqueteFieldSpecified;
-            }
-            set {
-                this.m2_PaqueteFieldSpecified = value;
-                this.RaisePropertyChanged("m2_PaqueteSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
-        public decimal Kgs_Paquete {
-            get {
-                return this.kgs_PaqueteField;
-            }
-            set {
-                this.kgs_PaqueteField = value;
-                this.RaisePropertyChanged("Kgs_Paquete");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Kgs_PaqueteSpecified {
-            get {
-                return this.kgs_PaqueteFieldSpecified;
-            }
-            set {
-                this.kgs_PaqueteFieldSpecified = value;
-                this.RaisePropertyChanged("Kgs_PaqueteSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
-        public decimal euros_m2 {
-            get {
-                return this.euros_m2Field;
-            }
-            set {
-                this.euros_m2Field = value;
-                this.RaisePropertyChanged("euros_m2");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool euros_m2Specified {
-            get {
-                return this.euros_m2FieldSpecified;
-            }
-            set {
-                this.euros_m2FieldSpecified = value;
-                this.RaisePropertyChanged("euros_m2Specified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
-        public decimal euros_Kg {
-            get {
-                return this.euros_KgField;
-            }
-            set {
-                this.euros_KgField = value;
-                this.RaisePropertyChanged("euros_Kg");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool euros_KgSpecified {
-            get {
-                return this.euros_KgFieldSpecified;
-            }
-            set {
-                this.euros_KgFieldSpecified = value;
-                this.RaisePropertyChanged("euros_KgSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
-        public decimal euros_Paño {
-            get {
-                return this.euros_PañoField;
-            }
-            set {
-                this.euros_PañoField = value;
-                this.RaisePropertyChanged("euros_Paño");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool euros_PañoSpecified {
-            get {
-                return this.euros_PañoFieldSpecified;
-            }
-            set {
-                this.euros_PañoFieldSpecified = value;
-                this.RaisePropertyChanged("euros_PañoSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
-        public decimal Diametro {
-            get {
-                return this.diametroField;
-            }
-            set {
-                this.diametroField = value;
-                this.RaisePropertyChanged("Diametro");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool DiametroSpecified {
-            get {
-                return this.diametroFieldSpecified;
-            }
-            set {
-                this.diametroFieldSpecified = value;
-                this.RaisePropertyChanged("DiametroSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=55)]
-        public decimal Nº_Barras_Trans {
-            get {
-                return this.nº_Barras_TransField;
-            }
-            set {
-                this.nº_Barras_TransField = value;
-                this.RaisePropertyChanged("Nº_Barras_Trans");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Nº_Barras_TransSpecified {
-            get {
-                return this.nº_Barras_TransFieldSpecified;
-            }
-            set {
-                this.nº_Barras_TransFieldSpecified = value;
-                this.RaisePropertyChanged("Nº_Barras_TransSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=56)]
-        public Diámetro_Alambrón Diámetro_Alambrón {
-            get {
-                return this.diámetro_AlambrónField;
-            }
-            set {
-                this.diámetro_AlambrónField = value;
-                this.RaisePropertyChanged("Diámetro_Alambrón");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Diámetro_AlambrónSpecified {
-            get {
-                return this.diámetro_AlambrónFieldSpecified;
-            }
-            set {
-                this.diámetro_AlambrónFieldSpecified = value;
-                this.RaisePropertyChanged("Diámetro_AlambrónSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=57)]
-        public string Cod_Barco {
-            get {
-                return this.cod_BarcoField;
-            }
-            set {
-                this.cod_BarcoField = value;
-                this.RaisePropertyChanged("Cod_Barco");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=58)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=25)]
         public System.DateTime Fecha_Embarque {
             get {
                 return this.fecha_EmbarqueField;
@@ -1679,1046 +621,242 @@ namespace ModelDataTRH.ServiceReference1 {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=59)]
-        public decimal Peso_Medio_Teórico {
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public string Last_Receiving_No {
             get {
-                return this.peso_Medio_TeóricoField;
+                return this.last_Receiving_NoField;
             }
             set {
-                this.peso_Medio_TeóricoField = value;
-                this.RaisePropertyChanged("Peso_Medio_Teórico");
+                this.last_Receiving_NoField = value;
+                this.RaisePropertyChanged("Last_Receiving_No");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Peso_Medio_TeóricoSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=27)]
+        public System.DateTime Fecha_LLegada {
             get {
-                return this.peso_Medio_TeóricoFieldSpecified;
+                return this.fecha_LLegadaField;
             }
             set {
-                this.peso_Medio_TeóricoFieldSpecified = value;
-                this.RaisePropertyChanged("Peso_Medio_TeóricoSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=60)]
-        public int Paquetes_por_Camión {
-            get {
-                return this.paquetes_por_CamiónField;
-            }
-            set {
-                this.paquetes_por_CamiónField = value;
-                this.RaisePropertyChanged("Paquetes_por_Camión");
+                this.fecha_LLegadaField = value;
+                this.RaisePropertyChanged("Fecha_LLegada");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Paquetes_por_CamiónSpecified {
+        public bool Fecha_LLegadaSpecified {
             get {
-                return this.paquetes_por_CamiónFieldSpecified;
+                return this.fecha_LLegadaFieldSpecified;
             }
             set {
-                this.paquetes_por_CamiónFieldSpecified = value;
-                this.RaisePropertyChanged("Paquetes_por_CamiónSpecified");
+                this.fecha_LLegadaFieldSpecified = value;
+                this.RaisePropertyChanged("Fecha_LLegadaSpecified");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=61)]
-        public bool Barras_Dobles {
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        public string Order_Address_Code {
             get {
-                return this.barras_DoblesField;
+                return this.order_Address_CodeField;
             }
             set {
-                this.barras_DoblesField = value;
-                this.RaisePropertyChanged("Barras_Dobles");
+                this.order_Address_CodeField = value;
+                this.RaisePropertyChanged("Order_Address_Code");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Barras_DoblesSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        public decimal Cantidad_Total {
             get {
-                return this.barras_DoblesFieldSpecified;
+                return this.cantidad_TotalField;
             }
             set {
-                this.barras_DoblesFieldSpecified = value;
-                this.RaisePropertyChanged("Barras_DoblesSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=62)]
-        public decimal Nº_Barras_Dobles {
-            get {
-                return this.nº_Barras_DoblesField;
-            }
-            set {
-                this.nº_Barras_DoblesField = value;
-                this.RaisePropertyChanged("Nº_Barras_Dobles");
+                this.cantidad_TotalField = value;
+                this.RaisePropertyChanged("Cantidad_Total");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Nº_Barras_DoblesSpecified {
+        public bool Cantidad_TotalSpecified {
             get {
-                return this.nº_Barras_DoblesFieldSpecified;
+                return this.cantidad_TotalFieldSpecified;
             }
             set {
-                this.nº_Barras_DoblesFieldSpecified = value;
-                this.RaisePropertyChanged("Nº_Barras_DoblesSpecified");
+                this.cantidad_TotalFieldSpecified = value;
+                this.RaisePropertyChanged("Cantidad_TotalSpecified");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=63)]
-        public decimal M_Longitudinal {
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        public decimal Importe_Total_Pedido {
             get {
-                return this.m_LongitudinalField;
+                return this.importe_Total_PedidoField;
             }
             set {
-                this.m_LongitudinalField = value;
-                this.RaisePropertyChanged("M_Longitudinal");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool M_LongitudinalSpecified {
-            get {
-                return this.m_LongitudinalFieldSpecified;
-            }
-            set {
-                this.m_LongitudinalFieldSpecified = value;
-                this.RaisePropertyChanged("M_LongitudinalSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=64)]
-        public decimal M_Transversal {
-            get {
-                return this.m_TransversalField;
-            }
-            set {
-                this.m_TransversalField = value;
-                this.RaisePropertyChanged("M_Transversal");
+                this.importe_Total_PedidoField = value;
+                this.RaisePropertyChanged("Importe_Total_Pedido");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool M_TransversalSpecified {
+        public bool Importe_Total_PedidoSpecified {
             get {
-                return this.m_TransversalFieldSpecified;
+                return this.importe_Total_PedidoFieldSpecified;
             }
             set {
-                this.m_TransversalFieldSpecified = value;
-                this.RaisePropertyChanged("M_TransversalSpecified");
+                this.importe_Total_PedidoFieldSpecified = value;
+                this.RaisePropertyChanged("Importe_Total_PedidoSpecified");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=65)]
-        public bool EPI {
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        public int Nº_Ped_Venta_Asignados {
             get {
-                return this.ePIField;
+                return this.nº_Ped_Venta_AsignadosField;
             }
             set {
-                this.ePIField = value;
-                this.RaisePropertyChanged("EPI");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EPISpecified {
-            get {
-                return this.ePIFieldSpecified;
-            }
-            set {
-                this.ePIFieldSpecified = value;
-                this.RaisePropertyChanged("EPISpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=66)]
-        public decimal Nº_Rollo {
-            get {
-                return this.nº_RolloField;
-            }
-            set {
-                this.nº_RolloField = value;
-                this.RaisePropertyChanged("Nº_Rollo");
+                this.nº_Ped_Venta_AsignadosField = value;
+                this.RaisePropertyChanged("Nº_Ped_Venta_Asignados");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Nº_RolloSpecified {
+        public bool Nº_Ped_Venta_AsignadosSpecified {
             get {
-                return this.nº_RolloFieldSpecified;
+                return this.nº_Ped_Venta_AsignadosFieldSpecified;
             }
             set {
-                this.nº_RolloFieldSpecified = value;
-                this.RaisePropertyChanged("Nº_RolloSpecified");
+                this.nº_Ped_Venta_AsignadosFieldSpecified = value;
+                this.RaisePropertyChanged("Nº_Ped_Venta_AsignadosSpecified");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=67)]
-        public decimal Nº_Puntadas {
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public string Vendor_Authorization_No {
             get {
-                return this.nº_PuntadasField;
+                return this.vendor_Authorization_NoField;
             }
             set {
-                this.nº_PuntadasField = value;
-                this.RaisePropertyChanged("Nº_Puntadas");
+                this.vendor_Authorization_NoField = value;
+                this.RaisePropertyChanged("Vendor_Authorization_No");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Nº_PuntadasSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        public string Pay_to_Name {
             get {
-                return this.nº_PuntadasFieldSpecified;
+                return this.pay_to_NameField;
             }
             set {
-                this.nº_PuntadasFieldSpecified = value;
-                this.RaisePropertyChanged("Nº_PuntadasSpecified");
+                this.pay_to_NameField = value;
+                this.RaisePropertyChanged("Pay_to_Name");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=68)]
-        public decimal Inventario_Peso {
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        public string Pay_to_Post_Code {
             get {
-                return this.inventario_PesoField;
+                return this.pay_to_Post_CodeField;
             }
             set {
-                this.inventario_PesoField = value;
-                this.RaisePropertyChanged("Inventario_Peso");
+                this.pay_to_Post_CodeField = value;
+                this.RaisePropertyChanged("Pay_to_Post_Code");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Inventario_PesoSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        public string Pay_to_Country_Region_Code {
             get {
-                return this.inventario_PesoFieldSpecified;
+                return this.pay_to_Country_Region_CodeField;
             }
             set {
-                this.inventario_PesoFieldSpecified = value;
-                this.RaisePropertyChanged("Inventario_PesoSpecified");
+                this.pay_to_Country_Region_CodeField = value;
+                this.RaisePropertyChanged("Pay_to_Country_Region_Code");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=69)]
-        public decimal Tamaño_Barra_Grafil {
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        public string Pay_to_Contact {
             get {
-                return this.tamaño_Barra_GrafilField;
+                return this.pay_to_ContactField;
             }
             set {
-                this.tamaño_Barra_GrafilField = value;
-                this.RaisePropertyChanged("Tamaño_Barra_Grafil");
+                this.pay_to_ContactField = value;
+                this.RaisePropertyChanged("Pay_to_Contact");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Tamaño_Barra_GrafilSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        public string Ship_to_Code {
             get {
-                return this.tamaño_Barra_GrafilFieldSpecified;
+                return this.ship_to_CodeField;
             }
             set {
-                this.tamaño_Barra_GrafilFieldSpecified = value;
-                this.RaisePropertyChanged("Tamaño_Barra_GrafilSpecified");
+                this.ship_to_CodeField = value;
+                this.RaisePropertyChanged("Ship_to_Code");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=70)]
-        public decimal Tamaño_Carrete_Grafil {
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        public string Ship_to_Name {
             get {
-                return this.tamaño_Carrete_GrafilField;
+                return this.ship_to_NameField;
             }
             set {
-                this.tamaño_Carrete_GrafilField = value;
-                this.RaisePropertyChanged("Tamaño_Carrete_Grafil");
+                this.ship_to_NameField = value;
+                this.RaisePropertyChanged("Ship_to_Name");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Tamaño_Carrete_GrafilSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        public string Ship_to_Post_Code {
             get {
-                return this.tamaño_Carrete_GrafilFieldSpecified;
+                return this.ship_to_Post_CodeField;
             }
             set {
-                this.tamaño_Carrete_GrafilFieldSpecified = value;
-                this.RaisePropertyChanged("Tamaño_Carrete_GrafilSpecified");
+                this.ship_to_Post_CodeField = value;
+                this.RaisePropertyChanged("Ship_to_Post_Code");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=71)]
-        public string Cod_Antiguo {
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        public string Ship_to_Country_Region_Code {
             get {
-                return this.cod_AntiguoField;
+                return this.ship_to_Country_Region_CodeField;
             }
             set {
-                this.cod_AntiguoField = value;
-                this.RaisePropertyChanged("Cod_Antiguo");
+                this.ship_to_Country_Region_CodeField = value;
+                this.RaisePropertyChanged("Ship_to_Country_Region_Code");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=72)]
-        public decimal Base {
+        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
+        public string Ship_to_Contact {
             get {
-                return this.baseField;
+                return this.ship_to_ContactField;
             }
             set {
-                this.baseField = value;
-                this.RaisePropertyChanged("Base");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool BaseSpecified {
-            get {
-                return this.baseFieldSpecified;
-            }
-            set {
-                this.baseFieldSpecified = value;
-                this.RaisePropertyChanged("BaseSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=73)]
-        public decimal Cantidad {
-            get {
-                return this.cantidadField;
-            }
-            set {
-                this.cantidadField = value;
-                this.RaisePropertyChanged("Cantidad");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CantidadSpecified {
-            get {
-                return this.cantidadFieldSpecified;
-            }
-            set {
-                this.cantidadFieldSpecified = value;
-                this.RaisePropertyChanged("CantidadSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=74)]
-        public decimal Kg_M2_Comercial {
-            get {
-                return this.kg_M2_ComercialField;
-            }
-            set {
-                this.kg_M2_ComercialField = value;
-                this.RaisePropertyChanged("Kg_M2_Comercial");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Kg_M2_ComercialSpecified {
-            get {
-                return this.kg_M2_ComercialFieldSpecified;
-            }
-            set {
-                this.kg_M2_ComercialFieldSpecified = value;
-                this.RaisePropertyChanged("Kg_M2_ComercialSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=75)]
-        public decimal Descuento_Comercial {
-            get {
-                return this.descuento_ComercialField;
-            }
-            set {
-                this.descuento_ComercialField = value;
-                this.RaisePropertyChanged("Descuento_Comercial");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Descuento_ComercialSpecified {
-            get {
-                return this.descuento_ComercialFieldSpecified;
-            }
-            set {
-                this.descuento_ComercialFieldSpecified = value;
-                this.RaisePropertyChanged("Descuento_ComercialSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=76)]
-        public System.DateTime Fecha_Descuento {
-            get {
-                return this.fecha_DescuentoField;
-            }
-            set {
-                this.fecha_DescuentoField = value;
-                this.RaisePropertyChanged("Fecha_Descuento");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Fecha_DescuentoSpecified {
-            get {
-                return this.fecha_DescuentoFieldSpecified;
-            }
-            set {
-                this.fecha_DescuentoFieldSpecified = value;
-                this.RaisePropertyChanged("Fecha_DescuentoSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=77)]
-        public bool Proveerdor_Unico {
-            get {
-                return this.proveerdor_UnicoField;
-            }
-            set {
-                this.proveerdor_UnicoField = value;
-                this.RaisePropertyChanged("Proveerdor_Unico");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Proveerdor_UnicoSpecified {
-            get {
-                return this.proveerdor_UnicoFieldSpecified;
-            }
-            set {
-                this.proveerdor_UnicoFieldSpecified = value;
-                this.RaisePropertyChanged("Proveerdor_UnicoSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=78)]
-        public string Unidad_Base {
-            get {
-                return this.unidad_BaseField;
-            }
-            set {
-                this.unidad_BaseField = value;
-                this.RaisePropertyChanged("Unidad_Base");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=79)]
-        public decimal Altura_Paquete {
-            get {
-                return this.altura_PaqueteField;
-            }
-            set {
-                this.altura_PaqueteField = value;
-                this.RaisePropertyChanged("Altura_Paquete");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Altura_PaqueteSpecified {
-            get {
-                return this.altura_PaqueteFieldSpecified;
-            }
-            set {
-                this.altura_PaqueteFieldSpecified = value;
-                this.RaisePropertyChanged("Altura_PaqueteSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=80)]
-        public string Country_Region_Calidad {
-            get {
-                return this.country_Region_CalidadField;
-            }
-            set {
-                this.country_Region_CalidadField = value;
-                this.RaisePropertyChanged("Country_Region_Calidad");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=81)]
-        public string Alias_2 {
-            get {
-                return this.alias_2Field;
-            }
-            set {
-                this.alias_2Field = value;
-                this.RaisePropertyChanged("Alias_2");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=82)]
-        public bool AENOR {
-            get {
-                return this.aENORField;
-            }
-            set {
-                this.aENORField = value;
-                this.RaisePropertyChanged("AENOR");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AENORSpecified {
-            get {
-                return this.aENORFieldSpecified;
-            }
-            set {
-                this.aENORFieldSpecified = value;
-                this.RaisePropertyChanged("AENORSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=83)]
-        public bool CARES {
-            get {
-                return this.cARESField;
-            }
-            set {
-                this.cARESField = value;
-                this.RaisePropertyChanged("CARES");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CARESSpecified {
-            get {
-                return this.cARESFieldSpecified;
-            }
-            set {
-                this.cARESFieldSpecified = value;
-                this.RaisePropertyChanged("CARESSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=84)]
-        public string Diametro_Grafil {
-            get {
-                return this.diametro_GrafilField;
-            }
-            set {
-                this.diametro_GrafilField = value;
-                this.RaisePropertyChanged("Diametro_Grafil");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=85)]
-        public bool Fuera_de_gama {
-            get {
-                return this.fuera_de_gamaField;
-            }
-            set {
-                this.fuera_de_gamaField = value;
-                this.RaisePropertyChanged("Fuera_de_gama");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Fuera_de_gamaSpecified {
-            get {
-                return this.fuera_de_gamaFieldSpecified;
-            }
-            set {
-                this.fuera_de_gamaFieldSpecified = value;
-                this.RaisePropertyChanged("Fuera_de_gamaSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=86)]
-        public int Saliente_Long_U1 {
-            get {
-                return this.saliente_Long_U1Field;
-            }
-            set {
-                this.saliente_Long_U1Field = value;
-                this.RaisePropertyChanged("Saliente_Long_U1");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Saliente_Long_U1Specified {
-            get {
-                return this.saliente_Long_U1FieldSpecified;
-            }
-            set {
-                this.saliente_Long_U1FieldSpecified = value;
-                this.RaisePropertyChanged("Saliente_Long_U1Specified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=87)]
-        public int Saliente_Trans_U3 {
-            get {
-                return this.saliente_Trans_U3Field;
-            }
-            set {
-                this.saliente_Trans_U3Field = value;
-                this.RaisePropertyChanged("Saliente_Trans_U3");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Saliente_Trans_U3Specified {
-            get {
-                return this.saliente_Trans_U3FieldSpecified;
-            }
-            set {
-                this.saliente_Trans_U3FieldSpecified = value;
-                this.RaisePropertyChanged("Saliente_Trans_U3Specified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=88)]
-        public int Barras_Ahorro_Long {
-            get {
-                return this.barras_Ahorro_LongField;
-            }
-            set {
-                this.barras_Ahorro_LongField = value;
-                this.RaisePropertyChanged("Barras_Ahorro_Long");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Barras_Ahorro_LongSpecified {
-            get {
-                return this.barras_Ahorro_LongFieldSpecified;
-            }
-            set {
-                this.barras_Ahorro_LongFieldSpecified = value;
-                this.RaisePropertyChanged("Barras_Ahorro_LongSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=89)]
-        public int Barras_Ahorro_Trans {
-            get {
-                return this.barras_Ahorro_TransField;
-            }
-            set {
-                this.barras_Ahorro_TransField = value;
-                this.RaisePropertyChanged("Barras_Ahorro_Trans");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Barras_Ahorro_TransSpecified {
-            get {
-                return this.barras_Ahorro_TransFieldSpecified;
-            }
-            set {
-                this.barras_Ahorro_TransFieldSpecified = value;
-                this.RaisePropertyChanged("Barras_Ahorro_TransSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=90)]
-        public Subtipo Subtipo {
-            get {
-                return this.subtipoField;
-            }
-            set {
-                this.subtipoField = value;
-                this.RaisePropertyChanged("Subtipo");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool SubtipoSpecified {
-            get {
-                return this.subtipoFieldSpecified;
-            }
-            set {
-                this.subtipoFieldSpecified = value;
-                this.RaisePropertyChanged("SubtipoSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=91)]
-        public System.DateTime Fecha_Planilla {
-            get {
-                return this.fecha_PlanillaField;
-            }
-            set {
-                this.fecha_PlanillaField = value;
-                this.RaisePropertyChanged("Fecha_Planilla");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Fecha_PlanillaSpecified {
-            get {
-                return this.fecha_PlanillaFieldSpecified;
-            }
-            set {
-                this.fecha_PlanillaFieldSpecified = value;
-                this.RaisePropertyChanged("Fecha_PlanillaSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=92)]
-        public string Designacion {
-            get {
-                return this.designacionField;
-            }
-            set {
-                this.designacionField = value;
-                this.RaisePropertyChanged("Designacion");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=93)]
-        public int Saliente_Long_U2 {
-            get {
-                return this.saliente_Long_U2Field;
-            }
-            set {
-                this.saliente_Long_U2Field = value;
-                this.RaisePropertyChanged("Saliente_Long_U2");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Saliente_Long_U2Specified {
-            get {
-                return this.saliente_Long_U2FieldSpecified;
-            }
-            set {
-                this.saliente_Long_U2FieldSpecified = value;
-                this.RaisePropertyChanged("Saliente_Long_U2Specified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=94)]
-        public int Saliente_Trans_U4 {
-            get {
-                return this.saliente_Trans_U4Field;
-            }
-            set {
-                this.saliente_Trans_U4Field = value;
-                this.RaisePropertyChanged("Saliente_Trans_U4");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Saliente_Trans_U4Specified {
-            get {
-                return this.saliente_Trans_U4FieldSpecified;
-            }
-            set {
-                this.saliente_Trans_U4FieldSpecified = value;
-                this.RaisePropertyChanged("Saliente_Trans_U4Specified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=95)]
-        public int Separacion_BL_Ahorro_PA {
-            get {
-                return this.separacion_BL_Ahorro_PAField;
-            }
-            set {
-                this.separacion_BL_Ahorro_PAField = value;
-                this.RaisePropertyChanged("Separacion_BL_Ahorro_PA");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Separacion_BL_Ahorro_PASpecified {
-            get {
-                return this.separacion_BL_Ahorro_PAFieldSpecified;
-            }
-            set {
-                this.separacion_BL_Ahorro_PAFieldSpecified = value;
-                this.RaisePropertyChanged("Separacion_BL_Ahorro_PASpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=96)]
-        public int Separacion_BT_Ahorro_PA {
-            get {
-                return this.separacion_BT_Ahorro_PAField;
-            }
-            set {
-                this.separacion_BT_Ahorro_PAField = value;
-                this.RaisePropertyChanged("Separacion_BT_Ahorro_PA");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Separacion_BT_Ahorro_PASpecified {
-            get {
-                return this.separacion_BT_Ahorro_PAFieldSpecified;
-            }
-            set {
-                this.separacion_BT_Ahorro_PAFieldSpecified = value;
-                this.RaisePropertyChanged("Separacion_BT_Ahorro_PASpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=97)]
-        public bool Permite_stock_negativo {
-            get {
-                return this.permite_stock_negativoField;
-            }
-            set {
-                this.permite_stock_negativoField = value;
-                this.RaisePropertyChanged("Permite_stock_negativo");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Permite_stock_negativoSpecified {
-            get {
-                return this.permite_stock_negativoFieldSpecified;
-            }
-            set {
-                this.permite_stock_negativoFieldSpecified = value;
-                this.RaisePropertyChanged("Permite_stock_negativoSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=98)]
-        public string Nombre_Categoría {
-            get {
-                return this.nombre_CategoríaField;
-            }
-            set {
-                this.nombre_CategoríaField = value;
-                this.RaisePropertyChanged("Nombre_Categoría");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=99)]
-        public string Nombre_Grupo {
-            get {
-                return this.nombre_GrupoField;
-            }
-            set {
-                this.nombre_GrupoField = value;
-                this.RaisePropertyChanged("Nombre_Grupo");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute("EHE`08", Order=100)]
-        public bool EHE08 {
-            get {
-                return this.eHE08Field;
-            }
-            set {
-                this.eHE08Field = value;
-                this.RaisePropertyChanged("EHE08");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EHE08Specified {
-            get {
-                return this.eHE08FieldSpecified;
-            }
-            set {
-                this.eHE08FieldSpecified = value;
-                this.RaisePropertyChanged("EHE08Specified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=101)]
-        public bool UNE36092 {
-            get {
-                return this.uNE36092Field;
-            }
-            set {
-                this.uNE36092Field = value;
-                this.RaisePropertyChanged("UNE36092");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool UNE36092Specified {
-            get {
-                return this.uNE36092FieldSpecified;
-            }
-            set {
-                this.uNE36092FieldSpecified = value;
-                this.RaisePropertyChanged("UNE36092Specified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=102)]
-        public bool Estandar {
-            get {
-                return this.estandarField;
-            }
-            set {
-                this.estandarField = value;
-                this.RaisePropertyChanged("Estandar");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EstandarSpecified {
-            get {
-                return this.estandarFieldSpecified;
-            }
-            set {
-                this.estandarFieldSpecified = value;
-                this.RaisePropertyChanged("EstandarSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=103)]
-        public bool Especial {
-            get {
-                return this.especialField;
-            }
-            set {
-                this.especialField = value;
-                this.RaisePropertyChanged("Especial");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EspecialSpecified {
-            get {
-                return this.especialFieldSpecified;
-            }
-            set {
-                this.especialFieldSpecified = value;
-                this.RaisePropertyChanged("EspecialSpecified");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=104)]
-        public string Cliente_Etiqueta {
-            get {
-                return this.cliente_EtiquetaField;
-            }
-            set {
-                this.cliente_EtiquetaField = value;
-                this.RaisePropertyChanged("Cliente_Etiqueta");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=105)]
-        public string Envio_Malla_MM_Cliente {
-            get {
-                return this.envio_Malla_MM_ClienteField;
-            }
-            set {
-                this.envio_Malla_MM_ClienteField = value;
-                this.RaisePropertyChanged("Envio_Malla_MM_Cliente");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=106)]
-        public string NombreDescripcionGrupoContable {
-            get {
-                return this.nombreDescripcionGrupoContableField;
-            }
-            set {
-                this.nombreDescripcionGrupoContableField = value;
-                this.RaisePropertyChanged("NombreDescripcionGrupoContable");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=107)]
-        public string Routing_No {
-            get {
-                return this.routing_NoField;
-            }
-            set {
-                this.routing_NoField = value;
-                this.RaisePropertyChanged("Routing_No");
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=108)]
-        public string Production_BOM_No {
-            get {
-                return this.production_BOM_NoField;
-            }
-            set {
-                this.production_BOM_NoField = value;
-                this.RaisePropertyChanged("Production_BOM_No");
+                this.ship_to_ContactField = value;
+                this.RaisePropertyChanged("Ship_to_Contact");
             }
         }
         
@@ -2736,170 +874,19 @@ namespace ModelDataTRH.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos")]
-    public enum Costing_Method {
+    public enum Status {
         
         /// <comentarios/>
-        FIFO,
+        Open,
         
         /// <comentarios/>
-        LIFO,
+        Released,
         
         /// <comentarios/>
-        Specific,
+        Pending_Approval,
         
         /// <comentarios/>
-        Average,
-        
-        /// <comentarios/>
-        Standard,
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos")]
-    public enum Reserve {
-        
-        /// <comentarios/>
-        Never,
-        
-        /// <comentarios/>
-        Optional,
-        
-        /// <comentarios/>
-        Always,
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos")]
-    public enum Flushing_Method {
-        
-        /// <comentarios/>
-        Manual,
-        
-        /// <comentarios/>
-        Forward,
-        
-        /// <comentarios/>
-        Backward,
-        
-        /// <comentarios/>
-        Pick__x002B__Forward,
-        
-        /// <comentarios/>
-        Pick__x002B__Backward,
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos")]
-    public enum Replenishment_System {
-        
-        /// <comentarios/>
-        Purchase,
-        
-        /// <comentarios/>
-        Prod_Order,
-        
-        /// <comentarios/>
-        Assembly,
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos")]
-    public enum Reordering_Policy {
-        
-        /// <comentarios/>
-        _blank_,
-        
-        /// <comentarios/>
-        Fixed_Reorder_Qty,
-        
-        /// <comentarios/>
-        Maximum_Qty,
-        
-        /// <comentarios/>
-        Order,
-        
-        /// <comentarios/>
-        Lot_for_Lot,
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos")]
-    public enum Manufacturing_Policy {
-        
-        /// <comentarios/>
-        Make_to_Stock,
-        
-        /// <comentarios/>
-        Make_to_Order,
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos")]
-    public enum Diámetro_Alambrón {
-        
-        /// <comentarios/>
-        _blank_,
-        
-        /// <comentarios/>
-        _x0035__5,
-        
-        /// <comentarios/>
-        _x0036_,
-        
-        /// <comentarios/>
-        _x0037_,
-        
-        /// <comentarios/>
-        _x0039_,
-        
-        /// <comentarios/>
-        _x0031_1,
-        
-        /// <comentarios/>
-        _x0031_1_5,
-        
-        /// <comentarios/>
-        _x0031_3,
-        
-        /// <comentarios/>
-        _x0031_3_5,
-        
-        /// <comentarios/>
-        _x0031_4,
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos")]
-    public enum Subtipo {
-        
-        /// <comentarios/>
-        Malla_Especial,
-        
-        /// <comentarios/>
-        Quali,
-        
-        /// <comentarios/>
-        Eco,
-        
-        /// <comentarios/>
-        Fly_End,
-        
-        /// <comentarios/>
-        Cerramiento,
+        Pending_Prepayment,
     }
     
     /// <comentarios/>
@@ -2958,325 +945,124 @@ namespace ModelDataTRH.ServiceReference1 {
         No,
         
         /// <comentarios/>
-        Description,
+        Buy_from_Vendor_No,
         
         /// <comentarios/>
-        Search_Description,
+        Buy_from_Vendor_Name,
         
         /// <comentarios/>
-        Description_2,
+        Cantidad_Pdt_Facturar,
         
         /// <comentarios/>
-        Base_Unit_of_Measure,
+        Cantidad_a_Recibir,
         
         /// <comentarios/>
-        Inventory_Posting_Group,
+        Posting_Date,
         
         /// <comentarios/>
-        Allow_Invoice_Disc,
+        CodigoPedidoCabecera,
         
         /// <comentarios/>
-        Costing_Method,
+        Ref_Barco,
         
         /// <comentarios/>
-        Unit_Cost,
+        Firma_Direccion,
         
         /// <comentarios/>
-        Last_Direct_Cost,
+        Fecha_Firma,
         
         /// <comentarios/>
-        Cost_is_Adjusted,
+        Status,
         
         /// <comentarios/>
-        Allow_Online_Adjustment,
+        Vendor_Invoice_No,
         
         /// <comentarios/>
-        Gross_Weight,
+        Buy_from_Post_Code,
         
         /// <comentarios/>
-        Net_Weight,
+        Buy_from_Country_Region_Code,
         
         /// <comentarios/>
-        Tariff_No,
+        Buy_from_Contact,
         
         /// <comentarios/>
-        Blocked,
+        Pay_to_Vendor_No,
         
         /// <comentarios/>
-        Last_Date_Modified,
+        Ship_to_City,
         
         /// <comentarios/>
-        Gen_Prod_Posting_Group,
+        Shortcut_Dimension_1_Code,
         
         /// <comentarios/>
-        No_Series,
+        Shortcut_Dimension_2_Code,
         
         /// <comentarios/>
-        VAT_Prod_Posting_Group,
+        Location_Code,
         
         /// <comentarios/>
-        Reserve,
+        Purchaser_Code,
         
         /// <comentarios/>
-        Global_Dimension_1_Code,
+        Assigned_User_ID,
         
         /// <comentarios/>
-        Low_Level_Code,
+        Currency_Code,
         
         /// <comentarios/>
-        Minimum_Order_Quantity,
-        
-        /// <comentarios/>
-        Flushing_Method,
-        
-        /// <comentarios/>
-        Replenishment_System,
-        
-        /// <comentarios/>
-        Rounding_Precision,
-        
-        /// <comentarios/>
-        Sales_Unit_of_Measure,
-        
-        /// <comentarios/>
-        Purch_Unit_of_Measure,
-        
-        /// <comentarios/>
-        Reordering_Policy,
-        
-        /// <comentarios/>
-        Include_Inventory,
-        
-        /// <comentarios/>
-        Manufacturing_Policy,
-        
-        /// <comentarios/>
-        Item_Category_Code,
-        
-        /// <comentarios/>
-        Product_Group_Code,
-        
-        /// <comentarios/>
-        Put_away_Unit_of_Measure_Code,
-        
-        /// <comentarios/>
-        Last_Counting_Period_Update,
-        
-        /// <comentarios/>
-        Long_Rejilla,
-        
-        /// <comentarios/>
-        Trans_Rejilla,
-        
-        /// <comentarios/>
-        Diametro_Long,
-        
-        /// <comentarios/>
-        Diametro_Trans,
-        
-        /// <comentarios/>
-        Long_Barra,
-        
-        /// <comentarios/>
-        Trans_Barra,
-        
-        /// <comentarios/>
-        N_x00BA__Barras_Long,
-        
-        /// <comentarios/>
-        Malla_Estandar,
-        
-        /// <comentarios/>
-        KGxM2,
-        
-        /// <comentarios/>
-        Paños_x_Paquete,
-        
-        /// <comentarios/>
-        m2_Paño,
-        
-        /// <comentarios/>
-        Kgs_Paño,
-        
-        /// <comentarios/>
-        m2_Paquete,
-        
-        /// <comentarios/>
-        Kgs_Paquete,
-        
-        /// <comentarios/>
-        euros_m2,
-        
-        /// <comentarios/>
-        euros_Kg,
-        
-        /// <comentarios/>
-        euros_Paño,
-        
-        /// <comentarios/>
-        Diametro,
-        
-        /// <comentarios/>
-        N_x00BA__Barras_Trans,
-        
-        /// <comentarios/>
-        Diámetro_Alambrón,
-        
-        /// <comentarios/>
-        Cod_Barco,
+        Due_Date,
         
         /// <comentarios/>
         Fecha_Embarque,
         
         /// <comentarios/>
-        Peso_Medio_Teórico,
+        Last_Receiving_No,
         
         /// <comentarios/>
-        Paquetes_por_Camión,
+        Fecha_LLegada,
         
         /// <comentarios/>
-        Barras_Dobles,
+        Order_Address_Code,
         
         /// <comentarios/>
-        N_x00BA__Barras_Dobles,
+        Cantidad_Total,
         
         /// <comentarios/>
-        M_Longitudinal,
+        Importe_Total_Pedido,
         
         /// <comentarios/>
-        M_Transversal,
+        N_x00BA__Ped_Venta_Asignados,
         
         /// <comentarios/>
-        EPI,
+        Vendor_Authorization_No,
         
         /// <comentarios/>
-        N_x00BA__Rollo,
+        Pay_to_Name,
         
         /// <comentarios/>
-        N_x00BA__Puntadas,
+        Pay_to_Post_Code,
         
         /// <comentarios/>
-        Inventario_Peso,
+        Pay_to_Country_Region_Code,
         
         /// <comentarios/>
-        Tamaño_Barra_Grafil,
+        Pay_to_Contact,
         
         /// <comentarios/>
-        Tamaño_Carrete_Grafil,
+        Ship_to_Code,
         
         /// <comentarios/>
-        Cod_Antiguo,
+        Ship_to_Name,
         
         /// <comentarios/>
-        Base,
+        Ship_to_Post_Code,
         
         /// <comentarios/>
-        Cantidad,
+        Ship_to_Country_Region_Code,
         
         /// <comentarios/>
-        Kg_M2_Comercial,
-        
-        /// <comentarios/>
-        Descuento_Comercial,
-        
-        /// <comentarios/>
-        Fecha_Descuento,
-        
-        /// <comentarios/>
-        Proveerdor_Unico,
-        
-        /// <comentarios/>
-        Unidad_Base,
-        
-        /// <comentarios/>
-        Altura_Paquete,
-        
-        /// <comentarios/>
-        Country_Region_Calidad,
-        
-        /// <comentarios/>
-        Alias_2,
-        
-        /// <comentarios/>
-        AENOR,
-        
-        /// <comentarios/>
-        CARES,
-        
-        /// <comentarios/>
-        Diametro_Grafil,
-        
-        /// <comentarios/>
-        Fuera_de_gama,
-        
-        /// <comentarios/>
-        Saliente_Long_U1,
-        
-        /// <comentarios/>
-        Saliente_Trans_U3,
-        
-        /// <comentarios/>
-        Barras_Ahorro_Long,
-        
-        /// <comentarios/>
-        Barras_Ahorro_Trans,
-        
-        /// <comentarios/>
-        Subtipo,
-        
-        /// <comentarios/>
-        Fecha_Planilla,
-        
-        /// <comentarios/>
-        Designacion,
-        
-        /// <comentarios/>
-        Saliente_Long_U2,
-        
-        /// <comentarios/>
-        Saliente_Trans_U4,
-        
-        /// <comentarios/>
-        Separacion_BL_Ahorro_PA,
-        
-        /// <comentarios/>
-        Separacion_BT_Ahorro_PA,
-        
-        /// <comentarios/>
-        Permite_stock_negativo,
-        
-        /// <comentarios/>
-        Nombre_Categoría,
-        
-        /// <comentarios/>
-        Nombre_Grupo,
-        
-        /// <comentarios/>
-        EHE_x0060_08,
-        
-        /// <comentarios/>
-        UNE36092,
-        
-        /// <comentarios/>
-        Estandar,
-        
-        /// <comentarios/>
-        Especial,
-        
-        /// <comentarios/>
-        Cliente_Etiqueta,
-        
-        /// <comentarios/>
-        Envio_Malla_MM_Cliente,
-        
-        /// <comentarios/>
-        NombreDescripcionGrupoContable,
-        
-        /// <comentarios/>
-        Routing_No,
-        
-        /// <comentarios/>
-        Production_BOM_No,
+        Ship_to_Contact,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
