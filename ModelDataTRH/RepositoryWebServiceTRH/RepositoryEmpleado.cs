@@ -8,7 +8,7 @@ using RepositoryWebServiceTRH.EmpleadoContext;
 
 namespace RepositoryWebServiceTRH
 {
-    class RepositoryEmpleado : IRepository<EmpleadoContext.Empleados, String>
+    public class RepositoryEmpleado : IRepository<EmpleadoContext.Empleados, String>
     {
 
         
@@ -36,7 +36,15 @@ namespace RepositoryWebServiceTRH
 
         public Empleados Get(string id)
         {
-            return Context.contextEmpleado.Read(id);
+            if (!string.IsNullOrEmpty(id))
+            {
+                return Context.contextEmpleado.Read(id);
+            }
+            else {
+
+                throw new ArgumentNullException("id", "El parametro id no puede vernir vacio");
+            }
+            
            
         }
 

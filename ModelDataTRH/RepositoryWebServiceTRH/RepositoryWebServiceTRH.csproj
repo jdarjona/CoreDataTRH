@@ -44,11 +44,29 @@
   <ItemGroup>
     <Compile Include="Context.cs" />
     <Compile Include="ContextoWebService.cs" />
+    <Compile Include="EncryptDecrypt.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Prueba.cs" />
+    <Compile Include="RepositoryRepuestosCU.cs" />
     <Compile Include="RepositoryEmpleado.cs" />
+    <Compile Include="RepositoryEntragaAlmacenEpis.cs" />
+    <Compile Include="RepositoryItem.cs" />
     <Compile Include="Service References\EmpleadoContext\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\EntregaAlmacenEpisContext\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AlmacenRepuestosContext\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ItemContext\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -59,6 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\AlmacenRepuestosContext\RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\EmpleadoContext\Empleados.wsdl" />
     <None Include="Service References\EmpleadoContext\RepositoryWebServiceTRH.EmpleadoContext.Empleados.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -78,9 +99,81 @@
     <None Include="Service References\EmpleadoContext\RepositoryWebServiceTRH.EmpleadoContext.Read_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\EntregaAlmacen.wsdl" />
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.CreateMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.Create_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.Delete_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.EntregaAlmacen.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.GetRecIdFromKey_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.IsUpdated_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.ReadByRecId_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.ReadMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.Read_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.UpdateMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.Update_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AlmacenRepuestosContext\AlmacenRepuestos.wsdl" />
+    <None Include="Service References\ItemContext\NuevaListaProductos.wsdl" />
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.CreateMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.Create_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.Delete_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.GetRecIdFromKey_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.IsUpdated_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.NuevaListaProductos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.ReadByRecId_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.ReadMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.Read_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.UpdateMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.Update_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\EmpleadoContext\" />
+    <WCFMetadataStorage Include="Service References\EntregaAlmacenEpisContext\" />
+    <WCFMetadataStorage Include="Service References\AlmacenRepuestosContext\" />
+    <WCFMetadataStorage Include="Service References\ItemContext\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\EmpleadoContext\configuration91.svcinfo" />
@@ -90,6 +183,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\EmpleadoContext\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EntregaAlmacenEpisContext\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EntregaAlmacenEpisContext\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EntregaAlmacenEpisContext\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AlmacenRepuestosContext\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AlmacenRepuestosContext\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AlmacenRepuestosContext\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ItemContext\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ItemContext\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ItemContext\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
