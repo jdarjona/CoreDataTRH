@@ -2,187 +2,58 @@
 <definitions xmlns:tns="urn:microsoft-dynamics-schemas/page/nuevalistaproductos" targetNamespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/page/nuevalistaproductos" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-      <xsd:simpleType name="Costing_Method">
+      <xsd:simpleType name="Status">
         <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="FIFO" />
-          <xsd:enumeration value="LIFO" />
-          <xsd:enumeration value="Specific" />
-          <xsd:enumeration value="Average" />
-          <xsd:enumeration value="Standard" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Reserve">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Never" />
-          <xsd:enumeration value="Optional" />
-          <xsd:enumeration value="Always" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Flushing_Method">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Manual" />
-          <xsd:enumeration value="Forward" />
-          <xsd:enumeration value="Backward" />
-          <xsd:enumeration value="Pick__x002B__Forward" />
-          <xsd:enumeration value="Pick__x002B__Backward" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Replenishment_System">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Purchase" />
-          <xsd:enumeration value="Prod_Order" />
-          <xsd:enumeration value="Assembly" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Reordering_Policy">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="_blank_" />
-          <xsd:enumeration value="Fixed_Reorder_Qty" />
-          <xsd:enumeration value="Maximum_Qty" />
-          <xsd:enumeration value="Order" />
-          <xsd:enumeration value="Lot_for_Lot" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Manufacturing_Policy">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Make_to_Stock" />
-          <xsd:enumeration value="Make_to_Order" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Diámetro_Alambrón">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="_blank_" />
-          <xsd:enumeration value="_x0035__5" />
-          <xsd:enumeration value="_x0036_" />
-          <xsd:enumeration value="_x0037_" />
-          <xsd:enumeration value="_x0039_" />
-          <xsd:enumeration value="_x0031_1" />
-          <xsd:enumeration value="_x0031_1_5" />
-          <xsd:enumeration value="_x0031_3" />
-          <xsd:enumeration value="_x0031_3_5" />
-          <xsd:enumeration value="_x0031_4" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Subtipo">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Malla_Especial" />
-          <xsd:enumeration value="Quali" />
-          <xsd:enumeration value="Eco" />
-          <xsd:enumeration value="Fly_End" />
-          <xsd:enumeration value="Cerramiento" />
+          <xsd:enumeration value="Open" />
+          <xsd:enumeration value="Released" />
+          <xsd:enumeration value="Pending_Approval" />
+          <xsd:enumeration value="Pending_Prepayment" />
         </xsd:restriction>
       </xsd:simpleType>
       <xsd:complexType name="NuevaListaProductos">
         <xsd:sequence>
           <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="No" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Search_Description" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Description_2" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Base_Unit_of_Measure" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Inventory_Posting_Group" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Allow_Invoice_Disc" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Costing_Method" type="tns:Costing_Method" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Unit_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Last_Direct_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cost_is_Adjusted" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Allow_Online_Adjustment" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Gross_Weight" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Net_Weight" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Tariff_No" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Blocked" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Last_Date_Modified" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Gen_Prod_Posting_Group" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="No_Series" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="VAT_Prod_Posting_Group" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Reserve" type="tns:Reserve" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Global_Dimension_1_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Low_Level_Code" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Minimum_Order_Quantity" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Flushing_Method" type="tns:Flushing_Method" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Replenishment_System" type="tns:Replenishment_System" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rounding_Precision" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Sales_Unit_of_Measure" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Purch_Unit_of_Measure" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Reordering_Policy" type="tns:Reordering_Policy" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Include_Inventory" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Manufacturing_Policy" type="tns:Manufacturing_Policy" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Item_Category_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Product_Group_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Put_away_Unit_of_Measure_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Last_Counting_Period_Update" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Long_Rejilla" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Trans_Rejilla" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diametro_Long" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diametro_Trans" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Long_Barra" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Trans_Barra" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Barras_Long" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Malla_Estandar" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="KGxM2" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Paños_x_Paquete" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="m2_Paño" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Kgs_Paño" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="m2_Paquete" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Kgs_Paquete" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="euros_m2" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="euros_Kg" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="euros_Paño" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diametro" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Barras_Trans" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diámetro_Alambrón" type="tns:Diámetro_Alambrón" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cod_Barco" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Buy_from_Vendor_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Buy_from_Vendor_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad_Pdt_Facturar" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad_a_Recibir" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Posting_Date" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="CodigoPedidoCabecera" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Ref_Barco" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Firma_Direccion" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Fecha_Firma" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Status" type="tns:Status" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Vendor_Invoice_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Buy_from_Post_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Buy_from_Country_Region_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Buy_from_Contact" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Pay_to_Vendor_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Ship_to_City" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_1_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_2_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Location_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Purchaser_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Assigned_User_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Currency_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Due_Date" type="xsd:date" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Fecha_Embarque" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Peso_Medio_Teórico" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Paquetes_por_Camión" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Barras_Dobles" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Barras_Dobles" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="M_Longitudinal" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="M_Transversal" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="EPI" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Rollo" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Puntadas" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Inventario_Peso" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Tamaño_Barra_Grafil" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Tamaño_Carrete_Grafil" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cod_Antiguo" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Base" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Kg_M2_Comercial" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Descuento_Comercial" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Fecha_Descuento" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Proveerdor_Unico" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Unidad_Base" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Altura_Paquete" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Country_Region_Calidad" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Alias_2" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="AENOR" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="CARES" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diametro_Grafil" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Fuera_de_gama" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Saliente_Long_U1" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Saliente_Trans_U3" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Barras_Ahorro_Long" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Barras_Ahorro_Trans" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Subtipo" type="tns:Subtipo" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Fecha_Planilla" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Designacion" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Saliente_Long_U2" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Saliente_Trans_U4" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Separacion_BL_Ahorro_PA" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Separacion_BT_Ahorro_PA" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Permite_stock_negativo" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Nombre_Categoría" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Nombre_Grupo" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="EHE_x0060_08" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="UNE36092" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Estandar" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Especial" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cliente_Etiqueta" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Envio_Malla_MM_Cliente" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="NombreDescripcionGrupoContable" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Routing_No" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Production_BOM_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Last_Receiving_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Fecha_LLegada" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Order_Address_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad_Total" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Importe_Total_Pedido" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Ped_Venta_Asignados" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Vendor_Authorization_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Pay_to_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Pay_to_Post_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Pay_to_Country_Region_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Pay_to_Contact" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Ship_to_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Ship_to_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Ship_to_Post_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Ship_to_Country_Region_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Ship_to_Contact" type="xsd:string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="NuevaListaProductos_List">
@@ -193,113 +64,46 @@
       <xsd:simpleType name="NuevaListaProductos_Fields">
         <xsd:restriction base="xsd:string">
           <xsd:enumeration value="No" />
-          <xsd:enumeration value="Description" />
-          <xsd:enumeration value="Search_Description" />
-          <xsd:enumeration value="Description_2" />
-          <xsd:enumeration value="Base_Unit_of_Measure" />
-          <xsd:enumeration value="Inventory_Posting_Group" />
-          <xsd:enumeration value="Allow_Invoice_Disc" />
-          <xsd:enumeration value="Costing_Method" />
-          <xsd:enumeration value="Unit_Cost" />
-          <xsd:enumeration value="Last_Direct_Cost" />
-          <xsd:enumeration value="Cost_is_Adjusted" />
-          <xsd:enumeration value="Allow_Online_Adjustment" />
-          <xsd:enumeration value="Gross_Weight" />
-          <xsd:enumeration value="Net_Weight" />
-          <xsd:enumeration value="Tariff_No" />
-          <xsd:enumeration value="Blocked" />
-          <xsd:enumeration value="Last_Date_Modified" />
-          <xsd:enumeration value="Gen_Prod_Posting_Group" />
-          <xsd:enumeration value="No_Series" />
-          <xsd:enumeration value="VAT_Prod_Posting_Group" />
-          <xsd:enumeration value="Reserve" />
-          <xsd:enumeration value="Global_Dimension_1_Code" />
-          <xsd:enumeration value="Low_Level_Code" />
-          <xsd:enumeration value="Minimum_Order_Quantity" />
-          <xsd:enumeration value="Flushing_Method" />
-          <xsd:enumeration value="Replenishment_System" />
-          <xsd:enumeration value="Rounding_Precision" />
-          <xsd:enumeration value="Sales_Unit_of_Measure" />
-          <xsd:enumeration value="Purch_Unit_of_Measure" />
-          <xsd:enumeration value="Reordering_Policy" />
-          <xsd:enumeration value="Include_Inventory" />
-          <xsd:enumeration value="Manufacturing_Policy" />
-          <xsd:enumeration value="Item_Category_Code" />
-          <xsd:enumeration value="Product_Group_Code" />
-          <xsd:enumeration value="Put_away_Unit_of_Measure_Code" />
-          <xsd:enumeration value="Last_Counting_Period_Update" />
-          <xsd:enumeration value="Long_Rejilla" />
-          <xsd:enumeration value="Trans_Rejilla" />
-          <xsd:enumeration value="Diametro_Long" />
-          <xsd:enumeration value="Diametro_Trans" />
-          <xsd:enumeration value="Long_Barra" />
-          <xsd:enumeration value="Trans_Barra" />
-          <xsd:enumeration value="N_x00BA__Barras_Long" />
-          <xsd:enumeration value="Malla_Estandar" />
-          <xsd:enumeration value="KGxM2" />
-          <xsd:enumeration value="Paños_x_Paquete" />
-          <xsd:enumeration value="m2_Paño" />
-          <xsd:enumeration value="Kgs_Paño" />
-          <xsd:enumeration value="m2_Paquete" />
-          <xsd:enumeration value="Kgs_Paquete" />
-          <xsd:enumeration value="euros_m2" />
-          <xsd:enumeration value="euros_Kg" />
-          <xsd:enumeration value="euros_Paño" />
-          <xsd:enumeration value="Diametro" />
-          <xsd:enumeration value="N_x00BA__Barras_Trans" />
-          <xsd:enumeration value="Diámetro_Alambrón" />
-          <xsd:enumeration value="Cod_Barco" />
+          <xsd:enumeration value="Buy_from_Vendor_No" />
+          <xsd:enumeration value="Buy_from_Vendor_Name" />
+          <xsd:enumeration value="Cantidad_Pdt_Facturar" />
+          <xsd:enumeration value="Cantidad_a_Recibir" />
+          <xsd:enumeration value="Posting_Date" />
+          <xsd:enumeration value="CodigoPedidoCabecera" />
+          <xsd:enumeration value="Ref_Barco" />
+          <xsd:enumeration value="Firma_Direccion" />
+          <xsd:enumeration value="Fecha_Firma" />
+          <xsd:enumeration value="Status" />
+          <xsd:enumeration value="Vendor_Invoice_No" />
+          <xsd:enumeration value="Buy_from_Post_Code" />
+          <xsd:enumeration value="Buy_from_Country_Region_Code" />
+          <xsd:enumeration value="Buy_from_Contact" />
+          <xsd:enumeration value="Pay_to_Vendor_No" />
+          <xsd:enumeration value="Ship_to_City" />
+          <xsd:enumeration value="Shortcut_Dimension_1_Code" />
+          <xsd:enumeration value="Shortcut_Dimension_2_Code" />
+          <xsd:enumeration value="Location_Code" />
+          <xsd:enumeration value="Purchaser_Code" />
+          <xsd:enumeration value="Assigned_User_ID" />
+          <xsd:enumeration value="Currency_Code" />
+          <xsd:enumeration value="Due_Date" />
           <xsd:enumeration value="Fecha_Embarque" />
-          <xsd:enumeration value="Peso_Medio_Teórico" />
-          <xsd:enumeration value="Paquetes_por_Camión" />
-          <xsd:enumeration value="Barras_Dobles" />
-          <xsd:enumeration value="N_x00BA__Barras_Dobles" />
-          <xsd:enumeration value="M_Longitudinal" />
-          <xsd:enumeration value="M_Transversal" />
-          <xsd:enumeration value="EPI" />
-          <xsd:enumeration value="N_x00BA__Rollo" />
-          <xsd:enumeration value="N_x00BA__Puntadas" />
-          <xsd:enumeration value="Inventario_Peso" />
-          <xsd:enumeration value="Tamaño_Barra_Grafil" />
-          <xsd:enumeration value="Tamaño_Carrete_Grafil" />
-          <xsd:enumeration value="Cod_Antiguo" />
-          <xsd:enumeration value="Base" />
-          <xsd:enumeration value="Cantidad" />
-          <xsd:enumeration value="Kg_M2_Comercial" />
-          <xsd:enumeration value="Descuento_Comercial" />
-          <xsd:enumeration value="Fecha_Descuento" />
-          <xsd:enumeration value="Proveerdor_Unico" />
-          <xsd:enumeration value="Unidad_Base" />
-          <xsd:enumeration value="Altura_Paquete" />
-          <xsd:enumeration value="Country_Region_Calidad" />
-          <xsd:enumeration value="Alias_2" />
-          <xsd:enumeration value="AENOR" />
-          <xsd:enumeration value="CARES" />
-          <xsd:enumeration value="Diametro_Grafil" />
-          <xsd:enumeration value="Fuera_de_gama" />
-          <xsd:enumeration value="Saliente_Long_U1" />
-          <xsd:enumeration value="Saliente_Trans_U3" />
-          <xsd:enumeration value="Barras_Ahorro_Long" />
-          <xsd:enumeration value="Barras_Ahorro_Trans" />
-          <xsd:enumeration value="Subtipo" />
-          <xsd:enumeration value="Fecha_Planilla" />
-          <xsd:enumeration value="Designacion" />
-          <xsd:enumeration value="Saliente_Long_U2" />
-          <xsd:enumeration value="Saliente_Trans_U4" />
-          <xsd:enumeration value="Separacion_BL_Ahorro_PA" />
-          <xsd:enumeration value="Separacion_BT_Ahorro_PA" />
-          <xsd:enumeration value="Permite_stock_negativo" />
-          <xsd:enumeration value="Nombre_Categoría" />
-          <xsd:enumeration value="Nombre_Grupo" />
-          <xsd:enumeration value="EHE_x0060_08" />
-          <xsd:enumeration value="UNE36092" />
-          <xsd:enumeration value="Estandar" />
-          <xsd:enumeration value="Especial" />
-          <xsd:enumeration value="Cliente_Etiqueta" />
-          <xsd:enumeration value="Envio_Malla_MM_Cliente" />
-          <xsd:enumeration value="NombreDescripcionGrupoContable" />
-          <xsd:enumeration value="Routing_No" />
-          <xsd:enumeration value="Production_BOM_No" />
+          <xsd:enumeration value="Last_Receiving_No" />
+          <xsd:enumeration value="Fecha_LLegada" />
+          <xsd:enumeration value="Order_Address_Code" />
+          <xsd:enumeration value="Cantidad_Total" />
+          <xsd:enumeration value="Importe_Total_Pedido" />
+          <xsd:enumeration value="N_x00BA__Ped_Venta_Asignados" />
+          <xsd:enumeration value="Vendor_Authorization_No" />
+          <xsd:enumeration value="Pay_to_Name" />
+          <xsd:enumeration value="Pay_to_Post_Code" />
+          <xsd:enumeration value="Pay_to_Country_Region_Code" />
+          <xsd:enumeration value="Pay_to_Contact" />
+          <xsd:enumeration value="Ship_to_Code" />
+          <xsd:enumeration value="Ship_to_Name" />
+          <xsd:enumeration value="Ship_to_Post_Code" />
+          <xsd:enumeration value="Ship_to_Country_Region_Code" />
+          <xsd:enumeration value="Ship_to_Contact" />
         </xsd:restriction>
       </xsd:simpleType>
       <xsd:complexType name="NuevaListaProductos_Filter">
