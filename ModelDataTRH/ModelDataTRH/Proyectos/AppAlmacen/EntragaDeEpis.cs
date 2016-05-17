@@ -58,7 +58,7 @@ namespace ModelDataTRH.Proyectos
         public string Ship_to_Post_Code { get; set; }
         public string Shortcut_Dimension_1_Code { get; set; }
         public string Shortcut_Dimension_2_Code { get; set; }
-        public ModelDataTRH.ServiceReference1.Status Status { get; set; }
+        public int Status { get; set; }
         public bool StatusSpecified { get; set; }
         public string Vendor_Authorization_No { get; set; }
         public string Vendor_Invoice_No { get; set; }
