@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using RepositoryWebServiceTRH.EmpleadoContext;
 
 namespace RepositoryWebServiceTRH
 {
@@ -10,14 +12,30 @@ namespace RepositoryWebServiceTRH
     {
 
        
-        public EmpleadoContext contextEmpleado { get;set }
+        public static EmpleadoContext.Empleados_PortClient contextEmpleado { get; private set; }
+
         
         public  static void CreateContext(HostWebService hostWS) {
 
 
+            BasicHttpBinding navisionWSBinding = new BasicHttpBinding();
+            navisionWSBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
+            navisionWSBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Windows;
+            navisionWSBinding.MaxReceivedMessageSize = 2000971520;
+
+
+            initEmpleadosPortCliente(navisionWSBinding,hostWS.urlHost);
 
         }
 
+        private static void initEmpleadosPortCliente(BasicHttpBinding navisionWSBinding, string url)
+        {
+
+            contextEmpleado = new Empleados_PortClient(navisionWSBinding, new EndpointAddress(string.Format(url,"Empleados")));
+            contextEmpleado.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Delegation;
+            contextEmpleado.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential("TRHSEVILLA0\administrador", "Paulagallardo2014");
+
+        }
 
 
 
@@ -83,7 +101,7 @@ namespace RepositoryWebServiceTRH
                 default:
                     break;
             }
-            urlHost = string.Format(@"http://{0}/DynamicsNAV/WS/{1}/{2}/{3}",this.IpHost,this.empresaServicio,this.tipoWS,entidadWS);
+            urlHost = string.Format(@"http://{0}/DynamicsNAV/WS/{1}/{2}/{3}",this.IpHost,this.empresaServicio,this.tipoWS,@"{0}");
     }
 
 
