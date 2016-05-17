@@ -18,7 +18,7 @@ namespace ModelDataTRH.Proyectos
         public string E_Mail { get; set; }
         public string Extension { get; set; }
         public string First_Family_Name { get; set; }
-        public ModelDataTRH.ServiceReference1.Gender Gender { get; set; }
+        public int Gender { get; set; }
         public bool GenderSpecified { get; set; }
         public string Global_Dimension_1_Code { get; set; }
         public string Global_Dimension_2_Code { get; set; }
@@ -40,7 +40,7 @@ namespace ModelDataTRH.Proyectos
         public string Search_Name { get; set; }
         public string Second_Family_Name { get; set; }
         public string Social_Security_No { get; set; }
-        public ModelDataTRH.ServiceReference1.Status Status { get; set; }
+        public int Status { get; set; }
         public bool StatusSpecified { get; set; }
         public string Union_Code { get; set; }
         public string Union_Membership_No { get; set; }

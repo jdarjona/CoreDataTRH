@@ -9,7 +9,5 @@ namespace ModelDataTRH.Proyectos
     class AlmacenRepuestoCU
     {
         public void registrarEntrega(string codEmpleado) {}
-
-
     }
 }
