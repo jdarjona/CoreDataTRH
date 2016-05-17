@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelDataTRH.Proyectos.AppAlmacen
+namespace ModelDataTRH.Proyectos
 {
     class AlmacenRepuestoCU
     {
+        
     }
 }
