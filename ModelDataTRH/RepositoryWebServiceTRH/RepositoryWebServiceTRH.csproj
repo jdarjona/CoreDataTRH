@@ -29,6 +29,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RepositorioPaTo.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,10 +53,17 @@
     <Compile Include="EncryptDecrypt.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryDatosEntreEmpresasCU.cs" />
     <Compile Include="RepositoryRepuestosCU.cs" />
     <Compile Include="RepositoryEmpleado.cs" />
     <Compile Include="RepositoryEntragaAlmacenEpis.cs" />
     <Compile Include="RepositoryItem.cs" />
+    <Compile Include="RespositoryBase.cs" />
+    <Compile Include="Service References\DatosEntreEmpresasContext\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\EmpleadoContext\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,10 +90,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="RepositorioPaTo.snk" />
     <None Include="Service References\AlmacenRepuestosContext\RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\EmpleadoContext\Empleados.wsdl" />
+    <None Include="Service References\DatosEntreEmpresasContext\DatosEntreEmpresas.wsdl" />
+    <None Include="Service References\DatosEntreEmpresasContext\RepositoryWebServiceTRH.DatosEntreEmpresasContext.GetInventarioCosteUnitario_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EmpleadoContext\Empleados1.wsdl" />
     <None Include="Service References\EmpleadoContext\RepositoryWebServiceTRH.EmpleadoContext.Empleados.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -170,6 +188,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DatosEntreEmpresasContext\" />
     <WCFMetadataStorage Include="Service References\EmpleadoContext\" />
     <WCFMetadataStorage Include="Service References\EntregaAlmacenEpisContext\" />
     <WCFMetadataStorage Include="Service References\AlmacenRepuestosContext\" />
@@ -219,6 +238,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ItemContext\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DatosEntreEmpresasContext\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DatosEntreEmpresasContext\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DatosEntreEmpresasContext\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -8,11 +8,11 @@ using RepositoryWebServiceTRH.AlmacenRepuestosContext;
 
 namespace RepositoryWebServiceTRH
 {
-    class RepositoryRepuestosCU : IRepository<AlmacenRepuestosContext.RegistrarEntrega, String>
+    class RepositoryRepuestosCU : RespositoryBase,IRepository<AlmacenRepuestosContext.RegistrarEntrega, String>
     {
-        public RepositoryRepuestosCU()
+        public RepositoryRepuestosCU(HostWebService hostWs) : base(hostWs)
         {
-            Context.CreateContext(new HostWebService(HostWebService.tipoIp.local, HostWebService.empresaWS.TRHSevilla, HostWebService.tipoWebService.CodeUnit, "AlmacenRepuestos"));
+
         }
 
         public void Add(RegistrarEntrega entity)

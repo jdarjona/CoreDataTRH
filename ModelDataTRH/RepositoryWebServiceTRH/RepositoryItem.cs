@@ -9,13 +9,13 @@ using RepositoryWebServiceTRH.ItemContext;
 
 namespace RepositoryWebServiceTRH
 {
-    class RepositoryItem : IRepository<ItemContext.NuevaListaProductos, String>
+    public class RepositoryItem : RespositoryBase, IRepository<ItemContext.NuevaListaProductos, String>
     {
 
 
-        public RepositoryItem()
+        public RepositoryItem(HostWebService hostWs) : base(hostWs)
         {
-            Context.CreateContext(new HostWebService(HostWebService.tipoIp.local, HostWebService.empresaWS.TRHSevilla, HostWebService.tipoWebService.Page, "NuevaListaProductos"));
+           
         }
         public void Add(NuevaListaProductos entity)
         {
@@ -34,12 +34,32 @@ namespace RepositoryWebServiceTRH
 
         public NuevaListaProductos Get(string id)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                return Context.contextItem.Read(id);
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("id", "El parametro 'id' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw  new Exception(string.Format("{0} mensaje: {1}","[Metodo NuevaListaProductos]",ex.Message),ex.InnerException);
+            }
+
         }
 
         public IEnumerable<NuevaListaProductos> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return Context.contextItem.ReadMultiple(null, null, 0);
+            }            
+            catch (Exception ex)
+            {
+                throw ex.InnerException;
+            }    
         }
 
         public void RemoveRange(IEnumerable<NuevaListaProductos> entities)

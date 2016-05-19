@@ -8,10 +8,11 @@ using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
 
 namespace RepositoryWebServiceTRH
 {
-    class RepositoryEntragaAlmacenEpis : IRepository<EntregaAlmacenEpisContext.EntregaAlmacen, String>
+    class RepositoryEntragaAlmacenEpis : RespositoryBase, IRepository<EntregaAlmacenEpisContext.EntregaAlmacen, String>
     {
-        public RepositoryEntragaAlmacenEpis() {
-            Context.CreateContext(new HostWebService(HostWebService.tipoIp.local, HostWebService.empresaWS.TRHSevilla, HostWebService.tipoWebService.Page, "EntragaAlmacen"));
+        public RepositoryEntragaAlmacenEpis(HostWebService hostWs) : base(hostWs)
+        {
+
         }
 
         public void Add(EntregaAlmacen entity)

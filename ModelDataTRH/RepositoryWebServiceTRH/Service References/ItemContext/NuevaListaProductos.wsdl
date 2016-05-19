@@ -24,122 +24,10 @@
           <xsd:enumeration value="Standard" />
         </xsd:restriction>
       </xsd:simpleType>
-      <xsd:simpleType name="Reserve">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Never" />
-          <xsd:enumeration value="Optional" />
-          <xsd:enumeration value="Always" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Stockout_Warning">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Default" />
-          <xsd:enumeration value="No" />
-          <xsd:enumeration value="Yes" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Prevent_Negative_Inventory">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Default" />
-          <xsd:enumeration value="No" />
-          <xsd:enumeration value="Yes" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Assembly_Policy">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Assemble_to_Stock" />
-          <xsd:enumeration value="Assemble_to_Order" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Flushing_Method">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Manual" />
-          <xsd:enumeration value="Forward" />
-          <xsd:enumeration value="Backward" />
-          <xsd:enumeration value="Pick__x002B__Forward" />
-          <xsd:enumeration value="Pick__x002B__Backward" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Replenishment_System">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Purchase" />
-          <xsd:enumeration value="Prod_Order" />
-          <xsd:enumeration value="Assembly" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Reordering_Policy">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="_blank_" />
-          <xsd:enumeration value="Fixed_Reorder_Qty" />
-          <xsd:enumeration value="Maximum_Qty" />
-          <xsd:enumeration value="Order" />
-          <xsd:enumeration value="Lot_for_Lot" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Manufacturing_Policy">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Make_to_Stock" />
-          <xsd:enumeration value="Make_to_Order" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Tipo_Artículo">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="_blank_" />
-          <xsd:enumeration value="Alambrón" />
-          <xsd:enumeration value="Rollo_de_atar" />
-          <xsd:enumeration value="Malla" />
-          <xsd:enumeration value="Acero_corrugado" />
-          <xsd:enumeration value="Otros" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Diámetro_Alambrón">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="_blank_" />
-          <xsd:enumeration value="_x0035__5" />
-          <xsd:enumeration value="_x0036_" />
-          <xsd:enumeration value="_x0037_" />
-          <xsd:enumeration value="_x0039_" />
-          <xsd:enumeration value="_x0031_1" />
-          <xsd:enumeration value="_x0031_1_5" />
-          <xsd:enumeration value="_x0031_3" />
-          <xsd:enumeration value="_x0031_3_5" />
-          <xsd:enumeration value="_x0031_4" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Calidad">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="_blank_" />
-          <xsd:enumeration value="Española" />
-          <xsd:enumeration value="Inglesa" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="TipoGestionComercial">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Descuento_Base" />
-          <xsd:enumeration value="Precio_Minimo" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Subtipo">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Malla_Especial" />
-          <xsd:enumeration value="Quali" />
-          <xsd:enumeration value="Eco" />
-          <xsd:enumeration value="Fly_End" />
-          <xsd:enumeration value="Cerramiento" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:simpleType name="Order_Tracking_Policy">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="None" />
-          <xsd:enumeration value="Tracking_Only" />
-          <xsd:enumeration value="Tracking__x0026__Action_Msg" />
-        </xsd:restriction>
-      </xsd:simpleType>
       <xsd:complexType name="NuevaListaProductos">
         <xsd:sequence>
           <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="No" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="No_2" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Search_Description" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Description_2" type="xsd:string" />
@@ -150,8 +38,6 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="Inventory_Posting_Group" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Shelf_No" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Item_Disc_Group" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Allow_Invoice_Disc" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Statistics_Group" type="xsd:int" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Commission_Group" type="xsd:int" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Unit_Price" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Price_Profit_Calculation" type="tns:Price_Profit_Calculation" />
@@ -162,7 +48,6 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="Last_Direct_Cost" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Indirect_Cost_Percent" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Cost_is_Adjusted" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Allow_Online_Adjustment" type="xsd:boolean" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Vendor_No" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Vendor_Item_No" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Lead_Time_Calculation" type="xsd:string" />
@@ -171,16 +56,11 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="Reorder_Quantity" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Alternative_Item_No" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Unit_List_Price" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Duty_Due_Percent" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Duty_Code" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Gross_Weight" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Net_Weight" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Units_per_Parcel" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Unit_Volume" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Durability" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Freight_Type" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Tariff_No" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Duty_Unit_Conversion" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Country_Region_Purchased_Code" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Budget_Quantity" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Budgeted_Amount" type="xsd:decimal" />
@@ -189,245 +69,6 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="Blocked" type="xsd:boolean" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Cost_is_Posted_to_G_L" type="xsd:boolean" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Last_Date_Modified" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Date_Filter" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Global_Dimension_1_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Global_Dimension_2_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Location_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Inventory" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Net_Invoiced_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Net_Change" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Purchases_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Sales_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Positive_Adjmt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Negative_Adjmt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Purchases_LCY" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Sales_LCY" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Positive_Adjmt_LCY" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Negative_Adjmt_LCY" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="COGS_LCY" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Purch_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Sales_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Price_Includes_VAT" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Drop_Shipment_Filter" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="VAT_Bus_Posting_Gr_Price" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Gen_Prod_Posting_Group" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Transferred_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Transferred_LCY" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Country_Region_of_Origin_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Automatic_Ext_Texts" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="No_Series" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Tax_Group_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="VAT_Prod_Posting_Group" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Reserve" type="tns:Reserve" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Reserved_Qty_on_Inventory" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Reserved_Qty_on_Purch_Orders" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Reserved_Qty_on_Sales_Orders" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Global_Dimension_1_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Global_Dimension_2_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Outbound_Transfer" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Inbound_Transfer" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Sales_Returns" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Purch_Returns" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Stockout_Warning" type="tns:Stockout_Warning" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Prevent_Negative_Inventory" type="tns:Prevent_Negative_Inventory" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cost_of_Open_Production_Orders" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Application_Wksh_User_ID" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Assembly_Policy" type="tns:Assembly_Policy" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Assembly_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Asm_Comp" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Assembly_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Asm_Component" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Job_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Job_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Low_Level_Code" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Lot_Size" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Serial_Nos" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Last_Unit_Cost_Calc_Date" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rolled_up_Material_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rolled_up_Capacity_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Scrap_Percent" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Inventory_Value_Zero" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Discrete_Order_Quantity" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Minimum_Order_Quantity" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Maximum_Order_Quantity" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Safety_Stock_Quantity" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Order_Multiple" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Safety_Lead_Time" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Flushing_Method" type="tns:Flushing_Method" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Replenishment_System" type="tns:Replenishment_System" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Scheduled_Receipt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Scheduled_Need_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rounding_Precision" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Bin_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Variant_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Sales_Unit_of_Measure" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Purch_Unit_of_Measure" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Time_Bucket" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Reserved_Qty_on_Prod_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Prod_Order_Comp" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Req_Line" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Reordering_Policy" type="tns:Reordering_Policy" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Include_Inventory" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Manufacturing_Policy" type="tns:Manufacturing_Policy" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rescheduling_Period" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Lot_Accumulation_Period" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Dampener_Period" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Dampener_Quantity" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Overflow_Level" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Planning_Transfer_Ship_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Planning_Worksheet_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Stockkeeping_Unit_Exists" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Manufacturer_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Item_Category_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Created_From_Nonstock_Item" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Product_Group_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Substitutes_Exist" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_in_Transit" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Trans_Ord_Receipt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Trans_Ord_Shipment_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_Assigned_to_ship" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_Picked" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Service_Item_Group" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Service_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Res_Qty_on_Service_Orders" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Item_Tracking_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Lot_Nos" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Expiration_Calculation" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Lot_No_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Serial_No_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Purch_Return" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Sales_Return" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="No_of_Substitutes" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Special_Equipment_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Put_away_Template_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Put_away_Unit_of_Measure_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Phys_Invt_Counting_Period_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Last_Counting_Period_Update" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Next_Counting_Period" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Last_Phys_Invt_Date" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Use_Cross_Docking" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Identifier_Code" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cost_Regulation_Percent" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Long_Rejilla" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Trans_Rejilla" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diametro_Long" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diametro_Trans" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Long_Barra" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Trans_Barra" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Barras_Long" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Malla_Estandar" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="KGxM2" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Paños_x_Paquete" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="m2_Paño" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Kgs_Paño" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="m2_Paquete" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Kgs_Paquete" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="euros_m2" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="euros_Kg" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="euros_Paño" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Lectura_Agil" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Tipo_Artículo" type="tns:Tipo_Artículo" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diametro" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Refuerzo" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Barras_Trans" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Disponibles_Lote" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Filtro_Lote" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diámetro_Alambrón" type="tns:Diámetro_Alambrón" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cod_Barco" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Fecha_Embarque" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Calidad" type="tns:Calidad" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Concatenacion_MP" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cliente_Malla_Especial" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Envio_Malla_Especial" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Nombre_Proveedor" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Siglas_Proveedor" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Peso_Medio_Teórico" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Kg_Recibidos" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Nombre_Envio_Malla" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Nombre_Cliente_Malla" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Poblacion_Envio_Malla" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cdad_en_pedidos_abiertos" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Paquetes_por_Camión" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Barras_Dobles" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Barras_Dobles" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="M_Longitudinal" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="M_Transversal" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="EPI" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Rollo" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Puntadas" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Inventario_Peso" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Item_Category_Code_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Product_Group_Code_Filter" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Unidad_Medida_Prevision_Prod" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Tamaño_Barra_Grafil" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Tamaño_Carrete_Grafil" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Filtro_Barco" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cod_Antiguo" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Malla_BK" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Base" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Kg_M2_Comercial" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="TipoGestionComercial" type="tns:TipoGestionComercial" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Descuento_Comercial" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Fecha_Descuento" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Proveerdor_Unico" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Unidad_Base" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Altura_Paquete" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Country_Region_Calidad" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Alias_2" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="AENOR" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="CARES" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Diametro_Grafil" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Fuera_de_gama" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Saliente_Long_U1" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Saliente_Trans_U3" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Barras_Ahorro_Long" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Barras_Ahorro_Trans" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Subtipo" type="tns:Subtipo" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Fecha_Planilla" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Designacion" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Saliente_Long_U2" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Saliente_Trans_U4" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Separacion_BL_Ahorro_PA" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Separacion_BT_Ahorro_PA" type="xsd:int" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Permite_stock_negativo" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Nombre_Categoría" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Nombre_Grupo" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="EHE_x0060_08" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="UNE36092" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Estandar" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Especial" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cliente_Etiqueta" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Envio_Malla_MM_Cliente" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="NombreDescripcionGrupoContable" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Routing_No" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Production_BOM_No" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Single_Level_Material_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Single_Level_Capacity_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Single_Level_Subcontrd_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Single_Level_Cap_Ovhd_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Single_Level_Mfg_Ovhd_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Overhead_Rate" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rolled_up_Subcontracted_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rolled_up_Mfg_Ovhd_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rolled_up_Cap_Overhead_Cost" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Planning_Issues_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Planning_Receipt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Planned_Order_Receipt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="FP_Order_Receipt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Rel_Order_Receipt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Planning_Release_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Planned_Order_Release_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Purch_Req_Receipt_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Purch_Req_Release_Qty" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Order_Tracking_Policy" type="tns:Order_Tracking_Policy" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Prod_Forecast_Quantity_Base" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Production_Forecast_Name" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Component_Forecast" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Prod_Order" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Qty_on_Component_Lines" type="xsd:decimal" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Critical" type="xsd:boolean" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Common_Item_No" type="xsd:string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="NuevaListaProductos_List">
@@ -438,7 +79,6 @@
       <xsd:simpleType name="NuevaListaProductos_Fields">
         <xsd:restriction base="xsd:string">
           <xsd:enumeration value="No" />
-          <xsd:enumeration value="No_2" />
           <xsd:enumeration value="Description" />
           <xsd:enumeration value="Search_Description" />
           <xsd:enumeration value="Description_2" />
@@ -449,8 +89,6 @@
           <xsd:enumeration value="Inventory_Posting_Group" />
           <xsd:enumeration value="Shelf_No" />
           <xsd:enumeration value="Item_Disc_Group" />
-          <xsd:enumeration value="Allow_Invoice_Disc" />
-          <xsd:enumeration value="Statistics_Group" />
           <xsd:enumeration value="Commission_Group" />
           <xsd:enumeration value="Unit_Price" />
           <xsd:enumeration value="Price_Profit_Calculation" />
@@ -461,7 +99,6 @@
           <xsd:enumeration value="Last_Direct_Cost" />
           <xsd:enumeration value="Indirect_Cost_Percent" />
           <xsd:enumeration value="Cost_is_Adjusted" />
-          <xsd:enumeration value="Allow_Online_Adjustment" />
           <xsd:enumeration value="Vendor_No" />
           <xsd:enumeration value="Vendor_Item_No" />
           <xsd:enumeration value="Lead_Time_Calculation" />
@@ -470,16 +107,11 @@
           <xsd:enumeration value="Reorder_Quantity" />
           <xsd:enumeration value="Alternative_Item_No" />
           <xsd:enumeration value="Unit_List_Price" />
-          <xsd:enumeration value="Duty_Due_Percent" />
-          <xsd:enumeration value="Duty_Code" />
           <xsd:enumeration value="Gross_Weight" />
           <xsd:enumeration value="Net_Weight" />
           <xsd:enumeration value="Units_per_Parcel" />
           <xsd:enumeration value="Unit_Volume" />
           <xsd:enumeration value="Durability" />
-          <xsd:enumeration value="Freight_Type" />
-          <xsd:enumeration value="Tariff_No" />
-          <xsd:enumeration value="Duty_Unit_Conversion" />
           <xsd:enumeration value="Country_Region_Purchased_Code" />
           <xsd:enumeration value="Budget_Quantity" />
           <xsd:enumeration value="Budgeted_Amount" />
@@ -488,245 +120,6 @@
           <xsd:enumeration value="Blocked" />
           <xsd:enumeration value="Cost_is_Posted_to_G_L" />
           <xsd:enumeration value="Last_Date_Modified" />
-          <xsd:enumeration value="Date_Filter" />
-          <xsd:enumeration value="Global_Dimension_1_Filter" />
-          <xsd:enumeration value="Global_Dimension_2_Filter" />
-          <xsd:enumeration value="Location_Filter" />
-          <xsd:enumeration value="Inventory" />
-          <xsd:enumeration value="Net_Invoiced_Qty" />
-          <xsd:enumeration value="Net_Change" />
-          <xsd:enumeration value="Purchases_Qty" />
-          <xsd:enumeration value="Sales_Qty" />
-          <xsd:enumeration value="Positive_Adjmt_Qty" />
-          <xsd:enumeration value="Negative_Adjmt_Qty" />
-          <xsd:enumeration value="Purchases_LCY" />
-          <xsd:enumeration value="Sales_LCY" />
-          <xsd:enumeration value="Positive_Adjmt_LCY" />
-          <xsd:enumeration value="Negative_Adjmt_LCY" />
-          <xsd:enumeration value="COGS_LCY" />
-          <xsd:enumeration value="Qty_on_Purch_Order" />
-          <xsd:enumeration value="Qty_on_Sales_Order" />
-          <xsd:enumeration value="Price_Includes_VAT" />
-          <xsd:enumeration value="Drop_Shipment_Filter" />
-          <xsd:enumeration value="VAT_Bus_Posting_Gr_Price" />
-          <xsd:enumeration value="Gen_Prod_Posting_Group" />
-          <xsd:enumeration value="Transferred_Qty" />
-          <xsd:enumeration value="Transferred_LCY" />
-          <xsd:enumeration value="Country_Region_of_Origin_Code" />
-          <xsd:enumeration value="Automatic_Ext_Texts" />
-          <xsd:enumeration value="No_Series" />
-          <xsd:enumeration value="Tax_Group_Code" />
-          <xsd:enumeration value="VAT_Prod_Posting_Group" />
-          <xsd:enumeration value="Reserve" />
-          <xsd:enumeration value="Reserved_Qty_on_Inventory" />
-          <xsd:enumeration value="Reserved_Qty_on_Purch_Orders" />
-          <xsd:enumeration value="Reserved_Qty_on_Sales_Orders" />
-          <xsd:enumeration value="Global_Dimension_1_Code" />
-          <xsd:enumeration value="Global_Dimension_2_Code" />
-          <xsd:enumeration value="Res_Qty_on_Outbound_Transfer" />
-          <xsd:enumeration value="Res_Qty_on_Inbound_Transfer" />
-          <xsd:enumeration value="Res_Qty_on_Sales_Returns" />
-          <xsd:enumeration value="Res_Qty_on_Purch_Returns" />
-          <xsd:enumeration value="Stockout_Warning" />
-          <xsd:enumeration value="Prevent_Negative_Inventory" />
-          <xsd:enumeration value="Cost_of_Open_Production_Orders" />
-          <xsd:enumeration value="Application_Wksh_User_ID" />
-          <xsd:enumeration value="Assembly_Policy" />
-          <xsd:enumeration value="Res_Qty_on_Assembly_Order" />
-          <xsd:enumeration value="Res_Qty_on_Asm_Comp" />
-          <xsd:enumeration value="Qty_on_Assembly_Order" />
-          <xsd:enumeration value="Qty_on_Asm_Component" />
-          <xsd:enumeration value="Qty_on_Job_Order" />
-          <xsd:enumeration value="Res_Qty_on_Job_Order" />
-          <xsd:enumeration value="Low_Level_Code" />
-          <xsd:enumeration value="Lot_Size" />
-          <xsd:enumeration value="Serial_Nos" />
-          <xsd:enumeration value="Last_Unit_Cost_Calc_Date" />
-          <xsd:enumeration value="Rolled_up_Material_Cost" />
-          <xsd:enumeration value="Rolled_up_Capacity_Cost" />
-          <xsd:enumeration value="Scrap_Percent" />
-          <xsd:enumeration value="Inventory_Value_Zero" />
-          <xsd:enumeration value="Discrete_Order_Quantity" />
-          <xsd:enumeration value="Minimum_Order_Quantity" />
-          <xsd:enumeration value="Maximum_Order_Quantity" />
-          <xsd:enumeration value="Safety_Stock_Quantity" />
-          <xsd:enumeration value="Order_Multiple" />
-          <xsd:enumeration value="Safety_Lead_Time" />
-          <xsd:enumeration value="Flushing_Method" />
-          <xsd:enumeration value="Replenishment_System" />
-          <xsd:enumeration value="Scheduled_Receipt_Qty" />
-          <xsd:enumeration value="Scheduled_Need_Qty" />
-          <xsd:enumeration value="Rounding_Precision" />
-          <xsd:enumeration value="Bin_Filter" />
-          <xsd:enumeration value="Variant_Filter" />
-          <xsd:enumeration value="Sales_Unit_of_Measure" />
-          <xsd:enumeration value="Purch_Unit_of_Measure" />
-          <xsd:enumeration value="Time_Bucket" />
-          <xsd:enumeration value="Reserved_Qty_on_Prod_Order" />
-          <xsd:enumeration value="Res_Qty_on_Prod_Order_Comp" />
-          <xsd:enumeration value="Res_Qty_on_Req_Line" />
-          <xsd:enumeration value="Reordering_Policy" />
-          <xsd:enumeration value="Include_Inventory" />
-          <xsd:enumeration value="Manufacturing_Policy" />
-          <xsd:enumeration value="Rescheduling_Period" />
-          <xsd:enumeration value="Lot_Accumulation_Period" />
-          <xsd:enumeration value="Dampener_Period" />
-          <xsd:enumeration value="Dampener_Quantity" />
-          <xsd:enumeration value="Overflow_Level" />
-          <xsd:enumeration value="Planning_Transfer_Ship_Qty" />
-          <xsd:enumeration value="Planning_Worksheet_Qty" />
-          <xsd:enumeration value="Stockkeeping_Unit_Exists" />
-          <xsd:enumeration value="Manufacturer_Code" />
-          <xsd:enumeration value="Item_Category_Code" />
-          <xsd:enumeration value="Created_From_Nonstock_Item" />
-          <xsd:enumeration value="Product_Group_Code" />
-          <xsd:enumeration value="Substitutes_Exist" />
-          <xsd:enumeration value="Qty_in_Transit" />
-          <xsd:enumeration value="Trans_Ord_Receipt_Qty" />
-          <xsd:enumeration value="Trans_Ord_Shipment_Qty" />
-          <xsd:enumeration value="Qty_Assigned_to_ship" />
-          <xsd:enumeration value="Qty_Picked" />
-          <xsd:enumeration value="Service_Item_Group" />
-          <xsd:enumeration value="Qty_on_Service_Order" />
-          <xsd:enumeration value="Res_Qty_on_Service_Orders" />
-          <xsd:enumeration value="Item_Tracking_Code" />
-          <xsd:enumeration value="Lot_Nos" />
-          <xsd:enumeration value="Expiration_Calculation" />
-          <xsd:enumeration value="Lot_No_Filter" />
-          <xsd:enumeration value="Serial_No_Filter" />
-          <xsd:enumeration value="Qty_on_Purch_Return" />
-          <xsd:enumeration value="Qty_on_Sales_Return" />
-          <xsd:enumeration value="No_of_Substitutes" />
-          <xsd:enumeration value="Special_Equipment_Code" />
-          <xsd:enumeration value="Put_away_Template_Code" />
-          <xsd:enumeration value="Put_away_Unit_of_Measure_Code" />
-          <xsd:enumeration value="Phys_Invt_Counting_Period_Code" />
-          <xsd:enumeration value="Last_Counting_Period_Update" />
-          <xsd:enumeration value="Next_Counting_Period" />
-          <xsd:enumeration value="Last_Phys_Invt_Date" />
-          <xsd:enumeration value="Use_Cross_Docking" />
-          <xsd:enumeration value="Identifier_Code" />
-          <xsd:enumeration value="Cost_Regulation_Percent" />
-          <xsd:enumeration value="Long_Rejilla" />
-          <xsd:enumeration value="Trans_Rejilla" />
-          <xsd:enumeration value="Diametro_Long" />
-          <xsd:enumeration value="Diametro_Trans" />
-          <xsd:enumeration value="Long_Barra" />
-          <xsd:enumeration value="Trans_Barra" />
-          <xsd:enumeration value="N_x00BA__Barras_Long" />
-          <xsd:enumeration value="Malla_Estandar" />
-          <xsd:enumeration value="KGxM2" />
-          <xsd:enumeration value="Paños_x_Paquete" />
-          <xsd:enumeration value="m2_Paño" />
-          <xsd:enumeration value="Kgs_Paño" />
-          <xsd:enumeration value="m2_Paquete" />
-          <xsd:enumeration value="Kgs_Paquete" />
-          <xsd:enumeration value="euros_m2" />
-          <xsd:enumeration value="euros_Kg" />
-          <xsd:enumeration value="euros_Paño" />
-          <xsd:enumeration value="Lectura_Agil" />
-          <xsd:enumeration value="Tipo_Artículo" />
-          <xsd:enumeration value="Diametro" />
-          <xsd:enumeration value="Refuerzo" />
-          <xsd:enumeration value="N_x00BA__Barras_Trans" />
-          <xsd:enumeration value="Disponibles_Lote" />
-          <xsd:enumeration value="Filtro_Lote" />
-          <xsd:enumeration value="Diámetro_Alambrón" />
-          <xsd:enumeration value="Cod_Barco" />
-          <xsd:enumeration value="Fecha_Embarque" />
-          <xsd:enumeration value="Calidad" />
-          <xsd:enumeration value="Concatenacion_MP" />
-          <xsd:enumeration value="Cliente_Malla_Especial" />
-          <xsd:enumeration value="Envio_Malla_Especial" />
-          <xsd:enumeration value="Nombre_Proveedor" />
-          <xsd:enumeration value="Siglas_Proveedor" />
-          <xsd:enumeration value="Peso_Medio_Teórico" />
-          <xsd:enumeration value="Kg_Recibidos" />
-          <xsd:enumeration value="Nombre_Envio_Malla" />
-          <xsd:enumeration value="Nombre_Cliente_Malla" />
-          <xsd:enumeration value="Poblacion_Envio_Malla" />
-          <xsd:enumeration value="Cdad_en_pedidos_abiertos" />
-          <xsd:enumeration value="Paquetes_por_Camión" />
-          <xsd:enumeration value="Barras_Dobles" />
-          <xsd:enumeration value="N_x00BA__Barras_Dobles" />
-          <xsd:enumeration value="M_Longitudinal" />
-          <xsd:enumeration value="M_Transversal" />
-          <xsd:enumeration value="EPI" />
-          <xsd:enumeration value="N_x00BA__Rollo" />
-          <xsd:enumeration value="N_x00BA__Puntadas" />
-          <xsd:enumeration value="Inventario_Peso" />
-          <xsd:enumeration value="Item_Category_Code_Filter" />
-          <xsd:enumeration value="Product_Group_Code_Filter" />
-          <xsd:enumeration value="Unidad_Medida_Prevision_Prod" />
-          <xsd:enumeration value="Tamaño_Barra_Grafil" />
-          <xsd:enumeration value="Tamaño_Carrete_Grafil" />
-          <xsd:enumeration value="Filtro_Barco" />
-          <xsd:enumeration value="Cod_Antiguo" />
-          <xsd:enumeration value="Malla_BK" />
-          <xsd:enumeration value="Base" />
-          <xsd:enumeration value="Cantidad" />
-          <xsd:enumeration value="Kg_M2_Comercial" />
-          <xsd:enumeration value="TipoGestionComercial" />
-          <xsd:enumeration value="Descuento_Comercial" />
-          <xsd:enumeration value="Fecha_Descuento" />
-          <xsd:enumeration value="Proveerdor_Unico" />
-          <xsd:enumeration value="Unidad_Base" />
-          <xsd:enumeration value="Altura_Paquete" />
-          <xsd:enumeration value="Country_Region_Calidad" />
-          <xsd:enumeration value="Alias_2" />
-          <xsd:enumeration value="AENOR" />
-          <xsd:enumeration value="CARES" />
-          <xsd:enumeration value="Diametro_Grafil" />
-          <xsd:enumeration value="Fuera_de_gama" />
-          <xsd:enumeration value="Saliente_Long_U1" />
-          <xsd:enumeration value="Saliente_Trans_U3" />
-          <xsd:enumeration value="Barras_Ahorro_Long" />
-          <xsd:enumeration value="Barras_Ahorro_Trans" />
-          <xsd:enumeration value="Subtipo" />
-          <xsd:enumeration value="Fecha_Planilla" />
-          <xsd:enumeration value="Designacion" />
-          <xsd:enumeration value="Saliente_Long_U2" />
-          <xsd:enumeration value="Saliente_Trans_U4" />
-          <xsd:enumeration value="Separacion_BL_Ahorro_PA" />
-          <xsd:enumeration value="Separacion_BT_Ahorro_PA" />
-          <xsd:enumeration value="Permite_stock_negativo" />
-          <xsd:enumeration value="Nombre_Categoría" />
-          <xsd:enumeration value="Nombre_Grupo" />
-          <xsd:enumeration value="EHE_x0060_08" />
-          <xsd:enumeration value="UNE36092" />
-          <xsd:enumeration value="Estandar" />
-          <xsd:enumeration value="Especial" />
-          <xsd:enumeration value="Cliente_Etiqueta" />
-          <xsd:enumeration value="Envio_Malla_MM_Cliente" />
-          <xsd:enumeration value="NombreDescripcionGrupoContable" />
-          <xsd:enumeration value="Routing_No" />
-          <xsd:enumeration value="Production_BOM_No" />
-          <xsd:enumeration value="Single_Level_Material_Cost" />
-          <xsd:enumeration value="Single_Level_Capacity_Cost" />
-          <xsd:enumeration value="Single_Level_Subcontrd_Cost" />
-          <xsd:enumeration value="Single_Level_Cap_Ovhd_Cost" />
-          <xsd:enumeration value="Single_Level_Mfg_Ovhd_Cost" />
-          <xsd:enumeration value="Overhead_Rate" />
-          <xsd:enumeration value="Rolled_up_Subcontracted_Cost" />
-          <xsd:enumeration value="Rolled_up_Mfg_Ovhd_Cost" />
-          <xsd:enumeration value="Rolled_up_Cap_Overhead_Cost" />
-          <xsd:enumeration value="Planning_Issues_Qty" />
-          <xsd:enumeration value="Planning_Receipt_Qty" />
-          <xsd:enumeration value="Planned_Order_Receipt_Qty" />
-          <xsd:enumeration value="FP_Order_Receipt_Qty" />
-          <xsd:enumeration value="Rel_Order_Receipt_Qty" />
-          <xsd:enumeration value="Planning_Release_Qty" />
-          <xsd:enumeration value="Planned_Order_Release_Qty" />
-          <xsd:enumeration value="Purch_Req_Receipt_Qty" />
-          <xsd:enumeration value="Purch_Req_Release_Qty" />
-          <xsd:enumeration value="Order_Tracking_Policy" />
-          <xsd:enumeration value="Prod_Forecast_Quantity_Base" />
-          <xsd:enumeration value="Production_Forecast_Name" />
-          <xsd:enumeration value="Component_Forecast" />
-          <xsd:enumeration value="Qty_on_Prod_Order" />
-          <xsd:enumeration value="Qty_on_Component_Lines" />
-          <xsd:enumeration value="Critical" />
-          <xsd:enumeration value="Common_Item_No" />
         </xsd:restriction>
       </xsd:simpleType>
       <xsd:complexType name="NuevaListaProductos_Filter">

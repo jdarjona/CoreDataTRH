@@ -10,11 +10,21 @@ namespace RepositoryWebServicesTest.Tests1
     [TestFixture]
     public class RepositoryEmpleadoTest
     {
+        private HostWebService hostWs;
+
+        [SetUp]
+        public void initEmpeladoContext() {
+
+            hostWs = new HostWebService(HostWebService.tipoIp.local, HostWebService.empresaWS.TRHSevilla, HostWebService.tipoWebService.Page, "Empleados", @"TRHSEVILLA0\administrador", "Paulagallardo2014");
+
+
+        }
         [Test]
         public void Get_ById_ReturnEmpleado()
         {
 
-            RepositoryWebServiceTRH.RepositoryEmpleado repoEmpleado = new RepositoryEmpleado() ;
+            
+            RepositoryWebServiceTRH.RepositoryEmpleado repoEmpleado = new RepositoryEmpleado(hostWs) ;
             string id = "E0001";
             var empleado=repoEmpleado.Get(id);
 
@@ -26,7 +36,7 @@ namespace RepositoryWebServicesTest.Tests1
         [Test]
         public void Get_ParametroNull_ReturnException() {
 
-            RepositoryWebServiceTRH.RepositoryEmpleado repoEmpleado = new RepositoryEmpleado();
+            RepositoryWebServiceTRH.RepositoryEmpleado repoEmpleado = new RepositoryEmpleado(hostWs);
             string id = null;
             //var empleado = repoEmpleado.Get(id);
 
@@ -35,17 +45,18 @@ namespace RepositoryWebServicesTest.Tests1
 
         }
 
-        [Test]
-        public void Find_Querry_ReturnAny()
-        {
+        //[Test]
+        //public void Find_Querry_ReturnAny()
+        //{
 
-            RepositoryWebServiceTRH.RepositoryEmpleado repoEmpleado = new RepositoryEmpleado();
-            string id = "E0001";
-            //var empleado = repoEmpleado.Find(System.Linq.Expressions.Expression<Func<RepositoryWebServiceTRH.EmpleadoContext.Empleados, true>> );
+        //    RepositoryWebServiceTRH.RepositoryEmpleado repoEmpleado = new RepositoryEmpleado(hostWs);
+           
+        //    System.Linq.Expressions.Expression<Func<RepositoryWebServiceTRH.EmpleadoContext.Empleados, bool>> expr =q=>q.Name.StartsWith("Manuel");
+        //    var empleado = repoEmpleado.Find(expr);
 
-            Assert.Throws<ArgumentNullException>(() => repoEmpleado.Get(id));
-            // Assert.AreNotEqual(null, empleado, string.Format(@"Hemos encontrado el empleado {0}", id));
+            
+        //    Assert.AreNotEqual(null, empleado.ToList());
 
-        }
+        //}
     }
 }
