@@ -56,19 +56,24 @@ namespace RepositoryWebServiceTRH
         public Empleados Get(string id)
         {
             if (!string.IsNullOrEmpty(id))
-            {
-               
+            {               
                 return Context.contextEmpleado.Read(id);
             }
             else {
-
                 throw new ArgumentNullException("id", "El parametro 'id' no puede vernir vacio");
             }
         }
 
         public IEnumerable<Empleados> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return Context.contextEmpleado.ReadMultiple(null, null, 0);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no controlado: ", ex.InnerException);
+            }
         }
 
         public void RemoveRange(IEnumerable<Empleados> entities)

@@ -12,18 +12,24 @@ namespace RepositoryWebServiceTRH
         {
         }
 
-        public void getDatosPCInterno(string codProducto,string almacen) {
+        public bool getDatosPCInterno(string codProducto,string almacen, out decimal precio, out decimal inventario) {
             try
             {
-                decimal precio = 0;
-                decimal inventario = 0;
+                precio = 0;
+                inventario = 0;
+                
                 if (Context.contextDatosEntreEmpresas.GetInventarioCosteUnitario(codProducto, almacen, ref precio, ref inventario))
                 {
-
+                    return true;
                 }
                 else
-                {
-
+                {                   
+                    throw new Exception("Metodo getDatosPCInterno: Devuelve false al consultar el metodo GetInventarioCosteUnitario con parametros: " +Environment.NewLine
+                        + "CodProducto: " +codProducto + Environment.NewLine 
+                        + "Almacen: " +almacen+ Environment.NewLine
+                        + "precio: "+ precio + Environment.NewLine
+                        + "inventario: " + inventario + Environment.NewLine
+                        );
                 }
             }
             catch (ArgumentNullException)

@@ -45,7 +45,7 @@ namespace RepositoryWebServiceTRH
             }
             catch (Exception ex)
             {
-                throw  new Exception(string.Format("{0} mensaje: {1}","[Metodo NuevaListaProductos]",ex.Message),ex.InnerException);
+                throw  new Exception(string.Format("{0} mensaje: {1}","[Metodo Get] ",ex.Message),ex.InnerException);
             }
 
         }
@@ -58,7 +58,7 @@ namespace RepositoryWebServiceTRH
             }            
             catch (Exception ex)
             {
-                throw ex.InnerException;
+                throw new Exception("Error no controlado: ", ex.InnerException);
             }    
         }
 

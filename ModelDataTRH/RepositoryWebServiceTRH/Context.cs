@@ -11,6 +11,7 @@ using RepositoryWebServiceTRH.ItemContext;
 using RepositoryWebServiceTRH.DatosEntreEmpresasContext;
 
 
+
 namespace RepositoryWebServiceTRH
 {
     class Context
@@ -20,6 +21,7 @@ namespace RepositoryWebServiceTRH
         public static AlmacenRepuestos_PortClient contextAlmacenesRepuestos { get; private set; }
         public static NuevaListaProductos_PortClient contextItem { get; private set; }
         public static DatosEntreEmpresas_PortClient contextDatosEntreEmpresas { get; private set; }
+       // public static DatosEntreEmpresas_PortClient contextDatosEntreEmpresas { get; private set; }
 
         public static string usuario=@"TRHSEVILLA0\administrador";
 

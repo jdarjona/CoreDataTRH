@@ -32,12 +32,34 @@ namespace RepositoryWebServiceTRH
 
         public EntregaAlmacen Get(string id)
         {
-            throw new NotImplementedException();
+            int numLienea = 1000;
+            DateTime fecha = new DateTime();
+            try
+            {
+
+                return Context.contextEntregaAlmacenEpis.Read("CodEmpleado","CodProducto",fecha,numLienea);
+              //  return Context.contextEntregaAlmacenEpis.ReadByRecId("CodEmpleado");
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("id", "El parametro 'id' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo Get] [Item] ", ex.Message), ex.InnerException);
+            }
         }
 
         public IEnumerable<EntregaAlmacen> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return Context.contextEntregaAlmacenEpis.ReadMultiple(null, null, 0);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no controlado: ", ex.InnerException);
+            }
         }
 
         public void RemoveRange(IEnumerable<EntregaAlmacen> entities)
