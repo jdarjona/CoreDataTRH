@@ -26,6 +26,8 @@ namespace AlmacenRepuestosXamarin
 		
 		public static void UpdateIdValues()
 		{
+			global::Tesseract.Droid.Resource.String.ApplicationName = global::AlmacenRepuestosXamarin.Resource.String.ApplicationName;
+			global::Tesseract.Droid.Resource.String.Hello = global::AlmacenRepuestosXamarin.Resource.String.Hello;
 			global::ZXing.Mobile.Resource.Id.contentFrame = global::AlmacenRepuestosXamarin.Resource.Id.contentFrame;
 			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::AlmacenRepuestosXamarin.Resource.Layout.zxingscanneractivitylayout;
 			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::AlmacenRepuestosXamarin.Resource.Layout.zxingscannerfragmentlayout;
@@ -1475,8 +1477,8 @@ namespace AlmacenRepuestosXamarin
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b0070
-			public const int ButtonScan = 2131427440;
+			// aapt resource value: 0x7f0b0071
+			public const int ButtonScan = 2131427441;
 			
 			// aapt resource value: 0x7f0b005c
 			public const int ButtonScanMain = 2131427420;
@@ -1565,8 +1567,8 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b001d
 			public const int collapseActionView = 2131427357;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int contentFrame = 2131427441;
+			// aapt resource value: 0x7f0b0072
+			public const int contentFrame = 2131427442;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int contentPanel = 2131427377;
@@ -1655,11 +1657,11 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0060
 			public const int media_actions = 2131427424;
 			
-			// aapt resource value: 0x7f0b0072
-			public const int menu_empleados = 2131427442;
-			
 			// aapt resource value: 0x7f0b0073
-			public const int menu_scan = 2131427443;
+			public const int menu_empleados = 2131427443;
+			
+			// aapt resource value: 0x7f0b0074
+			public const int menu_scan = 2131427444;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int middle = 2131427355;
@@ -1795,6 +1797,9 @@ namespace AlmacenRepuestosXamarin
 			
 			// aapt resource value: 0x7f0b006e
 			public const int textView3 = 2131427438;
+			
+			// aapt resource value: 0x7f0b0070
+			public const int textoSpinner = 2131427440;
 			
 			// aapt resource value: 0x7f0b0063
 			public const int time = 2131427427;
@@ -1988,19 +1993,22 @@ namespace AlmacenRepuestosXamarin
 			public const int select_dialog_singlechoice_material = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int support_simple_spinner_dropdown_item = 2130903081;
+			public const int spinnerLayout = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int TabListaRepuestos = 2130903082;
+			public const int support_simple_spinner_dropdown_item = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int toolBar = 2130903083;
+			public const int TabListaRepuestos = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int zxingscanneractivitylayout = 2130903084;
+			public const int toolBar = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int zxingscannerfragmentlayout = 2130903085;
+			public const int zxingscanneractivitylayout = 2130903085;
+			
+			// aapt resource value: 0x7f03002e
+			public const int zxingscannerfragmentlayout = 2130903086;
 			
 			static Layout()
 			{

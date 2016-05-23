@@ -10,6 +10,8 @@ using AlmacenRepuestosXamarin.Adapter;
 using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.Collections.Generic;
+using Tesseract;
+using Tesseract.Droid;
 
 namespace AlmacenRepuestosXamarin
 {
@@ -21,6 +23,8 @@ namespace AlmacenRepuestosXamarin
         List<string> items;
 
         ArrayAdapter adapterEmpleados;
+        private Task<bool> api;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -42,7 +46,9 @@ namespace AlmacenRepuestosXamarin
             listViewEmpleados.ItemClick += OnListItemClick;
             listViewEmpleados.Adapter=adapterEmpleados;
 
+            ITesseractApi api = new TesseractApi(this, AssetsDeployment.OncePerInitialization);
             
+
 
         }
 
@@ -81,40 +87,13 @@ namespace AlmacenRepuestosXamarin
         }
 
 
-        //private async Task  launchScaner() {
+        //private async Task launchScaner()
+        //{
 
 
-        //    scanner = new MobileBarcodeScanner();
-        //    Button flashButton;
-        //    View zxingOverlay;
+          
 
-        //    scanner.UseCustomOverlay = true;
-
-        //    //Inflate our custom overlay from a resource layout
-        //    zxingOverlay = LayoutInflater.FromContext(this).Inflate(Resource.Layout.OverlayReadBarCode, null);
-
-        //    //Find the button from our resource layout and wire up the click event
-        //    flashButton = zxingOverlay.FindViewById<Button>(Resource.Id.buttonZxingFlash);
-        //    flashButton.Click += (sender, e) => scanner.ToggleTorch();
-
-        //    //Set our custom overlay
-        //    scanner.CustomOverlay = zxingOverlay;
-
-        //    //Start scanning!
-        //    var result = await scanner.Scan();
-
-            
-        //    //HandleScanResult(result);
-
-        //    string msg = "";
-
-        //    if (result != null && !string.IsNullOrEmpty(result.Text))
-        //        codBarRead=result.Text;
-        //        msg = "Found Barcode: " + result.Text;
-        //    else
-        //        msg = "Scanning Canceled!";
-
-        //    this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
+        //    //this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
         //}
 
 
