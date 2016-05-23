@@ -12,7 +12,8 @@ using Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.Collections.Generic;
 using Tesseract;
 using Tesseract.Droid;
-
+using RepositoryWebServiceTRH.EmpleadoContext;
+using RepositoryWebServiceTRH;
 namespace AlmacenRepuestosXamarin
 {
     [Activity(Label = "AlmacenRepuestosXamarin", MainLauncher = true, Icon = "@drawable/icon")]
@@ -21,8 +22,11 @@ namespace AlmacenRepuestosXamarin
         
         
         List<string> items;
+        List<Empleados> empleados;
+        RepositoryEmpleado repoEmpleado = new RepositoryWebServiceTRH.RepositoryEmpleado(new HostWebService(HostWebService.tipoIp.local, HostWebService.empresaWS.TRHSevilla, HostWebService.tipoWebService.Page, "Empleados", @"TRHSEVILLA0\administrador", "Paulagallardo2014")) ;
+        //ArrayAdapter adapterEmpleados;
+        Adapter.AdapterEmpleados adaptardoEmpleados;
 
-        ArrayAdapter adapterEmpleados;
         private Task<bool> api;
 
         protected override void OnCreate(Bundle bundle)
@@ -39,12 +43,16 @@ namespace AlmacenRepuestosXamarin
             SupportActionBar.Title = "Almacen Repuestos";
            
             items = new List<string>() { "Menganito", "Sutanito", "Fulanito", "Pepito", "Jaimito", "Luisito" };
+
+            empleados = this.repoEmpleado.GetAll();
+            
             ListView listViewEmpleados = (ListView)FindViewById(Resource.Id.listEmpleados);
-            adapterEmpleados = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
+             adaptardoEmpleados= new Adapter.AdapterEmpleados(this, empleados);
+          //  adapterEmpleados = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
             
 
             listViewEmpleados.ItemClick += OnListItemClick;
-            listViewEmpleados.Adapter=adapterEmpleados;
+            listViewEmpleados.Adapter= adaptardoEmpleados;
 
             ITesseractApi api = new TesseractApi(this, AssetsDeployment.OncePerInitialization);
             

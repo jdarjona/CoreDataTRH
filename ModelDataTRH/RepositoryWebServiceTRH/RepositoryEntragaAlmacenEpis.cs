@@ -50,11 +50,11 @@ namespace RepositoryWebServiceTRH
             }
         }
 
-        public IEnumerable<EntregaAlmacen> GetAll()
+        public List<EntregaAlmacen> GetAll()
         {
             try
             {
-                return Context.contextEntregaAlmacenEpis.ReadMultiple(null, null, 0);
+                return Context.contextEntregaAlmacenEpis.ReadMultiple(null, null, 0).ToList();
             }
             catch (Exception ex)
             {

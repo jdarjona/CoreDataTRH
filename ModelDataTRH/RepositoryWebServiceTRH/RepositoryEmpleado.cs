@@ -64,11 +64,11 @@ namespace RepositoryWebServiceTRH
             }
         }
 
-        public IEnumerable<Empleados> GetAll()
+        public List<Empleados> GetAll()
         {
             try
             {
-                return Context.contextEmpleado.ReadMultiple(null, null, 0);
+                return Context.contextEmpleado.ReadMultiple(null, null, 0).ToList();
             }
             catch (Exception ex)
             {

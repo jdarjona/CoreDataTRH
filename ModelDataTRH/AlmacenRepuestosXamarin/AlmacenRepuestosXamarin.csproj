@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\AdapterEmpleados.cs" />
     <Compile Include="Adapter\AdapterRepuestos.cs" />
     <Compile Include="Adapter\AdapterSpinner.cs" />
     <Compile Include="detalleRepuestoActivity.cs" />
@@ -154,6 +155,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\string_destinos.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RepositoryWebServiceTRH\RepositoryWebServiceTRH.csproj">
+      <Project>{f7146df8-5361-448d-bab9-74ada37a3c6f}</Project>
+      <Name>RepositoryWebServiceTRH</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

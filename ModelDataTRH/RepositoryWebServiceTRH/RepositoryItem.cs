@@ -50,11 +50,11 @@ namespace RepositoryWebServiceTRH
 
         }
 
-        public IEnumerable<NuevaListaProductos> GetAll()
+        public List<NuevaListaProductos> GetAll()
         {
             try
             {
-                return Context.contextItem.ReadMultiple(null, null, 0);
+                return Context.contextItem.ReadMultiple(null, null, 0).ToList();
             }            
             catch (Exception ex)
             {

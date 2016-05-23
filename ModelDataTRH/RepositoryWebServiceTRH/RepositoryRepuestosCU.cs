@@ -35,7 +35,7 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public IEnumerable<RegistrarEntrega> GetAll()
+        public List<RegistrarEntrega> GetAll()
         {
             throw new NotImplementedException();
         }
