@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryWebServicesTest.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfazNavision", "InterfazNavision\InterfazNavision.csproj", "{83A31B71-C9A2-4252-A8B9-48A4E1DB6DBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmacenRepuestosXamarin", "..\..\..\AlmacenRepuestosXamarin\AlmacenRepuestosXamarin\AlmacenRepuestosXamarin.csproj", "{8601A199-3212-48D9-8F32-27B4AB37066A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmacenRepuestosXamarin", "AlmacenRepuestosXamarin\AlmacenRepuestosXamarin.csproj", "{8601A199-3212-48D9-8F32-27B4AB37066A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
