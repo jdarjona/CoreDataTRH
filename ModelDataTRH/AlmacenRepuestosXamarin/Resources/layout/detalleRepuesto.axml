@@ -14,7 +14,9 @@
         android:layout_height="wrap_content"
         android:hint="Cantidad"
         android:id="@+id/textCantidad"
-        android:layout_marginTop="10px" />
+        android:layout_marginTop="10px"
+        android:textAlignment="textEnd"
+        android:textSize="15sp" />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -13,6 +13,7 @@ using Android.Widget;
 using static Android.Widget.AdapterView;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using AlmacenRepuestosXamarin.Model;
+using AlmacenRepuestosXamarin.Adapter;
 namespace AlmacenRepuestosXamarin
 {
     [Activity(Label = "detalleRepuestoActivity")]
@@ -22,8 +23,8 @@ namespace AlmacenRepuestosXamarin
 
         enum DestinosEnum
         {
-            T_Mecánico,
-            T_Eléctrico, 
+            Taller_Mecánico,
+            Taller_Eléctrico, 
             Máquina, 
             Sevilla, 
             Liege, 
@@ -62,18 +63,21 @@ namespace AlmacenRepuestosXamarin
 
             spinnerMaquina = (Spinner)FindViewById(Resource.Id.spinnerMaquina);
 
+            spinnerMaquina.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerMaquina_ItemSelected);
+
             spinnerMaquina.Visibility = ViewStates.Invisible;
 
 
             var s = (DestinosEnum[])Enum.GetValues(typeof(DestinosEnum));
-
-            ArrayAdapter<DestinosEnum> adapterDestinos = new ArrayAdapter<DestinosEnum>(this, Android.Resource.Layout.SimpleSpinnerItem,s);
+            
+            AdapterSpinner<DestinosEnum> adapterDestinos = new AdapterSpinner<DestinosEnum>(this, Android.Resource.Layout.SimpleSpinnerItem,s);
             // Specify the layout to use when the list of choices appears
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
             spinnerDestino.Adapter=adapterDestinos;
 
-            ArrayAdapter adapterMaquinas = ArrayAdapter.CreateFromResource(this, Resource.Array.Maquinas, Android.Resource.Layout.SimpleSpinnerItem);
+            string[] Maquinas = new String[] { "M1", "M2", "M3", "M4", "R1", "R2", "R3", "R4", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8" };
+            AdapterSpinner<String> adapterMaquinas = new AdapterSpinner<String>(this, Android.Resource.Layout.SimpleSpinnerItem, Maquinas); 
             // Specify the layout to use when the list of choices appears
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
@@ -113,12 +117,11 @@ namespace AlmacenRepuestosXamarin
 
             this.RunOnUiThread(() => Toast.MakeText(this, spinner.SelectedItem.ToString(), ToastLength.Short).Show());
             repuesto.destino = spinner.SelectedItem.ToString();
+
+            this.spinnerMaquina.Visibility = ViewStates.Invisible;
             if (spinner.SelectedItem.ToString() == DestinosEnum.Máquina.ToString())
             {
-
-               
                 this.spinnerMaquina.Visibility = ViewStates.Visible;
-
             }
            
         }
