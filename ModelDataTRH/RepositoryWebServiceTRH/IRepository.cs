@@ -10,6 +10,7 @@ namespace RepositoryWebServiceTRH
     public interface IRepository<TEntity,Tid> where TEntity:class
     {
 
+
         TEntity Get(Tid id);
         IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);

@@ -8,14 +8,14 @@ using RepositoryWebServiceTRH.EmpleadoContext;
 
 namespace RepositoryWebServiceTRH
 {
-    class RepositoryEmpleado : IRepository<EmpleadoContext.Empleados, String>
+    public class RepositoryEmpleado : RespositoryBase,IRepository<EmpleadoContext.Empleados, String>
     {
 
         
 
-        public RepositoryEmpleado() {
+        public RepositoryEmpleado(HostWebService hostWs):base(hostWs) {
 
-            Context.CreateContext(new HostWebService(HostWebService.tipoIp.local, HostWebService.empresaWS.TRHSevilla, HostWebService.tipoWebService.Page, "Empleados"));
+           
         }
         public void Add(Empleados entity)
         {
@@ -29,15 +29,41 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Empleados> Find(Expression<Func<Empleados, bool>> predicate)
+        public IEnumerable<Empleados> Find(Expression<Func<Empleados,bool>> predicate)
+       // public IEnumerable<Empleados> Find( Predicate<Empleados> predicate)
         {
-            throw new NotImplementedException();
+            Empleados_Filter[] filter = new Empleados_Filter[] { new Empleados_Filter { Field = Empleados_Fields.No, Criteria = "*" } };
+
+            try
+            {
+                IQueryable<Empleados> query = Context.contextEmpleado.ReadMultiple(filter, null, 0).AsQueryable();
+               // predicate(query)
+               var result= query.Where(predicate).ToList();
+                return result;
+               // var expresion = delegate(q => q.FullName.StartsWith("Manuel"))
+            
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("predicate", "El parametro 'predicate' no puede vernir vacio"); 
+            }
+            catch (Exception ex) {
+
+                throw new Exception("Se ha producido una excipcion no controlada",ex.InnerException); 
+            }
         }
 
         public Empleados Get(string id)
         {
-            return Context.contextEmpleado.Read(id);
-           
+            if (!string.IsNullOrEmpty(id))
+            {
+               
+                return Context.contextEmpleado.Read(id);
+            }
+            else {
+
+                throw new ArgumentNullException("id", "El parametro 'id' no puede vernir vacio");
+            }
         }
 
         public IEnumerable<Empleados> GetAll()

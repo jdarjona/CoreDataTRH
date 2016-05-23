@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="LiHKVenyCnD2p1adMjWvO6lM2y8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="NPf4ZzpUg8+bOEYKjQX0c8tzMlk=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="Empleados_Binding">
+    <bindingConfiguration bindingType="basicHttpBinding" name="NuevaListaProductos_Binding">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Empleados_Binding</serializedValue>
+          <serializedValue>NuevaListaProductos_Binding</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="Empleados_Port" contract="EmpleadoContext.Empleados_Port" bindingType="basicHttpBinding" address="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados" bindingConfiguration="Empleados_Binding">
+    <endpoint name="NuevaListaProductos_Port" contract="ItemContext.NuevaListaProductos_Port" bindingType="basicHttpBinding" address="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/NuevaListaProductos" bindingConfiguration="NuevaListaProductos_Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados</serializedValue>
+          <serializedValue>http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/NuevaListaProductos</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -124,10 +124,10 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Empleados_Binding</serializedValue>
+          <serializedValue>NuevaListaProductos_Binding</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>EmpleadoContext.Empleados_Port</serializedValue>
+          <serializedValue>ItemContext.NuevaListaProductos_Port</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Empleados_Port</serializedValue>
+          <serializedValue>NuevaListaProductos_Port</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

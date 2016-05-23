@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0078b7c1-f98a-40cc-9f96-716ba2ef6122" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="315ad93f-3077-45a6-8f87-4a4383b22f0c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -9,9 +9,7 @@
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
-    <CollectionMappings>
-      <CollectionMapping TypeName="System.Collections.ObjectModel.Collection`1" Category="List" />
-    </CollectionMappings>
+    <CollectionMappings />
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
@@ -21,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/NuevaListaProductos" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Empleados1.wsdl" MetadataType="Wsdl" ID="ee101d28-1970-4e19-b58c-cf182490630a" SourceId="1" SourceUrl="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados" />
+    <MetadataFile FileName="NuevaListaProductos.wsdl" MetadataType="Wsdl" ID="901bf63c-a8c2-4320-9b1a-2e1cfb9d1be6" SourceId="1" SourceUrl="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/NuevaListaProductos" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
