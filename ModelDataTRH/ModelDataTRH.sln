@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryWebServicesTest.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfazNavision", "InterfazNavision\InterfazNavision.csproj", "{83A31B71-C9A2-4252-A8B9-48A4E1DB6DBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmacenRepuestosXamarin", "..\..\..\AlmacenRepuestosXamarin\AlmacenRepuestosXamarin\AlmacenRepuestosXamarin.csproj", "{8601A199-3212-48D9-8F32-27B4AB37066A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{83A31B71-C9A2-4252-A8B9-48A4E1DB6DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A31B71-C9A2-4252-A8B9-48A4E1DB6DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A31B71-C9A2-4252-A8B9-48A4E1DB6DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8601A199-3212-48D9-8F32-27B4AB37066A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8601A199-3212-48D9-8F32-27B4AB37066A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8601A199-3212-48D9-8F32-27B4AB37066A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8601A199-3212-48D9-8F32-27B4AB37066A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8601A199-3212-48D9-8F32-27B4AB37066A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8601A199-3212-48D9-8F32-27B4AB37066A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
