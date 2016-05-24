@@ -57,7 +57,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70,11 +70,11 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         private string fullNameField;
         
-        private string nameField;
+        private string first_NameField;
         
-        private string second_Family_NameField;
+        private string middle_NameField;
         
-        private string first_Family_NameField;
+        private string last_NameField;
         
         private string initialsField;
         
@@ -144,37 +144,37 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Name {
+        public string First_Name {
             get {
-                return this.nameField;
+                return this.first_NameField;
             }
             set {
-                this.nameField = value;
-                this.RaisePropertyChanged("Name");
+                this.first_NameField = value;
+                this.RaisePropertyChanged("First_Name");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string Second_Family_Name {
+        public string Middle_Name {
             get {
-                return this.second_Family_NameField;
+                return this.middle_NameField;
             }
             set {
-                this.second_Family_NameField = value;
-                this.RaisePropertyChanged("Second_Family_Name");
+                this.middle_NameField = value;
+                this.RaisePropertyChanged("Middle_Name");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string First_Family_Name {
+        public string Last_Name {
             get {
-                return this.first_Family_NameField;
+                return this.last_NameField;
             }
             set {
-                this.first_Family_NameField = value;
-                this.RaisePropertyChanged("First_Family_Name");
+                this.last_NameField = value;
+                this.RaisePropertyChanged("Last_Name");
             }
         }
         
@@ -369,7 +369,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -415,7 +415,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/empleados")]
     public enum Empleados_Fields {
@@ -427,13 +427,13 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         FullName,
         
         /// <comentarios/>
-        Name,
+        First_Name,
         
         /// <comentarios/>
-        Second_Family_Name,
+        Middle_Name,
         
         /// <comentarios/>
-        First_Family_Name,
+        Last_Name,
         
         /// <comentarios/>
         Initials,

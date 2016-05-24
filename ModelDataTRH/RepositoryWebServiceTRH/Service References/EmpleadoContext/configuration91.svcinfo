@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="LiHKVenyCnD2p1adMjWvO6lM2y8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hRKkent8t4czNGUqiGINV4RScOI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="Empleados_Binding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="Empleados_Port" contract="EmpleadoContext.Empleados_Port" bindingType="basicHttpBinding" address="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados" bindingConfiguration="Empleados_Binding">
+    <endpoint name="Empleados_Port" contract="EmpleadoContext.Empleados_Port" bindingType="basicHttpBinding" address="http://intranet.trh-be.com:7047/DynamicsNAV/WS/TRH Liege/Page/Empleados" bindingConfiguration="Empleados_Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados</serializedValue>
+          <serializedValue>http://intranet.trh-be.com:7047/DynamicsNAV/WS/TRH%20Liege/Page/Empleados</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

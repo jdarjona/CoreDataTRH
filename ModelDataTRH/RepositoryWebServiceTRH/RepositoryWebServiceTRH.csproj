@@ -98,7 +98,7 @@
     <None Include="Service References\DatosEntreEmpresasContext\RepositoryWebServiceTRH.DatosEntreEmpresasContext.GetInventarioCosteUnitario_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\EmpleadoContext\Empleados1.wsdl" />
+    <None Include="Service References\EmpleadoContext\Empleados.wsdl" />
     <None Include="Service References\EmpleadoContext\RepositoryWebServiceTRH.EmpleadoContext.Empleados.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -21,10 +21,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://intranet.trh-be.com:7047/DynamicsNAV/WS/TRH Liege/Page/Empleados" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Empleados1.wsdl" MetadataType="Wsdl" ID="ee101d28-1970-4e19-b58c-cf182490630a" SourceId="1" SourceUrl="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados" />
+    <MetadataFile FileName="Empleados.wsdl" MetadataType="Wsdl" ID="6f7d8e01-f5ce-47e6-ae84-8d9072e4f30f" SourceId="1" SourceUrl="http://intranet.trh-be.com:7047/DynamicsNAV/WS/TRH Liege/Page/Empleados" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -68,7 +68,8 @@ namespace RepositoryWebServiceTRH
         {
             try
             {
-                return Context.contextEmpleado.ReadMultiple(null, null, 0).ToList();
+                Empleados_Filter[] filter = new Empleados_Filter[] { new Empleados_Filter { Field = Empleados_Fields.No, Criteria = "*" } };
+                return Context.contextEmpleado.ReadMultiple(filter, null, 0).ToList();
             }
             catch (Exception ex)
             {

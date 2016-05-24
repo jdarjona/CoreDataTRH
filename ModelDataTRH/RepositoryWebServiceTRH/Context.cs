@@ -34,19 +34,40 @@ namespace RepositoryWebServiceTRH
             navisionWSBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             navisionWSBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Windows;
             navisionWSBinding.MaxReceivedMessageSize = 2000971520;
-            initEmpleadosPortCliente(navisionWSBinding,hostWS);
+
+            initEmpleadosPortCliente(navisionWSBinding, hostWS);
             initEntregaAlmacenEpisPortCliente(navisionWSBinding, hostWS);
             initAlmacenesClientesPortCliente(navisionWSBinding, hostWS);
             initItemPortCliente(navisionWSBinding, hostWS);
         }
+        private static BasicHttpBinding CreateBasicHttp()
+        {
+            BasicHttpBinding binding = new BasicHttpBinding
+            {
+                Name = "basicHttpBinding",
+                MaxBufferSize = 2147483647,
+                MaxReceivedMessageSize = 2147483647
+            };
+            TimeSpan timeout = new TimeSpan(0, 0, 30);
+            binding.SendTimeout = timeout;
+            binding.OpenTimeout = timeout;
+            binding.ReceiveTimeout = timeout;
+            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+            return binding;
+        }
         #endregion
-
+        
         #region INICIALIZACION DE PORT_CLIENTS
         private static void initEmpleadosPortCliente(BasicHttpBinding navisionWSBinding, HostWebService hostWs)
         {
+           
+            
             contextEmpleado = new Empleados_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "Empleados")));
             contextEmpleado.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Delegation;
-            contextEmpleado.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential(hostWs.user,hostWs.password);
+            contextEmpleado.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential(hostWs.user, hostWs.password);
+          
+
+
         }
 
         private static void initEntregaAlmacenEpisPortCliente(BasicHttpBinding navisionWSBinding, HostWebService hostWs)

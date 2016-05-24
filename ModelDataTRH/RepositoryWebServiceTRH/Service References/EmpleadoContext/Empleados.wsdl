@@ -7,9 +7,9 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="No" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="FullName" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Second_Family_Name" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="First_Family_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="First_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Middle_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Last_Name" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Initials" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Job_Title" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="N_x00BA__Taquilla" type="xsd:int" />
@@ -34,9 +34,9 @@
         <xsd:restriction base="xsd:string">
           <xsd:enumeration value="No" />
           <xsd:enumeration value="FullName" />
-          <xsd:enumeration value="Name" />
-          <xsd:enumeration value="Second_Family_Name" />
-          <xsd:enumeration value="First_Family_Name" />
+          <xsd:enumeration value="First_Name" />
+          <xsd:enumeration value="Middle_Name" />
+          <xsd:enumeration value="Last_Name" />
           <xsd:enumeration value="Initials" />
           <xsd:enumeration value="Job_Title" />
           <xsd:enumeration value="N_x00BA__Taquilla" />
@@ -234,7 +234,7 @@
   </binding>
   <service name="Empleados_Service">
     <port name="Empleados_Port" binding="tns:Empleados_Binding">
-      <address location="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/Empleados" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://intranet.trh-be.com:7047/DynamicsNAV/WS/TRH%20Liege/Page/Empleados" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>
