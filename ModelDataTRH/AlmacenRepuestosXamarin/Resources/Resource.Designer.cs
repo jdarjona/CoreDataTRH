@@ -26,6 +26,7 @@ namespace AlmacenRepuestosXamarin
 		
 		public static void UpdateIdValues()
 		{
+			global::ModernHttpClient.Resource.String.library_name = global::AlmacenRepuestosXamarin.Resource.String.library_name;
 			global::Tesseract.Droid.Resource.String.ApplicationName = global::AlmacenRepuestosXamarin.Resource.String.ApplicationName;
 			global::Tesseract.Droid.Resource.String.Hello = global::AlmacenRepuestosXamarin.Resource.String.Hello;
 			global::ZXing.Mobile.Resource.Id.contentFrame = global::AlmacenRepuestosXamarin.Resource.Id.contentFrame;
@@ -2102,17 +2103,20 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f050012
 			public const int abc_toolbar_collapse_description = 2131034130;
 			
-			// aapt resource value: 0x7f050018
-			public const int btoScanear = 2131034136;
+			// aapt resource value: 0x7f050019
+			public const int btoScanear = 2131034137;
+			
+			// aapt resource value: 0x7f050016
+			public const int library_name = 2131034134;
 			
 			// aapt resource value: 0x7f050013
 			public const int status_bar_notification_info_overflow = 2131034131;
 			
-			// aapt resource value: 0x7f050016
-			public const int tab1_Name = 2131034134;
-			
 			// aapt resource value: 0x7f050017
-			public const int tab2_Name = 2131034135;
+			public const int tab1_Name = 2131034135;
+			
+			// aapt resource value: 0x7f050018
+			public const int tab2_Name = 2131034136;
 			
 			static String()
 			{

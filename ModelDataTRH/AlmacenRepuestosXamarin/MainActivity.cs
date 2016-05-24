@@ -22,14 +22,14 @@ namespace AlmacenRepuestosXamarin
         
         
         List<string> items;
-        List<Empleados> empleados;
-       
+        List<Empleados> empleados=new List<Empleados>();
+        Data.AccesoDatos restService = new Data.AccesoDatos();
         //ArrayAdapter adapterEmpleados;
         Adapter.AdapterEmpleados adaptardoEmpleados;
 
         private Task<bool> api;
 
-        protected override void OnCreate(Bundle bundle)
+        protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
@@ -50,22 +50,25 @@ namespace AlmacenRepuestosXamarin
 
             ITesseractApi api = new TesseractApi(this, AssetsDeployment.OncePerInitialization);
 
-             getEmpleados();
-
-        }
-
-        private async void getEmpleados()
-        {
+            empleados=await getEmpleados();
             ListView listViewEmpleados = (ListView)FindViewById(Resource.Id.listEmpleados);
-
-            empleados = await Data.AccesoDatos.getEmpleados();
-
             adaptardoEmpleados = new Adapter.AdapterEmpleados(this, empleados);
-            //  adapterEmpleados = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
-
-
             listViewEmpleados.ItemClick += OnListItemClick;
             listViewEmpleados.Adapter = adaptardoEmpleados;
+        }
+
+        private async Task<List<Empleados>> getEmpleados()
+        {
+           
+            var query=await restService.getEmpleados();
+            return query;
+
+
+
+
+
+
+
 
 
         }
