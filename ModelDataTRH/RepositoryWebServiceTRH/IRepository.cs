@@ -17,7 +17,9 @@ namespace RepositoryWebServiceTRH
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 
         void Add(TEntity entity);
+        void Add(ref TEntity entity);
         void AddRange(IEnumerable<TEntity> entitties);
+        void AddRange(ref IEnumerable<TEntity> entitties);
 
         void Update(TEntity entity);
         void UpdateRange(IEnumerable<TEntity> entitties);
