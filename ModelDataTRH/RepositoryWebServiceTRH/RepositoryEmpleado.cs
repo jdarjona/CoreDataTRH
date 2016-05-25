@@ -17,10 +17,21 @@ namespace RepositoryWebServiceTRH
 
            
         }
+
+        public void Add(ref Empleados entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Add(Empleados entity)
         {
 
            
+            throw new NotImplementedException();
+        }
+
+        public void AddRange(ref IEnumerable<Empleados> entitties)
+        {
             throw new NotImplementedException();
         }
 

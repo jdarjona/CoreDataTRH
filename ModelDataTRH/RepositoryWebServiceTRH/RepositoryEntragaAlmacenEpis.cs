@@ -58,6 +58,24 @@ namespace RepositoryWebServiceTRH
            
         }
 
+        public void Add(ref EntregaAlmacen entity)
+        {
+            try
+            {
+                Context.contextEntregaAlmacenEpis.Create(ref entity);
+
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("entity", "El parametro 'entity' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo Add] [entity] ", ex.Message), ex.InnerException);
+
+            }
+        }
+
         public void AddRange(IEnumerable<EntregaAlmacen> entitties)
         {
 
@@ -76,6 +94,24 @@ namespace RepositoryWebServiceTRH
                 
             }
            
+        }
+
+        public void AddRange(ref IEnumerable<EntregaAlmacen> entitties)
+        {
+            try
+            {
+                EntregaAlmacen[] entregaAlmacenArray = entitties.ToArray<EntregaAlmacen>();
+                Context.contextEntregaAlmacenEpis.CreateMultiple(ref entregaAlmacenArray);
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("entitties", "El parametro 'entitties' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo AddRange] [entitties] ", ex.Message), ex.InnerException);
+
+            }
         }
 
         public IEnumerable<EntregaAlmacen> Find(Expression<Func<EntregaAlmacen, bool>> predicate)
@@ -174,5 +210,9 @@ namespace RepositoryWebServiceTRH
 
             }
         }
+
+    
+
+       
     }
 }

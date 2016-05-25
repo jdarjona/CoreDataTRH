@@ -17,7 +17,18 @@ namespace RepositoryWebServiceTRH
         {
            
         }
+
+        public void Add(ref NuevaListaProductos entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Add(NuevaListaProductos entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddRange(ref IEnumerable<NuevaListaProductos> entitties)
         {
             throw new NotImplementedException();
         }

@@ -15,7 +15,17 @@ namespace RepositoryWebServiceTRH
 
         }
 
+        public void Add(ref RegistrarEntrega entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Add(RegistrarEntrega entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddRange(ref IEnumerable<RegistrarEntrega> entitties)
         {
             throw new NotImplementedException();
         }
