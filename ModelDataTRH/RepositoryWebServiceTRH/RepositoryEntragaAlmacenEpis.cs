@@ -8,21 +8,70 @@ using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
 
 namespace RepositoryWebServiceTRH
 {
-    class RepositoryEntragaAlmacenEpis : RespositoryBase, IRepository<EntregaAlmacenEpisContext.EntregaAlmacen, String>
+    class RepositoryEntragaAlmacenEpis : RespositoryBase, IRepository<EntregaAlmacen, String>
     {
         public RepositoryEntragaAlmacenEpis(HostWebService hostWs) : base(hostWs)
         {
 
         }
 
+        public bool register(string codEmpleado) {
+
+            try
+            {
+                Context.contextAlmacenesRepuestos.RegistrarEntrega(codEmpleado);
+                return true;
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("codEmpleado", "El parametro 'codEmpleado' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo register] [codEmpleado] ", ex.Message), ex.InnerException);
+
+            }
+            
+        }
+
         public void Add(EntregaAlmacen entity)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                Context.contextEntregaAlmacenEpis.Update(ref entity);
+
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("entity", "El parametro 'entity' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo Add] [entity] ", ex.Message), ex.InnerException);
+                
+            }
+           
         }
 
         public void AddRange(IEnumerable<EntregaAlmacen> entitties)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                EntregaAlmacen[] entregaAlmacenArray = entitties.ToArray<EntregaAlmacen>();
+                Context.contextEntregaAlmacenEpis.UpdateMultiple(ref entregaAlmacenArray);
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("entitties", "El parametro 'entitties' no puede vernir vacio");
+            }
+            catch (Exception  ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo AddRange] [entitties] ", ex.Message), ex.InnerException);
+                
+            }
+           
         }
 
         public IEnumerable<EntregaAlmacen> Find(Expression<Func<EntregaAlmacen, bool>> predicate)
@@ -30,15 +79,24 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public EntregaAlmacen Get(string id)
+        public List<EntregaAlmacen> GetbyIdKey(string id)
         {
-            int numLienea = 1000;
-            DateTime fecha = new DateTime();
+            
             try
             {
+                EntregaAlmacen_Filter[] filtro = new EntregaAlmacen_Filter[2];
 
-                return Context.contextEntregaAlmacenEpis.Read("CodEmpleado","CodProducto",fecha,numLienea);
-              //  return Context.contextEntregaAlmacenEpis.ReadByRecId("CodEmpleado");
+                //Filtro Empleado
+                filtro[0] = new EntregaAlmacen_Filter();
+                filtro[0].Field = EntregaAlmacen_Fields.Cod_Empleado;
+                filtro[0].Criteria = id;
+                //Filtro Empleado
+                filtro[1] = new EntregaAlmacen_Filter();
+                filtro[1].Field = EntregaAlmacen_Fields.Entregado;
+                filtro[1].Criteria = "No";
+
+                return Context.contextEntregaAlmacenEpis.ReadMultiple(filtro, null, 0).ToList();
+              
             }
             catch (ArgumentNullException)
             {
@@ -46,7 +104,7 @@ namespace RepositoryWebServiceTRH
             }
             catch (Exception ex)
             {
-                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo Get] [Item] ", ex.Message), ex.InnerException);
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo GetbyIdKey] [id] ", ex.Message), ex.InnerException);
             }
         }
 
@@ -68,6 +126,11 @@ namespace RepositoryWebServiceTRH
         }
 
         public void Reove(EntregaAlmacen entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public EntregaAlmacen Get(string id)
         {
             throw new NotImplementedException();
         }

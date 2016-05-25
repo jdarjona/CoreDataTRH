@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using Tesseract;
 using Tesseract.Droid;
 using RepositoryWebServiceTRH.EmpleadoContext;
-using RepositoryWebServiceTRH;
+using AlmacenRepuestosXamarin.Model;
 namespace AlmacenRepuestosXamarin
 {
     [Activity(Label = "AlmacenRepuestosXamarin", MainLauncher = true, Icon = "@drawable/icon")]
@@ -21,7 +21,7 @@ namespace AlmacenRepuestosXamarin
     {
         
         
-        List<string> items;
+        
         List<Empleados> empleados=new List<Empleados>();
         Data.AccesoDatos restService = new Data.AccesoDatos();
         //ArrayAdapter adapterEmpleados;
@@ -42,7 +42,7 @@ namespace AlmacenRepuestosXamarin
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "Almacen Repuestos";
            
-            items = new List<string>() { "Menganito", "Sutanito", "Fulanito", "Pepito", "Jaimito", "Luisito" };
+            
 
             
             
@@ -121,15 +121,13 @@ namespace AlmacenRepuestosXamarin
 
         void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            
-            var item = items[e.Position];
 
-            this.RunOnUiThread(() => Toast.MakeText(this, item, ToastLength.Short).Show());
+            ManagerRepuestos.addEmpleado(empleados[e.Position]);
+            
+            this.RunOnUiThread(() => Toast.MakeText(this, empleados[e.Position].FullName, ToastLength.Short).Show());
 
             var activityRepuestosEPIS = new Intent(this, typeof(ListEPISRepuestos));
-            activityRepuestosEPIS.PutExtra("Item", item);
-            
-
+          
             StartActivity(activityRepuestosEPIS);
             
         }

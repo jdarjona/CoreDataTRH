@@ -12,6 +12,7 @@ namespace RepositoryWebServiceTRH
 
 
         TEntity Get(Tid id);
+        List<TEntity> GetbyIdKey(Tid id);
         List<TEntity> GetAll();
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 

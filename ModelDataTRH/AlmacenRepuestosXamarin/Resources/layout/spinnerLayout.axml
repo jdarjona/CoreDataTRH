@@ -6,7 +6,7 @@
     android:padding="3dip">
     <TextView
         android:layout_marginTop="2dip"
-        android:textStyle="bold"
+        android:textSize="15sp"
         android:id="@+id/textoSpinner"
         android:text="Texto Spinner"
         android:layout_marginLeft="5dip"

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using AlmacenRepuestosXamarin.Model;
-
+using RepositoryWebServiceTRH.EmpleadoContext;
 namespace AlmacenRepuestosXamarin
 {
     
@@ -25,6 +25,7 @@ namespace AlmacenRepuestosXamarin
     {
 
         List<Repuesto> listRepuestosEpis;
+        Empleados empleado;
         int cantidad;
         AdapterRepuestos adapterRepuestos;
         //AdapterEmpleados adapterEmpleados;
@@ -32,15 +33,17 @@ namespace AlmacenRepuestosXamarin
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.ListEPISRepuestos);
             // Create your application here
+
+            empleado = ManagerRepuestos.getEmpleado();
+
 
             MobileBarcodeScanner.Initialize(Application);
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Repuestos";
+            SupportActionBar.Title = empleado.FullName;
 
 
 

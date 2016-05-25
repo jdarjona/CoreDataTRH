@@ -40,6 +40,11 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
+        public List<RegistrarEntrega> GetbyIdKey(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void RemoveRange(IEnumerable<RegistrarEntrega> entities)
         {
             throw new NotImplementedException();

@@ -9,7 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-
+using RepositoryWebServiceTRH.EmpleadoContext;
 namespace AlmacenRepuestosXamarin.Model
 {
     public class Repuesto
@@ -27,6 +27,8 @@ namespace AlmacenRepuestosXamarin.Model
     public static class ManagerRepuestos {
 
         private static List<Repuesto> repuestos= new List<Repuesto>();
+        private static Empleados empleado;
+
         private static int count;
         public static int  addRepuesto(Repuesto repuesto) {
 
@@ -51,7 +53,14 @@ namespace AlmacenRepuestosXamarin.Model
         }
 
 
+        public static void addEmpleado(Empleados _empleado) {
 
+            empleado = _empleado;
+        }
+
+        public static Empleados getEmpleado() {
+            return empleado;
+        }
 
 
     }

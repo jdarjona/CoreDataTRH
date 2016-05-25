@@ -62,6 +62,11 @@ namespace RepositoryWebServiceTRH
             }    
         }
 
+        public List<NuevaListaProductos> GetbyIdKey(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void RemoveRange(IEnumerable<NuevaListaProductos> entities)
         {
             throw new NotImplementedException();

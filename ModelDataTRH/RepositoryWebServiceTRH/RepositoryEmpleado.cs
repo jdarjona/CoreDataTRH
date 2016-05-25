@@ -77,6 +77,11 @@ namespace RepositoryWebServiceTRH
             }
         }
 
+        public List<Empleados> GetbyIdKey(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void RemoveRange(IEnumerable<Empleados> entities)
         {
             throw new NotImplementedException();
