@@ -113,6 +113,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="fragmentTabEmpleados.cs" />
     <Compile Include="Model\Repuestos.cs" />
+    <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

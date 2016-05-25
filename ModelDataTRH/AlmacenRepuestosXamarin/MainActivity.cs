@@ -7,17 +7,22 @@ using Android.Widget;
 using Android.OS;
 using System.Threading.Tasks;
 using AlmacenRepuestosXamarin.Adapter;
+using Android.Support.V4.View;
 using Android.Support.V7.App;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Support.V7.Widget;
 using System.Collections.Generic;
 using Tesseract;
 using Tesseract.Droid;
 using RepositoryWebServiceTRH.EmpleadoContext;
 using AlmacenRepuestosXamarin.Model;
+
+
+
+
 namespace AlmacenRepuestosXamarin
 {
-    [Activity(Label = "AlmacenRepuestosXamarin", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : AppCompatActivity
+    [Activity(Label = "AlmacenRepuestosXamarin", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/Theme.AppCompat.Light")]
+    public class MainActivity : AppCompatActivity 
     {
         
         
@@ -25,36 +30,32 @@ namespace AlmacenRepuestosXamarin
         List<Empleados> empleados=new List<Empleados>();
         Data.AccesoDatos restService = new Data.AccesoDatos();
         //ArrayAdapter adapterEmpleados;
-        Adapter.AdapterEmpleados adaptardoEmpleados;
+        Adapter.AdapterEmpleados adaptadorEmpleados;
+        private Android.Support.V7.Widget.SearchView _searchView;
+        //private ArrayAdapter _adapter;
 
-        private Task<bool> api;
+        //private Task<bool> api;
 
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            
-
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Almacen Repuestos";
-           
-            
-
-            
-            
-           
+           // var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SupportActionBar.SetDisplayShowHomeEnabled(true);
+            //
+            //SetSupportActionBar(toolbar);
+            //SupportActionBar.Title = "Almacen Repuestos";
 
             ITesseractApi api = new TesseractApi(this, AssetsDeployment.OncePerInitialization);
 
             empleados=await getEmpleados();
             ListView listViewEmpleados = (ListView)FindViewById(Resource.Id.listEmpleados);
-            adaptardoEmpleados = new Adapter.AdapterEmpleados(this, empleados);
+            adaptadorEmpleados = new AdapterEmpleados(this, empleados);
             listViewEmpleados.ItemClick += OnListItemClick;
-            listViewEmpleados.Adapter = adaptardoEmpleados;
+            listViewEmpleados.Adapter = adaptadorEmpleados;
         }
 
         private async Task<List<Empleados>> getEmpleados()
@@ -62,14 +63,6 @@ namespace AlmacenRepuestosXamarin
            
             var query=await restService.getEmpleados();
             return query;
-
-
-
-
-
-
-
-
 
         }
 
@@ -83,29 +76,68 @@ namespace AlmacenRepuestosXamarin
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu, menu);
+
+            var item = menu.FindItem(Resource.Id.action_search);
+
+            var searchView = MenuItemCompat.GetActionView(item);
+            _searchView = searchView.JavaCast<Android.Support.V7.Widget.SearchView> ();
+
+            _searchView.QueryTextChange += (s, e) => adaptadorEmpleados.Filter.InvokeFilter(e.NewText);
+
+            _searchView.QueryTextSubmit += (s, e) =>
+            {
+                // Handle enter/search button on keyboard here
+                Toast.MakeText(this, "Searched for: " + e.Query, ToastLength.Short).Show();
+                e.Handled = true;
+            };
+
+            MenuItemCompat.SetOnActionExpandListener(item, new SearchViewExpandListener(adaptadorEmpleados));
+
             return base.OnCreateOptionsMenu(menu);
         }
 
-        public override  bool OnOptionsItemSelected(IMenuItem item)
+        private class SearchViewExpandListener
+            : Java.Lang.Object, MenuItemCompat.IOnActionExpandListener
         {
-            Toast.MakeText(this, "Top ActionBar pressed: " + item.TitleFormatted, ToastLength.Short).Show();
+            private readonly IFilterable _adapter;
 
-            switch (item.ItemId)
+            public SearchViewExpandListener(IFilterable adapter)
             {
-                case Resource.Id.menu_scan:
-
-                    // var code=launchScaner();
-                    
-                    return true;
-                    break;
-
-                default:
-
-                    return base.OnOptionsItemSelected(item);
-                    break;
+                _adapter = adapter;
             }
 
+            public bool OnMenuItemActionCollapse(IMenuItem item)
+            {
+                _adapter.Filter.InvokeFilter("");
+                return true;
+            }
+
+            public bool OnMenuItemActionExpand(IMenuItem item)
+            {
+                return true;
+            }
         }
+
+        //public override  bool OnOptionsItemSelected(IMenuItem item)
+        //{
+        //    //Toast.MakeText(this, "Top ActionBar pressed: " + item.TitleFormatted, ToastLength.Short).Show();
+
+        //    //switch (item.ItemId)
+        //    //{
+        //    //    case Resource.Id.menu_scan:
+
+        //    //        // var code=launchScaner();
+                    
+        //    //        return true;
+        //    //        break;
+
+        //    //    default:
+
+        //    //        return base.OnOptionsItemSelected(item);
+        //    //        break;
+        //    //}
+
+        //}
 
 
         //private async Task launchScaner()
@@ -130,6 +162,16 @@ namespace AlmacenRepuestosXamarin
           
             StartActivity(activityRepuestosEPIS);
             
+        }
+
+        public bool OnQueryTextChange(string newText)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool OnQueryTextSubmit(string query)
+        {
+            throw new NotImplementedException();
         }
 
 

@@ -1535,6 +1535,9 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0023
 			public const int action_mode_close_button = 2131427363;
 			
+			// aapt resource value: 0x7f0b0073
+			public const int action_search = 2131427443;
+			
 			// aapt resource value: 0x7f0b0024
 			public const int activity_chooser_view_content = 2131427364;
 			
@@ -1657,12 +1660,6 @@ namespace AlmacenRepuestosXamarin
 			
 			// aapt resource value: 0x7f0b0060
 			public const int media_actions = 2131427424;
-			
-			// aapt resource value: 0x7f0b0073
-			public const int menu_empleados = 2131427443;
-			
-			// aapt resource value: 0x7f0b0074
-			public const int menu_scan = 2131427444;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int middle = 2131427355;

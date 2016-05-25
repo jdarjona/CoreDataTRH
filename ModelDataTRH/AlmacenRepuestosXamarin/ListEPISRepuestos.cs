@@ -71,27 +71,27 @@ namespace AlmacenRepuestosXamarin
             return base.OnCreateOptionsMenu(menu);
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            Toast.MakeText(this, "Top ActionBar pressed: " + item.TitleFormatted, ToastLength.Short).Show();
+        //public override bool OnOptionsItemSelected(IMenuItem item)
+        //{
+        //    //Toast.MakeText(this, "Top ActionBar pressed: " + item.TitleFormatted, ToastLength.Short).Show();
 
-            switch (item.ItemId)
-            {
-                case Resource.Id.menu_scan:
+        //    //switch (item.ItemId)
+        //    //{
+        //    //    case Resource.Id.menu_scan:
 
-                     var code=launchScaner();
+        //    //         var code=launchScaner();
                      
 
-                    return true;
-                    break;
+        //    //        return true;
+        //    //        break;
 
-                default:
+        //    //    default:
 
-                    return base.OnOptionsItemSelected(item);
-                    break;
-            }
+        //    //        return base.OnOptionsItemSelected(item);
+        //    //        break;
+        //    //}
 
-        }
+        //}
 
 
         private async Task launchScaner()
