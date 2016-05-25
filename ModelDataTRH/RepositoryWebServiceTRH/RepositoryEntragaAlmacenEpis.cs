@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -8,7 +9,7 @@ using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
 
 namespace RepositoryWebServiceTRH
 {
-    class RepositoryEntragaAlmacenEpis : RespositoryBase, IRepository<EntregaAlmacen, String>
+    public class RepositoryEntragaAlmacenEpis : RespositoryBase, IRepository<EntregaAlmacen, String>
     {
         public RepositoryEntragaAlmacenEpis(HostWebService hostWs) : base(hostWs)
         {
@@ -19,6 +20,9 @@ namespace RepositoryWebServiceTRH
 
             try
             {
+                CultureInfo culture = new CultureInfo("es-US");
+                System.Threading.Thread.CurrentThread.CurrentCulture = culture;
+
                 Context.contextAlmacenesRepuestos.RegistrarEntrega(codEmpleado);
                 return true;
             }
@@ -39,7 +43,7 @@ namespace RepositoryWebServiceTRH
 
             try
             {
-                Context.contextEntregaAlmacenEpis.Update(ref entity);
+                Context.contextEntregaAlmacenEpis.Create(ref entity);
 
             }
             catch (ArgumentNullException)
@@ -60,7 +64,7 @@ namespace RepositoryWebServiceTRH
             try
             {
                 EntregaAlmacen[] entregaAlmacenArray = entitties.ToArray<EntregaAlmacen>();
-                Context.contextEntregaAlmacenEpis.UpdateMultiple(ref entregaAlmacenArray);
+                Context.contextEntregaAlmacenEpis.CreateMultiple(ref entregaAlmacenArray);
             }
             catch (ArgumentNullException)
             {
@@ -133,6 +137,42 @@ namespace RepositoryWebServiceTRH
         public EntregaAlmacen Get(string id)
         {
             throw new NotImplementedException();
+        }
+
+        public void Update(EntregaAlmacen entity)
+        {
+            try
+            {
+                Context.contextEntregaAlmacenEpis.Update(ref entity);
+
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("entity", "El parametro 'entity' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo Add] [entity] ", ex.Message), ex.InnerException);
+
+            }
+        }
+
+        public void UpdateRange(IEnumerable<EntregaAlmacen> entitties)
+        {
+            try
+            {
+                EntregaAlmacen[] entregaAlmacenArray = entitties.ToArray<EntregaAlmacen>();
+                Context.contextEntregaAlmacenEpis.CreateMultiple(ref entregaAlmacenArray);
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("entitties", "El parametro 'entitties' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo AddRange] [entitties] ", ex.Message), ex.InnerException);
+
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using RepositoryWebServiceTRH.AlmacenRepuestosContext;
 
 namespace RepositoryWebServiceTRH
 {
-    class RepositoryRepuestosCU : RespositoryBase,IRepository<AlmacenRepuestosContext.RegistrarEntrega, String>
+    class RepositoryRepuestosCU : RespositoryBase,IRepository<RegistrarEntrega, String>
     {
         public RepositoryRepuestosCU(HostWebService hostWs) : base(hostWs)
         {
@@ -51,6 +51,16 @@ namespace RepositoryWebServiceTRH
         }
 
         public void Reove(RegistrarEntrega entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(RegistrarEntrega entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateRange(IEnumerable<RegistrarEntrega> entitties)
         {
             throw new NotImplementedException();
         }

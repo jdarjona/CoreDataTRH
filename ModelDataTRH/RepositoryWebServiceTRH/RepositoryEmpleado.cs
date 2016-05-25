@@ -91,5 +91,15 @@ namespace RepositoryWebServiceTRH
         {
             throw new NotImplementedException();
         }
+
+        public void Update(Empleados entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateRange(IEnumerable<Empleados> entitties)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

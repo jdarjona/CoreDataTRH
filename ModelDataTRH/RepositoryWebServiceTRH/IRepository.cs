@@ -19,6 +19,9 @@ namespace RepositoryWebServiceTRH
         void Add(TEntity entity);
         void AddRange(IEnumerable<TEntity> entitties);
 
+        void Update(TEntity entity);
+        void UpdateRange(IEnumerable<TEntity> entitties);
+
         void Reove(TEntity entity);
         void RemoveRange(IEnumerable<TEntity> entities);
         

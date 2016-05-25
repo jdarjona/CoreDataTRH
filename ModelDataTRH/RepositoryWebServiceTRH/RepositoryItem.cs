@@ -9,7 +9,7 @@ using RepositoryWebServiceTRH.ItemContext;
 
 namespace RepositoryWebServiceTRH
 {
-    public class RepositoryItem : RespositoryBase, IRepository<ItemContext.NuevaListaProductos, String>
+    public class RepositoryItem : RespositoryBase, IRepository<NuevaListaProductos, String>
     {
 
 
@@ -73,6 +73,16 @@ namespace RepositoryWebServiceTRH
         }
 
         public void Reove(NuevaListaProductos entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(NuevaListaProductos entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateRange(IEnumerable<NuevaListaProductos> entitties)
         {
             throw new NotImplementedException();
         }
