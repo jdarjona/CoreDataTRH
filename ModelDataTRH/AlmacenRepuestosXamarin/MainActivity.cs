@@ -69,11 +69,7 @@ namespace AlmacenRepuestosXamarin
             listViewEmpleados.Adapter = adaptadorEmpleados;
             
         }
-
-
-
-
-
+        
         private async Task<List<Empleados>> getEmpleados()
         {
            
