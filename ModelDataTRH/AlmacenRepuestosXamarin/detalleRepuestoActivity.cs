@@ -15,6 +15,7 @@ using Toolbar = Android.Support.V7.Widget.Toolbar;
 using AlmacenRepuestosXamarin.Model;
 using AlmacenRepuestosXamarin.Adapter;
 using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
+using Android.Graphics.Drawables;
 
 namespace AlmacenRepuestosXamarin
 {
@@ -86,26 +87,48 @@ namespace AlmacenRepuestosXamarin
 
 
             EditText edittext = FindViewById<EditText>(Resource.Id.textCantidad);
-            edittext.KeyPress += (object sender, View.KeyEventArgs e) =>
-            {
-                e.Handled = false;
-                if (e.Event.Action == KeyEventActions.Up)
+            //edittext.KeyPress += (object sender, View.KeyEventArgs e) =>
+            //{
+            //    e.Handled = false;
+            //    if (e.Event.Action == KeyEventActions.)
+            //    {
+            //        int cantidad;
+            //        int.TryParse(edittext.Text, out cantidad);
+            //        repuesto.Cantidad = cantidad;
+            //        Toast.MakeText(this, edittext.Text, ToastLength.Short).Show();
+            //        e.Handled = true;
+            //    }
+            //};
+
+            edittext.TextChanged += Edittext_TextChanged;
+
+            
+                Button btoAceptar = FindViewById<Button>(Resource.Id.btoAceptar);
+                btoAceptar.Click += (object sender, EventArgs e) =>
                 {
-                    int cantidad;
-                    int.TryParse(edittext.Text, out cantidad);
-                    repuesto.Cantidad = cantidad;
-                    Toast.MakeText(this, edittext.Text, ToastLength.Short).Show();
-                    e.Handled = true;
-                }
-            };
+                    Finish();
 
-            Button btoAceptar = FindViewById<Button>(Resource.Id.btoAceptar);
-            btoAceptar.Click += (object sender, EventArgs e) =>
+
+                };
+            
+
+        }
+
+        private void Edittext_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            var editTextCantidad = (EditText)sender;
+            int cantidad;
+            int.TryParse(editTextCantidad.Text, out cantidad);
+
+            Drawable warning = (Drawable)GetDrawable(Android.Resource.Drawable.AlertLightFrame);//GetResources().getDrawable(R.drawable.alert_icon);
+            if (cantidad > repuesto.Inventory)
             {
-                Finish();
-
-
-            };
+                editTextCantidad.SetError("La cantidad es mayor que las existencias disponibles", warning);
+            }
+            else
+            {
+                repuesto.Cantidad = cantidad;
+            }
 
         }
 
