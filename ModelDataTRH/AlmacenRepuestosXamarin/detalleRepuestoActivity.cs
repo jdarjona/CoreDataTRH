@@ -16,6 +16,7 @@ using AlmacenRepuestosXamarin.Model;
 using AlmacenRepuestosXamarin.Adapter;
 using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
 using Android.Graphics.Drawables;
+using Android.Views.InputMethods;
 
 namespace AlmacenRepuestosXamarin
 {
@@ -37,6 +38,8 @@ namespace AlmacenRepuestosXamarin
         }
 
         private DestinosEnum destinos;
+        EditText edittext;
+        Drawable warning;
         private Spinner spinnerDestino;
         private Spinner spinnerMaquina;
         private int id;
@@ -54,20 +57,25 @@ namespace AlmacenRepuestosXamarin
             string key = Intent.GetStringExtra("idEntregaAlmacen");
             repuesto = ManagerRepuestos.getRepuestoByKey(key);
 
-            SupportActionBar.Title = repuesto.Cod_Producto;
+            SupportActionBar.Title = string.Format(@"{0} - {1}",repuesto.Cod_Producto,repuesto.Unit_of_Measure_Code);
 
             
             this.RunOnUiThread(() => Toast.MakeText(this, id.ToString(), ToastLength.Short).Show());
 
-            spinnerDestino = (Spinner)FindViewById(Resource.Id.spinnerDestino);
+             edittext = FindViewById<EditText>(Resource.Id.textCantidad);
+            edittext.TextChanged += Edittext_TextChanged;
 
+
+
+            spinnerDestino = (Spinner)FindViewById(Resource.Id.spinnerDestino);
             spinnerDestino.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerDestino_ItemSelected);
+            //spinnerDestino.ItemClick += spinner_OnClick;
+
 
             spinnerMaquina = (Spinner)FindViewById(Resource.Id.spinnerMaquina);
-
             spinnerMaquina.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerMaquina_ItemSelected);
-
             spinnerMaquina.Visibility = ViewStates.Invisible;
+            //spinnerMaquina.ItemClick += spinner_OnClick;
 
 
             var s = (DestinosEnum[])Enum.GetValues(typeof(DestinosEnum));
@@ -86,49 +94,62 @@ namespace AlmacenRepuestosXamarin
             spinnerMaquina.Adapter = adapterMaquinas;
 
 
-            EditText edittext = FindViewById<EditText>(Resource.Id.textCantidad);
-            //edittext.KeyPress += (object sender, View.KeyEventArgs e) =>
-            //{
-            //    e.Handled = false;
-            //    if (e.Event.Action == KeyEventActions.)
-            //    {
-            //        int cantidad;
-            //        int.TryParse(edittext.Text, out cantidad);
-            //        repuesto.Cantidad = cantidad;
-            //        Toast.MakeText(this, edittext.Text, ToastLength.Short).Show();
-            //        e.Handled = true;
-            //    }
-            //};
+            TextView textDescription = FindViewById<TextView>(Resource.Id.textDescription);
+            textDescription.Text = repuesto.Descripcion_Producto;
 
-            edittext.TextChanged += Edittext_TextChanged;
 
             
-                Button btoAceptar = FindViewById<Button>(Resource.Id.btoAceptar);
-                btoAceptar.Click += (object sender, EventArgs e) =>
+
+            Resources.GetDrawable(Android.Resource.Drawable.AlertLightFrame);
+             warning = (Drawable)Resources.GetDrawable(Android.Resource.Drawable.AlertLightFrame);
+
+            
+
+            
+            Button btoAceptar = FindViewById<Button>(Resource.Id.btoAceptar);
+            btoAceptar.Click += (object sender, EventArgs e) =>
+            {
+                var _btoAceptar = (Button)sender;
+                if (repuesto.Cantidad > 0)
                 {
+
                     Finish();
+                }
+                else {
+
+                    _btoAceptar.SetError("Introduza una cantidad antes de aceptar", warning); 
+                }
+                    
 
 
-                };
+            };
             
 
         }
+
+        private void spinner_OnClick(object sender, ItemClickEventArgs e) {
+
+            InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            inputMethodManager.HideSoftInputFromWindow(edittext.WindowToken, 0);
+        }
+
+
 
         private void Edittext_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
             var editTextCantidad = (EditText)sender;
             int cantidad;
             int.TryParse(editTextCantidad.Text, out cantidad);
-
-            Drawable warning = (Drawable)GetDrawable(Android.Resource.Drawable.AlertLightFrame);//GetResources().getDrawable(R.drawable.alert_icon);
+            //GetResources().getDrawable(R.drawable.alert_icon);
             if (cantidad > repuesto.Inventory)
             {
-                editTextCantidad.SetError("La cantidad es mayor que las existencias disponibles", warning);
+                editTextCantidad.SetError(string.Format(@"La cantidad es mayor que las existencias disponibles, Existencias disponible {0}",this.repuesto.Inventory.ToString("N2")), warning);
+                cantidad = 0;
+                editTextCantidad.Text = string.Empty;
+
             }
-            else
-            {
-                repuesto.Cantidad = cantidad;
-            }
+
+            repuesto.Cantidad = cantidad;
 
         }
 
