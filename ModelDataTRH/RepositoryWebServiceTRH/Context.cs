@@ -72,7 +72,7 @@ namespace RepositoryWebServiceTRH
 
         private static void initEntregaAlmacenEpisPortCliente(BasicHttpBinding navisionWSBinding, HostWebService hostWs)
         {
-            contextEntregaAlmacenEpis = new EntregaAlmacen_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "EntragaAlmacen")));
+            contextEntregaAlmacenEpis = new EntregaAlmacen_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "EntregaAlmacen")));
             contextEntregaAlmacenEpis.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Delegation;
             contextEntregaAlmacenEpis.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential(hostWs.user, hostWs.password);
         }

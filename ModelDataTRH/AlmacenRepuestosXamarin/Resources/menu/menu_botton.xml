@@ -6,12 +6,12 @@
       android:id="@+id/menu_empleados"
       android:showAsAction="always"
       android:title="Empleados" />
-    <item
-      android:id="@+id/menu_scan"
-      android:showAsAction="always"
-      android:title="Scan" />
-  
+  <item
+    android:id="@+id/menu_scan"
+    android:showAsAction="always"
+    android:title="Scan" />
 
- 
-  
+
+
+
 </menu>

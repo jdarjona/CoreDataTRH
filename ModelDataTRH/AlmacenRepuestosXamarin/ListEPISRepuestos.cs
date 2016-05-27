@@ -15,20 +15,18 @@ using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using AlmacenRepuestosXamarin.Model;
 using RepositoryWebServiceTRH.EmpleadoContext;
+using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
+
 namespace AlmacenRepuestosXamarin
 {
-    
-
-
     [Activity(Label = "ListEPISRepuestos")]
     public class ListEPISRepuestos : AppCompatActivity
     {
 
-        List<Repuesto> listRepuestosEpis;
+        List<EntregaAlmacen> listRepuestosEpis;
         Empleados empleado;
-        int cantidad;
         AdapterRepuestos adapterRepuestos;
-        //AdapterEmpleados adapterEmpleados;
+        
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,11 +41,37 @@ namespace AlmacenRepuestosXamarin
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
+           
             SupportActionBar.Title = empleado.FullName;
 
+            //var toolbarBottom = FindViewById<Toolbar>(Resource.Id.toolbar_bottom);
+            //SetSupportActionBar(toolbarBottom);
 
+            //toolbarBottom.Title = "Photo Editing";
+            //toolbarBottom.InflateMenu(Resource.Menu.menu_botton);
+            //toolbarBottom.MenuItemClick += (sender, e) =>
+            //{
+            //   // Toast.MakeText(this, "Bottom toolbar pressed: " + e.Item.TitleFormatted, ToastLength.Short).Show();
+            //    switch (e.Item.ItemId)
+            //    {
+            //        case Resource.Id.menu_scan:
+
+            //            var code = launchScaner();
+
+
+                        
+            //            break;
+
+            //        default:
+            //            Finish();
+                        
+            //            break;
+            //    }
+
+            //};
 
             
+
             listRepuestosEpis =  ManagerRepuestos.getRepuestos() ;
             ListView listViewEmpleados = (ListView)FindViewById(Resource.Id.listProductos);
             adapterRepuestos = new AdapterRepuestos(this, listRepuestosEpis);//new ArrayAdapter<string>(this,Android.Resource.Layout.SimpleListItem1, listRepuestosEpis);
@@ -71,27 +95,28 @@ namespace AlmacenRepuestosXamarin
             return base.OnCreateOptionsMenu(menu);
         }
 
-        //public override bool OnOptionsItemSelected(IMenuItem item)
-        //{
-        //    //Toast.MakeText(this, "Top ActionBar pressed: " + item.TitleFormatted, ToastLength.Short).Show();
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            
 
-        //    //switch (item.ItemId)
-        //    //{
-        //    //    case Resource.Id.menu_scan:
+            switch (item.ItemId)
+            {
+                case Resource.Id.menu_scan:
 
-        //    //         var code=launchScaner();
-                     
+                    var code = launchScaner();
 
-        //    //        return true;
-        //    //        break;
 
-        //    //    default:
 
-        //    //        return base.OnOptionsItemSelected(item);
-        //    //        break;
-        //    //}
+                    break;
 
-        //}
+                default:
+                    Finish();
+
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+
+        }
 
 
         private async Task launchScaner()
@@ -124,12 +149,14 @@ namespace AlmacenRepuestosXamarin
 
             if (result != null && !string.IsNullOrEmpty(result.Text)) { 
                 msg = "Found Barcode: " + result.Text;
-                Repuesto rep = new Repuesto { idRepuesto = 1, description = result.Text, quantity = 0 };
-                int id=ManagerRepuestos.addRepuesto(rep);
+
+
+                EntregaAlmacen rep = await ManagerRepuestos.addRepuesto(empleado.No,result.Text) ;
+                
 
                 this.adapterRepuestos.NotifyDataSetChanged();
                 var activityDetalleRepuestoActivity = new Intent(this, typeof(detalleRepuestoActivity));
-                activityDetalleRepuestoActivity.PutExtra("idRepuesto", id.ToString());
+                activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", rep.Key);
                 StartActivity(activityDetalleRepuestoActivity);
             }
             else

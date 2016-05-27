@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
+using AlmacenRepuestosXamarin.Data;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,6 +11,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using RepositoryWebServiceTRH.EmpleadoContext;
+using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
+
 namespace AlmacenRepuestosXamarin.Model
 {
     public class Repuesto
@@ -26,30 +29,27 @@ namespace AlmacenRepuestosXamarin.Model
 
     public static class ManagerRepuestos {
 
-        private static List<Repuesto> repuestos= new List<Repuesto>();
+        private static List<EntregaAlmacen> repuestos= new List<EntregaAlmacen>();
         private static Empleados empleado;
 
         private static int count;
-        public static int  addRepuesto(Repuesto repuesto) {
+        private static AccesoDatos datos = new AccesoDatos();
+        public static async Task<EntregaAlmacen> addRepuesto(string codEmpleado, string codRepuesto) {
 
-            count += 1;
 
-            repuesto.idRepuesto = count;
-
-            repuesto.description = repuesto.description + "_" + count.ToString();
-
+            EntregaAlmacen repuesto=await datos.addRepuesto(codEmpleado, codRepuesto);
             repuestos.Add(repuesto);
 
-            return repuesto.idRepuesto;
+            return repuesto;
         }
 
-        public static List<Repuesto> getRepuestos() {
+        public static List<EntregaAlmacen> getRepuestos() {
             return repuestos;
         }
 
-        public static Repuesto getRepuestoById(int id) {
+        public static EntregaAlmacen getRepuestoByKey(string Key) {
 
-            return  repuestos.Where(q => q.idRepuesto.Equals(id)).First();
+            return  repuestos.Where(q => q.Key.Equals(Key)).First();
         }
 
 

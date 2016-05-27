@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/EntregaAlmacen" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.1.2:7047/DynamicsNAV/WS/TRH Liege/Page/EntregaAlmacen" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="EntregaAlmacen.wsdl" MetadataType="Wsdl" ID="082e28a5-bbbf-493c-b3df-8c5a9583e333" SourceId="1" SourceUrl="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/EntregaAlmacen" />
+    <MetadataFile FileName="EntregaAlmacen1.wsdl" MetadataType="Wsdl" ID="2084d81a-e6f6-4837-b6b3-35b5abe2d49a" SourceId="1" SourceUrl="http://192.168.1.2:7047/DynamicsNAV/WS/TRH Liege/Page/EntregaAlmacen" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -97,7 +97,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -120,7 +120,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         private bool fechaFieldSpecified;
         
-        private int cantidadField;
+        private decimal cantidadField;
         
         private bool cantidadFieldSpecified;
         
@@ -242,7 +242,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public int Cantidad {
+        public decimal Cantidad {
             get {
                 return this.cantidadField;
             }
@@ -395,7 +395,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -441,7 +441,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/entregaalmacen")]
     public enum EntregaAlmacen_Fields {

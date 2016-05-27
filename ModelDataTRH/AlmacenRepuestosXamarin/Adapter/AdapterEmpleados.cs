@@ -6,9 +6,23 @@ using Android.Widget;
 using RepositoryWebServiceTRH.EmpleadoContext;
 using Java.Lang;
 using Object = Java.Lang.Object;
+using System.Globalization;
+using System;
+using AlmacenRepuestosXamarin.Adapter;
+using System.Text;
 
 namespace AlmacenRepuestosXamarin.Adapter
 {
+    public static class ExtensionString {
+        public static string RemoveDiacritics(this string text)
+        {
+            return string.Concat(
+                text.Normalize(NormalizationForm.FormD)
+                .Where(ch => CharUnicodeInfo.GetUnicodeCategory(ch) !=
+                                              UnicodeCategory.NonSpacingMark)
+              ).Normalize(NormalizationForm.FormC);
+        }
+    }
     public class AdapterEmpleados : BaseAdapter<Empleados>, IFilterable
     {
         private List<Empleados> _originalData;
@@ -28,6 +42,8 @@ namespace AlmacenRepuestosXamarin.Adapter
         {
             // If you are using cool stuff like sections
             // remember to update the indices here!
+          
+            
             base.NotifyDataSetChanged();
         }
 
@@ -38,6 +54,7 @@ namespace AlmacenRepuestosXamarin.Adapter
 
         public Filter Filter { get; private set; }
 
+       
 
         public class EmpleadosFilter : Filter
         {
@@ -46,8 +63,9 @@ namespace AlmacenRepuestosXamarin.Adapter
             {
                 _adapter = adapter;
             }
-            
-            
+
+           
+
             protected  override FilterResults PerformFiltering(ICharSequence constraint)
             {
                 var returnObj = new FilterResults();
@@ -57,13 +75,15 @@ namespace AlmacenRepuestosXamarin.Adapter
 
                 if (constraint == null) return returnObj;
 
-                if (_adapter._originalData != null && _adapter._originalData.Any())
+                if (_adapter._originalData != null && _adapter._originalData.Any() && constraint.Length() > 0)
                 {
                     // Compare constraint to all names lowercased. 
                     // It they are contained they are added to results.
+
+                    
                     results.AddRange(
                         _adapter._originalData.Where(
-                            list => list.FullName.ToLower().Contains(constraint.ToString())));
+                            list => list.FullName.ToLower().RemoveDiacritics().Contains(constraint.ToString())));
                 }
 
                 // Nasty piece of .NET to Java wrapping, be careful with this!

@@ -24,9 +24,9 @@ namespace AlmacenRepuestosXamarin
     [Activity(Label = "AlmacenRepuestosXamarin", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/Theme.AppCompat.Light")]
     public class MainActivity : AppCompatActivity 
     {
-        
-        
-        
+
+
+        bool indeterminateVisible;
         List<Empleados> empleados=new List<Empleados>();
         Data.AccesoDatos restService = new Data.AccesoDatos();
         //ArrayAdapter adapterEmpleados;
@@ -36,27 +36,43 @@ namespace AlmacenRepuestosXamarin
 
         //private Task<bool> api;
 
-        protected override async void OnCreate(Bundle bundle)
+        protected override  void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
+          
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-           // var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+           
+            // var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SupportActionBar.SetDisplayShowHomeEnabled(true);
+            //ActionBar.Title = "Almacen de Repuestos";
             //
             //SetSupportActionBar(toolbar);
             //SupportActionBar.Title = "Almacen Repuestos";
 
             ITesseractApi api = new TesseractApi(this, AssetsDeployment.OncePerInitialization);
 
-            empleados=await getEmpleados();
+            fillListView();
+
+        }
+
+
+        private async void fillListView() {
+
+            empleados = await getEmpleados();
             ListView listViewEmpleados = (ListView)FindViewById(Resource.Id.listEmpleados);
             adaptadorEmpleados = new AdapterEmpleados(this, empleados);
             listViewEmpleados.ItemClick += OnListItemClick;
             listViewEmpleados.Adapter = adaptadorEmpleados;
+            
         }
+
+
+
+
 
         private async Task<List<Empleados>> getEmpleados()
         {
@@ -73,15 +89,18 @@ namespace AlmacenRepuestosXamarin
         //    Console.WriteLine("Clicked on " + t);
         //}
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+        public override  bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.menu, menu);
+
+
+            MenuInflater.Inflate(Resource.Menu.buscador, menu);
 
             var item = menu.FindItem(Resource.Id.action_search);
 
             var searchView = MenuItemCompat.GetActionView(item);
-            _searchView = searchView.JavaCast<Android.Support.V7.Widget.SearchView> ();
+            _searchView = searchView.JavaCast<Android.Support.V7.Widget.SearchView>();
 
+            
             _searchView.QueryTextChange += (s, e) => adaptadorEmpleados.Filter.InvokeFilter(e.NewText);
 
             _searchView.QueryTextSubmit += (s, e) =>
@@ -91,8 +110,8 @@ namespace AlmacenRepuestosXamarin
                 e.Handled = true;
             };
 
-            MenuItemCompat.SetOnActionExpandListener(item, new SearchViewExpandListener(adaptadorEmpleados));
-
+            //MenuItemCompat.SetOnActionExpandListener(item, new SearchViewExpandListener(adaptadorEmpleados));
+            
             return base.OnCreateOptionsMenu(menu);
         }
 
@@ -101,6 +120,7 @@ namespace AlmacenRepuestosXamarin
         {
             private readonly IFilterable _adapter;
 
+            
             public SearchViewExpandListener(IFilterable adapter)
             {
                 _adapter = adapter;
@@ -108,7 +128,8 @@ namespace AlmacenRepuestosXamarin
 
             public bool OnMenuItemActionCollapse(IMenuItem item)
             {
-                _adapter.Filter.InvokeFilter("");
+                
+                //_adapter.Filter.InvokeFilter("");
                 return true;
             }
 
@@ -154,9 +175,23 @@ namespace AlmacenRepuestosXamarin
         void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
 
-            ManagerRepuestos.addEmpleado(empleados[e.Position]);
+            //  
+
+            //var listView = (Android.Widget.AbsListView)sender;
+            var listView = (Android.Widget.ListView)e.Parent;
+            var adapter = (AdapterEmpleados)listView.Adapter;
+
+          
+
             
-            this.RunOnUiThread(() => Toast.MakeText(this, empleados[e.Position].FullName, ToastLength.Short).Show());
+            //var lista = new Empleados();
+
+            ManagerRepuestos.addEmpleado(adapter.list[e.Position]);
+            
+            //var l = listView.Adapter.GetItem(e.Position).JavaCast<Empleados>();
+            
+
+            this.RunOnUiThread(() => Toast.MakeText(this, adapter.list[e.Position].FullName, ToastLength.Short).Show());
 
             var activityRepuestosEPIS = new Intent(this, typeof(ListEPISRepuestos));
           

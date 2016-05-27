@@ -10,14 +10,16 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AlmacenRepuestosXamarin.Model;
+using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
+
 namespace AlmacenRepuestosXamarin.Adapter
 {
-    public class AdapterRepuestos : BaseAdapter<Repuesto>
+    public class AdapterRepuestos : BaseAdapter<EntregaAlmacen>
     {
         Activity context;
-        List<Repuesto> list;
+        List<EntregaAlmacen> list;
 
-        public AdapterRepuestos(Activity _context, List<Repuesto> _list)
+        public AdapterRepuestos(Activity _context, List<EntregaAlmacen> _list)
             : base()
         {
             this.context = _context;
@@ -34,7 +36,7 @@ namespace AlmacenRepuestosXamarin.Adapter
             return position;
         }
 
-        public override Repuesto this[int index]
+        public override EntregaAlmacen this[int index]
         {
             get { return list[index]; }
         }
@@ -48,10 +50,10 @@ namespace AlmacenRepuestosXamarin.Adapter
             if (view == null)
                 view = context.LayoutInflater.Inflate(Resource.Layout.listRowRepuestos, parent, false);
 
-            Repuesto item = this[position];
-            view.FindViewById<TextView>(Resource.Id.idRepuesto).Text = item.idRepuesto.ToString();
-            view.FindViewById<TextView>(Resource.Id.Description).Text = item.description;
-            view.FindViewById<TextView>(Resource.Id.Cantidad).Text = item.quantity.ToString("N0");
+            EntregaAlmacen item = this[position];
+            view.FindViewById<TextView>(Resource.Id.idRepuesto).Text = item.Cod_Producto.ToString();
+            view.FindViewById<TextView>(Resource.Id.Description).Text = item.Descripcion_Producto;
+            view.FindViewById<TextView>(Resource.Id.Cantidad).Text = item.Cantidad.ToString("N0");
 
             //using (var imageView = view.FindViewById<ImageView>(Resource.Id.Thumbnail))
             //{

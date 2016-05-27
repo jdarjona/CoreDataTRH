@@ -14,6 +14,8 @@ using static Android.Widget.AdapterView;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using AlmacenRepuestosXamarin.Model;
 using AlmacenRepuestosXamarin.Adapter;
+using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
+
 namespace AlmacenRepuestosXamarin
 {
     [Activity(Label = "detalleRepuestoActivity")]
@@ -37,7 +39,7 @@ namespace AlmacenRepuestosXamarin
         private Spinner spinnerDestino;
         private Spinner spinnerMaquina;
         private int id;
-        private Repuesto repuesto;
+        private EntregaAlmacen repuesto;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -47,14 +49,13 @@ namespace AlmacenRepuestosXamarin
             // Create your application here
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Almacen Repuestos";
 
+            string key = Intent.GetStringExtra("idEntregaAlmacen");
+            repuesto = ManagerRepuestos.getRepuestoByKey(key);
 
+            SupportActionBar.Title = repuesto.Cod_Producto;
 
-            int.TryParse(Intent.GetStringExtra("idRepuesto"), out id);
-
-            repuesto = ManagerRepuestos.getRepuestoById(id);
-
+            
             this.RunOnUiThread(() => Toast.MakeText(this, id.ToString(), ToastLength.Short).Show());
 
             spinnerDestino = (Spinner)FindViewById(Resource.Id.spinnerDestino);
@@ -92,7 +93,7 @@ namespace AlmacenRepuestosXamarin
                 {
                     int cantidad;
                     int.TryParse(edittext.Text, out cantidad);
-                    repuesto.quantity = cantidad;
+                    repuesto.Cantidad = cantidad;
                     Toast.MakeText(this, edittext.Text, ToastLength.Short).Show();
                     e.Handled = true;
                 }
@@ -116,7 +117,7 @@ namespace AlmacenRepuestosXamarin
 
 
             this.RunOnUiThread(() => Toast.MakeText(this, spinner.SelectedItem.ToString(), ToastLength.Short).Show());
-            repuesto.destino = spinner.SelectedItem.ToString();
+            //repuesto.destino = spinner.SelectedItem.ToString();
 
             this.spinnerMaquina.Visibility = ViewStates.Invisible;
             if (spinner.SelectedItem.ToString() == DestinosEnum.Máquina.ToString())
@@ -129,7 +130,7 @@ namespace AlmacenRepuestosXamarin
         private void spinnerMaquina_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e) {
 
             Spinner spinner = (Spinner)sender;
-            repuesto.maquina=spinner.SelectedItem.ToString();
+           // repuesto.maquina=spinner.SelectedItem.ToString();
 
         }
        

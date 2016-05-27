@@ -21,7 +21,7 @@ namespace AlmacenRepuestosXamarin.Data
     public  class AccesoDatos
     {
 
-        private const string webBase = @"http://intranet.trh-be.com/WSTRH/";
+        private const string webBase = @"http://192.168.1.2/WSTRH/";
         private  HttpClient client = new HttpClient(new NativeMessageHandler());
 
 
@@ -72,7 +72,7 @@ namespace AlmacenRepuestosXamarin.Data
             {
                 
                 //var json = JsonConvert.SerializeObject(item);
-                var contentPost = new StringContent(null, Encoding.UTF8, "application/json");
+                var contentPost = new StringContent(string.Empty, Encoding.UTF8, "application/json");
                 string url = string.Format(@"api/EntregaAlmacen?codRepusto={0}&codEmpleado={1}", codRepuesto, codEmpleado);
                 var response = await client.PostAsync(url, contentPost);
                 if (response.IsSuccessStatusCode)
@@ -99,7 +99,7 @@ namespace AlmacenRepuestosXamarin.Data
             {
                 var contentPost = new StringContent(null, Encoding.UTF8, "application/json");
                 string url = string.Format(@"api/EntregaAlmacen?codEmpleado={0}",  codEmpleado);
-                var response = await client.PostAsync(url, contentPost);
+                var response = await client.PutAsync(url, contentPost);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

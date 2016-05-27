@@ -10,7 +10,7 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="Inventory" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="_x003C_Descripcion_Producto_x003E_" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Fecha" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Unit_of_Measure_Code" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="No_Documento" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Comentario" type="xsd:string" />
@@ -392,7 +392,7 @@
   </binding>
   <service name="EntregaAlmacen_Service">
     <port name="EntregaAlmacen_Port" binding="tns:EntregaAlmacen_Binding">
-      <address location="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Page/EntregaAlmacen" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://192.168.1.2:7047/DynamicsNAV/WS/TRH%20Liege/Page/EntregaAlmacen" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>
