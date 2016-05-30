@@ -27,6 +27,29 @@ namespace AlmacenRepuestosXamarin
 		public static void UpdateIdValues()
 		{
 			global::ModernHttpClient.Resource.String.library_name = global::AlmacenRepuestosXamarin.Resource.String.library_name;
+			global::com.refractored.fab.Resource.Attribute.fab_colorDisabled = global::AlmacenRepuestosXamarin.Resource.Attribute.fab_colorDisabled;
+			global::com.refractored.fab.Resource.Attribute.fab_colorNormal = global::AlmacenRepuestosXamarin.Resource.Attribute.fab_colorNormal;
+			global::com.refractored.fab.Resource.Attribute.fab_colorPressed = global::AlmacenRepuestosXamarin.Resource.Attribute.fab_colorPressed;
+			global::com.refractored.fab.Resource.Attribute.fab_colorRipple = global::AlmacenRepuestosXamarin.Resource.Attribute.fab_colorRipple;
+			global::com.refractored.fab.Resource.Attribute.fab_shadow = global::AlmacenRepuestosXamarin.Resource.Attribute.fab_shadow;
+			global::com.refractored.fab.Resource.Attribute.fab_size = global::AlmacenRepuestosXamarin.Resource.Attribute.fab_size;
+			global::com.refractored.fab.Resource.Color.fab_material_blue_500 = global::AlmacenRepuestosXamarin.Resource.Color.fab_material_blue_500;
+			global::com.refractored.fab.Resource.Dimension.fab_elevation_lollipop = global::AlmacenRepuestosXamarin.Resource.Dimension.fab_elevation_lollipop;
+			global::com.refractored.fab.Resource.Dimension.fab_scroll_threshold = global::AlmacenRepuestosXamarin.Resource.Dimension.fab_scroll_threshold;
+			global::com.refractored.fab.Resource.Dimension.fab_shadow_size = global::AlmacenRepuestosXamarin.Resource.Dimension.fab_shadow_size;
+			global::com.refractored.fab.Resource.Dimension.fab_size_mini = global::AlmacenRepuestosXamarin.Resource.Dimension.fab_size_mini;
+			global::com.refractored.fab.Resource.Dimension.fab_size_normal = global::AlmacenRepuestosXamarin.Resource.Dimension.fab_size_normal;
+			global::com.refractored.fab.Resource.Drawable.fab_shadow = global::AlmacenRepuestosXamarin.Resource.Drawable.fab_shadow;
+			global::com.refractored.fab.Resource.Drawable.fab_shadow_mini = global::AlmacenRepuestosXamarin.Resource.Drawable.fab_shadow_mini;
+			global::com.refractored.fab.Resource.Id.mini = global::AlmacenRepuestosXamarin.Resource.Id.mini;
+			global::com.refractored.fab.Resource.Id.normal = global::AlmacenRepuestosXamarin.Resource.Id.normal;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton = global::AlmacenRepuestosXamarin.Resource.Styleable.FloatingActionButton;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorDisabled = global::AlmacenRepuestosXamarin.Resource.Styleable.FloatingActionButton_fab_colorDisabled;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorNormal = global::AlmacenRepuestosXamarin.Resource.Styleable.FloatingActionButton_fab_colorNormal;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorPressed = global::AlmacenRepuestosXamarin.Resource.Styleable.FloatingActionButton_fab_colorPressed;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorRipple = global::AlmacenRepuestosXamarin.Resource.Styleable.FloatingActionButton_fab_colorRipple;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_shadow = global::AlmacenRepuestosXamarin.Resource.Styleable.FloatingActionButton_fab_shadow;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_size = global::AlmacenRepuestosXamarin.Resource.Styleable.FloatingActionButton_fab_size;
 			global::Tesseract.Droid.Resource.String.ApplicationName = global::AlmacenRepuestosXamarin.Resource.String.ApplicationName;
 			global::Tesseract.Droid.Resource.String.Hello = global::AlmacenRepuestosXamarin.Resource.String.Hello;
 			global::ZXing.Mobile.Resource.Id.contentFrame = global::AlmacenRepuestosXamarin.Resource.Id.contentFrame;
@@ -392,6 +415,24 @@ namespace AlmacenRepuestosXamarin
 			
 			// aapt resource value: 0x7f01001e
 			public const int expandActivityOverflowButtonDrawable = 2130771998;
+			
+			// aapt resource value: 0x7f0100d3
+			public const int fab_colorDisabled = 2130772179;
+			
+			// aapt resource value: 0x7f0100d2
+			public const int fab_colorNormal = 2130772178;
+			
+			// aapt resource value: 0x7f0100d1
+			public const int fab_colorPressed = 2130772177;
+			
+			// aapt resource value: 0x7f0100d4
+			public const int fab_colorRipple = 2130772180;
+			
+			// aapt resource value: 0x7f0100d5
+			public const int fab_shadow = 2130772181;
+			
+			// aapt resource value: 0x7f0100d6
+			public const int fab_size = 2130772182;
 			
 			// aapt resource value: 0x7f01009a
 			public const int gapBetweenBars = 2130772122;
@@ -776,29 +817,29 @@ namespace AlmacenRepuestosXamarin
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a003a
-			public const int abc_background_cache_hint_selector_material_dark = 2131361850;
-			
 			// aapt resource value: 0x7f0a003b
-			public const int abc_background_cache_hint_selector_material_light = 2131361851;
+			public const int abc_background_cache_hint_selector_material_dark = 2131361851;
+			
+			// aapt resource value: 0x7f0a003c
+			public const int abc_background_cache_hint_selector_material_light = 2131361852;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int abc_input_method_navigation_guard = 2131361792;
 			
-			// aapt resource value: 0x7f0a003c
-			public const int abc_primary_text_disable_only_material_dark = 2131361852;
-			
 			// aapt resource value: 0x7f0a003d
-			public const int abc_primary_text_disable_only_material_light = 2131361853;
+			public const int abc_primary_text_disable_only_material_dark = 2131361853;
 			
 			// aapt resource value: 0x7f0a003e
-			public const int abc_primary_text_material_dark = 2131361854;
+			public const int abc_primary_text_disable_only_material_light = 2131361854;
 			
 			// aapt resource value: 0x7f0a003f
-			public const int abc_primary_text_material_light = 2131361855;
+			public const int abc_primary_text_material_dark = 2131361855;
 			
 			// aapt resource value: 0x7f0a0040
-			public const int abc_search_url_text = 2131361856;
+			public const int abc_primary_text_material_light = 2131361856;
+			
+			// aapt resource value: 0x7f0a0041
+			public const int abc_search_url_text = 2131361857;
 			
 			// aapt resource value: 0x7f0a0001
 			public const int abc_search_url_text_normal = 2131361793;
@@ -809,11 +850,11 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0a0003
 			public const int abc_search_url_text_selected = 2131361795;
 			
-			// aapt resource value: 0x7f0a0041
-			public const int abc_secondary_text_material_dark = 2131361857;
-			
 			// aapt resource value: 0x7f0a0042
-			public const int abc_secondary_text_material_light = 2131361858;
+			public const int abc_secondary_text_material_dark = 2131361858;
+			
+			// aapt resource value: 0x7f0a0043
+			public const int abc_secondary_text_material_light = 2131361859;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int accent_material_dark = 2131361796;
@@ -868,6 +909,9 @@ namespace AlmacenRepuestosXamarin
 			
 			// aapt resource value: 0x7f0a0015
 			public const int dim_foreground_material_light = 2131361813;
+			
+			// aapt resource value: 0x7f0a003a
+			public const int fab_material_blue_500 = 2131361850;
 			
 			// aapt resource value: 0x7f0a0016
 			public const int foreground_material_dark = 2131361814;
@@ -971,11 +1015,11 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0a0037
 			public const int switch_thumb_disabled_material_light = 2131361847;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int switch_thumb_material_dark = 2131361859;
-			
 			// aapt resource value: 0x7f0a0044
-			public const int switch_thumb_material_light = 2131361860;
+			public const int switch_thumb_material_dark = 2131361860;
+			
+			// aapt resource value: 0x7f0a0045
+			public const int switch_thumb_material_light = 2131361861;
 			
 			// aapt resource value: 0x7f0a0038
 			public const int switch_thumb_normal_material_dark = 2131361848;
@@ -1202,6 +1246,21 @@ namespace AlmacenRepuestosXamarin
 			
 			// aapt resource value: 0x7f070044
 			public const int disabled_alpha_material_light = 2131165252;
+			
+			// aapt resource value: 0x7f07004f
+			public const int fab_elevation_lollipop = 2131165263;
+			
+			// aapt resource value: 0x7f07004e
+			public const int fab_scroll_threshold = 2131165262;
+			
+			// aapt resource value: 0x7f07004d
+			public const int fab_shadow_size = 2131165261;
+			
+			// aapt resource value: 0x7f07004c
+			public const int fab_size_mini = 2131165260;
+			
+			// aapt resource value: 0x7f07004b
+			public const int fab_size_normal = 2131165259;
 			
 			// aapt resource value: 0x7f070045
 			public const int highlight_alpha_material_colored = 2131165253;
@@ -1457,13 +1516,31 @@ namespace AlmacenRepuestosXamarin
 			public const int abc_textfield_search_material = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int ic_tab_white = 2130837578;
+			public const int botonOK = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int Icon = 2130837579;
+			public const int descarga = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int notification_template_icon_bg = 2130837580;
+			public const int fab_128x128 = 2130837580;
+			
+			// aapt resource value: 0x7f02004d
+			public const int fab_512x512 = 2130837581;
+			
+			// aapt resource value: 0x7f02004e
+			public const int fab_shadow = 2130837582;
+			
+			// aapt resource value: 0x7f02004f
+			public const int fab_shadow_mini = 2130837583;
+			
+			// aapt resource value: 0x7f020050
+			public const int ic_tab_white = 2130837584;
+			
+			// aapt resource value: 0x7f020051
+			public const int Icon = 2130837585;
+			
+			// aapt resource value: 0x7f020052
+			public const int notification_template_icon_bg = 2130837586;
 			
 			static Drawable()
 			{
@@ -1478,47 +1555,47 @@ namespace AlmacenRepuestosXamarin
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b0072
-			public const int ButtonScan = 2131427442;
+			// aapt resource value: 0x7f0b0074
+			public const int ButtonScan = 2131427444;
 			
-			// aapt resource value: 0x7f0b005d
-			public const int ButtonScanMain = 2131427421;
+			// aapt resource value: 0x7f0b005f
+			public const int ButtonScanMain = 2131427423;
 			
-			// aapt resource value: 0x7f0b005a
-			public const int Cantidad = 2131427418;
+			// aapt resource value: 0x7f0b005c
+			public const int Cantidad = 2131427420;
 			
-			// aapt resource value: 0x7f0b0059
-			public const int Description = 2131427417;
+			// aapt resource value: 0x7f0b005b
+			public const int Description = 2131427419;
 			
-			// aapt resource value: 0x7f0b005e
-			public const int action0 = 2131427422;
+			// aapt resource value: 0x7f0b0060
+			public const int action0 = 2131427424;
 			
-			// aapt resource value: 0x7f0b0041
-			public const int action_bar = 2131427393;
+			// aapt resource value: 0x7f0b0042
+			public const int action_bar = 2131427394;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int action_bar_activity_content = 2131427328;
 			
-			// aapt resource value: 0x7f0b0040
-			public const int action_bar_container = 2131427392;
+			// aapt resource value: 0x7f0b0041
+			public const int action_bar_container = 2131427393;
 			
-			// aapt resource value: 0x7f0b003c
-			public const int action_bar_root = 2131427388;
+			// aapt resource value: 0x7f0b003d
+			public const int action_bar_root = 2131427389;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int action_bar_spinner = 2131427329;
 			
+			// aapt resource value: 0x7f0b0023
+			public const int action_bar_subtitle = 2131427363;
+			
 			// aapt resource value: 0x7f0b0022
-			public const int action_bar_subtitle = 2131427362;
+			public const int action_bar_title = 2131427362;
 			
-			// aapt resource value: 0x7f0b0021
-			public const int action_bar_title = 2131427361;
+			// aapt resource value: 0x7f0b0043
+			public const int action_context_bar = 2131427395;
 			
-			// aapt resource value: 0x7f0b0042
-			public const int action_context_bar = 2131427394;
-			
-			// aapt resource value: 0x7f0b0062
-			public const int action_divider = 2131427426;
+			// aapt resource value: 0x7f0b0064
+			public const int action_divider = 2131427428;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -1526,23 +1603,23 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0003
 			public const int action_menu_presenter = 2131427331;
 			
+			// aapt resource value: 0x7f0b003f
+			public const int action_mode_bar = 2131427391;
+			
 			// aapt resource value: 0x7f0b003e
-			public const int action_mode_bar = 2131427390;
-			
-			// aapt resource value: 0x7f0b003d
-			public const int action_mode_bar_stub = 2131427389;
-			
-			// aapt resource value: 0x7f0b0023
-			public const int action_mode_close_button = 2131427363;
-			
-			// aapt resource value: 0x7f0b0074
-			public const int action_search = 2131427444;
+			public const int action_mode_bar_stub = 2131427390;
 			
 			// aapt resource value: 0x7f0b0024
-			public const int activity_chooser_view_content = 2131427364;
+			public const int action_mode_close_button = 2131427364;
 			
-			// aapt resource value: 0x7f0b0030
-			public const int alertTitle = 2131427376;
+			// aapt resource value: 0x7f0b0076
+			public const int action_search = 2131427446;
+			
+			// aapt resource value: 0x7f0b0025
+			public const int activity_chooser_view_content = 2131427365;
+			
+			// aapt resource value: 0x7f0b0031
+			public const int alertTitle = 2131427377;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int always = 2131427356;
@@ -1550,65 +1627,68 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0019
 			public const int beginning = 2131427353;
 			
-			// aapt resource value: 0x7f0b0055
-			public const int btoAceptar = 2131427413;
+			// aapt resource value: 0x7f0b0056
+			public const int btoAceptar = 2131427414;
 			
-			// aapt resource value: 0x7f0b002b
-			public const int buttonPanel = 2131427371;
+			// aapt resource value: 0x7f0b002c
+			public const int buttonPanel = 2131427372;
 			
-			// aapt resource value: 0x7f0b0070
-			public const int buttonZxingFlash = 2131427440;
+			// aapt resource value: 0x7f0b0072
+			public const int buttonZxingFlash = 2131427442;
 			
-			// aapt resource value: 0x7f0b005f
-			public const int cancel_action = 2131427423;
+			// aapt resource value: 0x7f0b0061
+			public const int cancel_action = 2131427425;
 			
-			// aapt resource value: 0x7f0b0039
-			public const int checkbox = 2131427385;
+			// aapt resource value: 0x7f0b003a
+			public const int checkbox = 2131427386;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int chronometer = 2131427429;
+			// aapt resource value: 0x7f0b0067
+			public const int chronometer = 2131427431;
 			
 			// aapt resource value: 0x7f0b001d
 			public const int collapseActionView = 2131427357;
 			
-			// aapt resource value: 0x7f0b0073
-			public const int contentFrame = 2131427443;
+			// aapt resource value: 0x7f0b0075
+			public const int contentFrame = 2131427445;
 			
-			// aapt resource value: 0x7f0b0031
-			public const int contentPanel = 2131427377;
+			// aapt resource value: 0x7f0b0032
+			public const int contentPanel = 2131427378;
+			
+			// aapt resource value: 0x7f0b0038
+			public const int custom = 2131427384;
 			
 			// aapt resource value: 0x7f0b0037
-			public const int custom = 2131427383;
+			public const int customPanel = 2131427383;
 			
-			// aapt resource value: 0x7f0b0036
-			public const int customPanel = 2131427382;
+			// aapt resource value: 0x7f0b0040
+			public const int decor_content_parent = 2131427392;
 			
-			// aapt resource value: 0x7f0b003f
-			public const int decor_content_parent = 2131427391;
-			
-			// aapt resource value: 0x7f0b0027
-			public const int default_activity_button = 2131427367;
+			// aapt resource value: 0x7f0b0028
+			public const int default_activity_button = 2131427368;
 			
 			// aapt resource value: 0x7f0b000c
 			public const int disableHome = 2131427340;
 			
-			// aapt resource value: 0x7f0b0043
-			public const int edit_query = 2131427395;
+			// aapt resource value: 0x7f0b0044
+			public const int edit_query = 2131427396;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int end = 2131427354;
 			
-			// aapt resource value: 0x7f0b006a
-			public const int end_padder = 2131427434;
+			// aapt resource value: 0x7f0b006c
+			public const int end_padder = 2131427436;
 			
-			// aapt resource value: 0x7f0b0025
-			public const int expand_activities_button = 2131427365;
+			// aapt resource value: 0x7f0b0026
+			public const int expand_activities_button = 2131427366;
 			
-			// aapt resource value: 0x7f0b0038
-			public const int expanded_menu = 2131427384;
+			// aapt resource value: 0x7f0b0039
+			public const int expanded_menu = 2131427385;
 			
-			// aapt resource value: 0x7f0b005c
-			public const int fragmentContainer = 2131427420;
+			// aapt resource value: 0x7f0b0059
+			public const int floating = 2131427417;
+			
+			// aapt resource value: 0x7f0b005e
+			public const int fragmentContainer = 2131427422;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int home = 2131427332;
@@ -1616,59 +1696,62 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b000d
 			public const int homeAsUp = 2131427341;
 			
-			// aapt resource value: 0x7f0b0029
-			public const int icon = 2131427369;
+			// aapt resource value: 0x7f0b002a
+			public const int icon = 2131427370;
 			
-			// aapt resource value: 0x7f0b0058
-			public const int idRepuesto = 2131427416;
+			// aapt resource value: 0x7f0b005a
+			public const int idRepuesto = 2131427418;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int ifRoom = 2131427358;
 			
-			// aapt resource value: 0x7f0b0026
-			public const int image = 2131427366;
-			
-			// aapt resource value: 0x7f0b0069
-			public const int info = 2131427433;
-			
-			// aapt resource value: 0x7f0b0063
-			public const int line1 = 2131427427;
-			
-			// aapt resource value: 0x7f0b0067
-			public const int line3 = 2131427431;
+			// aapt resource value: 0x7f0b0027
+			public const int image = 2131427367;
 			
 			// aapt resource value: 0x7f0b006b
-			public const int linearLayout1 = 2131427435;
+			public const int info = 2131427435;
 			
-			// aapt resource value: 0x7f0b006e
-			public const int linearLayout2 = 2131427438;
+			// aapt resource value: 0x7f0b0065
+			public const int line1 = 2131427429;
 			
-			// aapt resource value: 0x7f0b005b
-			public const int listEmpleados = 2131427419;
+			// aapt resource value: 0x7f0b0069
+			public const int line3 = 2131427433;
+			
+			// aapt resource value: 0x7f0b006d
+			public const int linearLayout1 = 2131427437;
+			
+			// aapt resource value: 0x7f0b0070
+			public const int linearLayout2 = 2131427440;
+			
+			// aapt resource value: 0x7f0b005d
+			public const int listEmpleados = 2131427421;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
 			
+			// aapt resource value: 0x7f0b0058
+			public const int listProductos = 2131427416;
+			
+			// aapt resource value: 0x7f0b0029
+			public const int list_item = 2131427369;
+			
 			// aapt resource value: 0x7f0b0057
-			public const int listProductos = 2131427415;
+			public const int main_content = 2131427415;
 			
-			// aapt resource value: 0x7f0b0028
-			public const int list_item = 2131427368;
+			// aapt resource value: 0x7f0b0063
+			public const int media_actions = 2131427427;
 			
-			// aapt resource value: 0x7f0b0056
-			public const int main_content = 2131427414;
+			// aapt resource value: 0x7f0b0078
+			public const int menu_empleados = 2131427448;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int media_actions = 2131427425;
-			
-			// aapt resource value: 0x7f0b0075
-			public const int menu_empleados = 2131427445;
-			
-			// aapt resource value: 0x7f0b0076
-			public const int menu_scan = 2131427446;
+			// aapt resource value: 0x7f0b0079
+			public const int menu_scan = 2131427449;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int middle = 2131427355;
+			
+			// aapt resource value: 0x7f0b0021
+			public const int mini = 2131427361;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int multiply = 2131427348;
@@ -1682,8 +1765,8 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b000a
 			public const int normal = 2131427338;
 			
-			// aapt resource value: 0x7f0b002d
-			public const int parentPanel = 2131427373;
+			// aapt resource value: 0x7f0b002e
+			public const int parentPanel = 2131427374;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int progress_circular = 2131427333;
@@ -1691,56 +1774,59 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0006
 			public const int progress_horizontal = 2131427334;
 			
-			// aapt resource value: 0x7f0b003b
-			public const int radio = 2131427387;
+			// aapt resource value: 0x7f0b003c
+			public const int radio = 2131427388;
+			
+			// aapt resource value: 0x7f0b0077
+			public const int registrar = 2131427447;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int screen = 2131427349;
 			
-			// aapt resource value: 0x7f0b0035
-			public const int scrollIndicatorDown = 2131427381;
-			
-			// aapt resource value: 0x7f0b0032
-			public const int scrollIndicatorUp = 2131427378;
+			// aapt resource value: 0x7f0b0036
+			public const int scrollIndicatorDown = 2131427382;
 			
 			// aapt resource value: 0x7f0b0033
-			public const int scrollView = 2131427379;
+			public const int scrollIndicatorUp = 2131427379;
 			
-			// aapt resource value: 0x7f0b0045
-			public const int search_badge = 2131427397;
-			
-			// aapt resource value: 0x7f0b0044
-			public const int search_bar = 2131427396;
+			// aapt resource value: 0x7f0b0034
+			public const int scrollView = 2131427380;
 			
 			// aapt resource value: 0x7f0b0046
-			public const int search_button = 2131427398;
+			public const int search_badge = 2131427398;
 			
-			// aapt resource value: 0x7f0b004b
-			public const int search_close_btn = 2131427403;
+			// aapt resource value: 0x7f0b0045
+			public const int search_bar = 2131427397;
 			
 			// aapt resource value: 0x7f0b0047
-			public const int search_edit_frame = 2131427399;
+			public const int search_button = 2131427399;
 			
-			// aapt resource value: 0x7f0b004d
-			public const int search_go_btn = 2131427405;
+			// aapt resource value: 0x7f0b004c
+			public const int search_close_btn = 2131427404;
 			
 			// aapt resource value: 0x7f0b0048
-			public const int search_mag_icon = 2131427400;
-			
-			// aapt resource value: 0x7f0b0049
-			public const int search_plate = 2131427401;
-			
-			// aapt resource value: 0x7f0b004a
-			public const int search_src_text = 2131427402;
+			public const int search_edit_frame = 2131427400;
 			
 			// aapt resource value: 0x7f0b004e
-			public const int search_voice_btn = 2131427406;
+			public const int search_go_btn = 2131427406;
+			
+			// aapt resource value: 0x7f0b0049
+			public const int search_mag_icon = 2131427401;
+			
+			// aapt resource value: 0x7f0b004a
+			public const int search_plate = 2131427402;
+			
+			// aapt resource value: 0x7f0b004b
+			public const int search_src_text = 2131427403;
 			
 			// aapt resource value: 0x7f0b004f
-			public const int select_dialog_listview = 2131427407;
+			public const int search_voice_btn = 2131427407;
 			
-			// aapt resource value: 0x7f0b003a
-			public const int shortcut = 2131427386;
+			// aapt resource value: 0x7f0b0050
+			public const int select_dialog_listview = 2131427408;
+			
+			// aapt resource value: 0x7f0b003b
+			public const int shortcut = 2131427387;
 			
 			// aapt resource value: 0x7f0b000f
 			public const int showCustom = 2131427343;
@@ -1751,14 +1837,14 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0011
 			public const int showTitle = 2131427345;
 			
-			// aapt resource value: 0x7f0b002c
-			public const int spacer = 2131427372;
-			
-			// aapt resource value: 0x7f0b0053
-			public const int spinnerDestino = 2131427411;
+			// aapt resource value: 0x7f0b002d
+			public const int spacer = 2131427373;
 			
 			// aapt resource value: 0x7f0b0054
-			public const int spinnerMaquina = 2131427412;
+			public const int spinnerDestino = 2131427412;
+			
+			// aapt resource value: 0x7f0b0055
+			public const int spinnerMaquina = 2131427413;
 			
 			// aapt resource value: 0x7f0b0007
 			public const int split_action_bar = 2131427335;
@@ -1772,56 +1858,56 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0018
 			public const int src_over = 2131427352;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int status_bar_latest_event_content = 2131427424;
+			// aapt resource value: 0x7f0b0062
+			public const int status_bar_latest_event_content = 2131427426;
 			
-			// aapt resource value: 0x7f0b004c
-			public const int submit_area = 2131427404;
+			// aapt resource value: 0x7f0b004d
+			public const int submit_area = 2131427405;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int tabMode = 2131427339;
 			
-			// aapt resource value: 0x7f0b0068
-			public const int text = 2131427432;
+			// aapt resource value: 0x7f0b006a
+			public const int text = 2131427434;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int text2 = 2131427430;
+			// aapt resource value: 0x7f0b0068
+			public const int text2 = 2131427432;
+			
+			// aapt resource value: 0x7f0b0053
+			public const int textCantidad = 2131427411;
 			
 			// aapt resource value: 0x7f0b0052
-			public const int textCantidad = 2131427410;
+			public const int textDescription = 2131427410;
 			
-			// aapt resource value: 0x7f0b0051
-			public const int textDescription = 2131427409;
+			// aapt resource value: 0x7f0b0035
+			public const int textSpacerNoButtons = 2131427381;
 			
-			// aapt resource value: 0x7f0b0034
-			public const int textSpacerNoButtons = 2131427380;
-			
-			// aapt resource value: 0x7f0b006c
-			public const int textView1 = 2131427436;
-			
-			// aapt resource value: 0x7f0b006d
-			public const int textView2 = 2131427437;
+			// aapt resource value: 0x7f0b006e
+			public const int textView1 = 2131427438;
 			
 			// aapt resource value: 0x7f0b006f
-			public const int textView3 = 2131427439;
+			public const int textView2 = 2131427439;
 			
 			// aapt resource value: 0x7f0b0071
-			public const int textoSpinner = 2131427441;
+			public const int textView3 = 2131427441;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int time = 2131427428;
+			// aapt resource value: 0x7f0b0073
+			public const int textoSpinner = 2131427443;
 			
-			// aapt resource value: 0x7f0b002a
-			public const int title = 2131427370;
+			// aapt resource value: 0x7f0b0066
+			public const int time = 2131427430;
+			
+			// aapt resource value: 0x7f0b002b
+			public const int title = 2131427371;
+			
+			// aapt resource value: 0x7f0b0030
+			public const int title_template = 2131427376;
+			
+			// aapt resource value: 0x7f0b0051
+			public const int toolbar = 2131427409;
 			
 			// aapt resource value: 0x7f0b002f
-			public const int title_template = 2131427375;
-			
-			// aapt resource value: 0x7f0b0050
-			public const int toolbar = 2131427408;
-			
-			// aapt resource value: 0x7f0b002e
-			public const int topPanel = 2131427374;
+			public const int topPanel = 2131427375;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int up = 2131427336;
@@ -3813,6 +3899,32 @@ namespace AlmacenRepuestosXamarin
 			
 			// aapt resource value: 7
 			public const int DrawerArrowToggle_thickness = 7;
+			
+			public static int[] FloatingActionButton = new int[] {
+					2130772177,
+					2130772178,
+					2130772179,
+					2130772180,
+					2130772181,
+					2130772182};
+			
+			// aapt resource value: 2
+			public const int FloatingActionButton_fab_colorDisabled = 2;
+			
+			// aapt resource value: 1
+			public const int FloatingActionButton_fab_colorNormal = 1;
+			
+			// aapt resource value: 0
+			public const int FloatingActionButton_fab_colorPressed = 0;
+			
+			// aapt resource value: 3
+			public const int FloatingActionButton_fab_colorRipple = 3;
+			
+			// aapt resource value: 4
+			public const int FloatingActionButton_fab_shadow = 4;
+			
+			// aapt resource value: 5
+			public const int FloatingActionButton_fab_size = 5;
 			
 			public static int[] LinearLayoutCompat = new int[] {
 					16842927,

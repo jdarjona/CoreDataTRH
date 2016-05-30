@@ -21,7 +21,7 @@ using AlmacenRepuestosXamarin.Model;
 
 namespace AlmacenRepuestosXamarin
 {
-    [Activity(Label = "AlmacenRepuestosXamarin", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/Theme.AppCompat.Light")]
+    [Activity(Label = "Almacen Repuestos", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/Theme.AppCompat.Light")]
     public class MainActivity : AppCompatActivity 
     {
 
@@ -78,12 +78,6 @@ namespace AlmacenRepuestosXamarin
 
         }
 
-        //protected override void OnListItemClick(ListView l, View v, int position, long id)
-        //{
-        //    var t = items[position];
-        //    Android.Widget.Toast.MakeText(this, t, Android.Widget.ToastLength.Short).Show();
-        //    Console.WriteLine("Clicked on " + t);
-        //}
 
         public override  bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -135,38 +129,6 @@ namespace AlmacenRepuestosXamarin
             }
         }
 
-        //public override  bool OnOptionsItemSelected(IMenuItem item)
-        //{
-        //    //Toast.MakeText(this, "Top ActionBar pressed: " + item.TitleFormatted, ToastLength.Short).Show();
-
-        //    //switch (item.ItemId)
-        //    //{
-        //    //    case Resource.Id.menu_scan:
-
-        //    //        // var code=launchScaner();
-                    
-        //    //        return true;
-        //    //        break;
-
-        //    //    default:
-
-        //    //        return base.OnOptionsItemSelected(item);
-        //    //        break;
-        //    //}
-
-        //}
-
-
-        //private async Task launchScaner()
-        //{
-
-
-          
-
-        //    //this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
-        //}
-
-
 
         void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
@@ -204,31 +166,6 @@ namespace AlmacenRepuestosXamarin
         {
             throw new NotImplementedException();
         }
-
-
-
-        //void AddTab(string tabText, int iconResourceId, Fragment view)
-        //{
-        //    var tab = this.ActionBar.NewTab();
-        //    tab.SetText(tabText);
-        //    tab.SetIcon(Resource.Drawable.ic_tab_white);
-
-        //    // must set event handler before adding tab
-        //    tab.TabSelected += delegate (object sender, ActionBar.TabEventArgs e)
-        //    {
-        //        //var fragment = this.FragmentManager.FindFragmentById(Resource.Id.fragmentContainer);
-        //        //if (fragment != null)
-        //        //    e.FragmentTransaction.Remove(fragment);
-        //        e.FragmentTransaction.Add(Resource.Id.fragmentContainer, view);
-        //    };
-        //    tab.TabUnselected += delegate (object sender, ActionBar.TabEventArgs e) {
-        //        e.FragmentTransaction.Remove(view);
-        //    };
-
-        //    this.ActionBar.AddTab(tab);
-        //}
-
-
     }
 }
 

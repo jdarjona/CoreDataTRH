@@ -42,7 +42,7 @@ namespace AlmacenRepuestosXamarin.Adapter
         {
             // If you are using cool stuff like sections
             // remember to update the indices here!
-          
+
             
             base.NotifyDataSetChanged();
         }
@@ -52,7 +52,7 @@ namespace AlmacenRepuestosXamarin.Adapter
             get { return list.Count; }
         }
 
-        public Filter Filter { get; private set; }
+        public Filter Filter { get;  set; }
 
        
 
@@ -73,8 +73,10 @@ namespace AlmacenRepuestosXamarin.Adapter
                 if (_adapter._originalData == null)
                     _adapter._originalData = _adapter.list;
 
-                if (constraint == null) return returnObj;
-
+                if (constraint == null || constraint.Count()==0)
+                {
+                    constraint = new Java.Lang.String(" "); 
+                }
                 if (_adapter._originalData != null && _adapter._originalData.Any() && constraint.Length() > 0)
                 {
                     // Compare constraint to all names lowercased. 

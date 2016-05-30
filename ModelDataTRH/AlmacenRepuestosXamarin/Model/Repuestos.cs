@@ -62,6 +62,9 @@ namespace AlmacenRepuestosXamarin.Model
             return empleado;
         }
 
-
+        public static void limpiarRepuestos()
+        {
+            repuestos.Clear();
+        }
     }
 }

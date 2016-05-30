@@ -20,8 +20,8 @@ namespace AlmacenRepuestosXamarin.Data
 {
     public  class AccesoDatos
     {
-       // private const string webBase = @"http://intranet.trh-be.com/WSTRH/";
-        private const string webBase = @"http://192.168.1.2/WSTRH/";
+        private const string webBase = @"http://intranet.trh-be.com/WSTRH/";
+       // private const string webBase = @"http://192.168.1.2/WSTRH/";
         private  HttpClient client = new HttpClient(new NativeMessageHandler());
 
 
@@ -38,6 +38,7 @@ namespace AlmacenRepuestosXamarin.Data
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
         }
+
         public  async Task<List<Empleados>> getEmpleados()
         {
             try
@@ -62,8 +63,6 @@ namespace AlmacenRepuestosXamarin.Data
             }
             
             return null;
-
-
         }
 
         public async Task<EntregaAlmacen> addRepuesto(string codEmpleado,string codRepuesto) {
@@ -86,7 +85,7 @@ namespace AlmacenRepuestosXamarin.Data
             }
             catch (Exception ex)
             {
-                throw new Exception("Se ha producido una excipcion no controlada", ex.InnerException);
+                throw new Exception("Se ha producido una excepcion no controlada", ex.InnerException);
             }
 
             return null;

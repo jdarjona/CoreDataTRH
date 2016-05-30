@@ -26,8 +26,9 @@ namespace AlmacenRepuestosXamarin
         List<EntregaAlmacen> listRepuestosEpis;
         Empleados empleado;
         AdapterRepuestos adapterRepuestos;
-        
-        
+        ListView listViewEmpleados;
+
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -73,15 +74,60 @@ namespace AlmacenRepuestosXamarin
             
 
             listRepuestosEpis =  ManagerRepuestos.getRepuestos() ;
-            ListView listViewEmpleados = (ListView)FindViewById(Resource.Id.listProductos);
+            listRepuestosEpis.Clear();
+            listViewEmpleados = (ListView)FindViewById(Resource.Id.listProductos);
             adapterRepuestos = new AdapterRepuestos(this, listRepuestosEpis);//new ArrayAdapter<string>(this,Android.Resource.Layout.SimpleListItem1, listRepuestosEpis);
 
             //listViewEmpleados.ItemClick += OnListItemClick;
             listViewEmpleados.Adapter = adapterRepuestos;
+            var fab = FindViewById<com.refractored.fab.FloatingActionButton>(Resource.Id.floating);
+            fab.AttachToListView(listViewEmpleados);
+           // Button btoScan = FindViewById<Button>(Resource.Id.btoScanear);
+            fab.Click += (object sender, EventArgs e) =>
+            {
+                var code = launchScaner();
+            };
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+        }
+
+
+
+
+
+        public override void OnBackPressed()
+        {
+
+            if (ManagerRepuestos.getRepuestos().Count != 0)
+            {
+
+
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                alert.SetTitle("¿Estas seguro de cerrar la lista?");
+                alert.SetMessage("Si cierras la lista, estos datos serán eliminados.");
+                alert.SetPositiveButton("SÍ", (s, e) =>
+                {
+                    ManagerRepuestos.limpiarRepuestos();
+                    base.OnBackPressed();
+                });
+                alert.SetNegativeButton("NO", (s, e) =>
+                {
+
+                });
+
+                Dialog dialog = alert.Create();
+                dialog.Show();
+            }
+            else {
+                
+                base.OnBackPressed();
+            }
 
 
         }
-
         protected override void OnResume()
         {
             base.OnResume();
@@ -117,7 +163,6 @@ namespace AlmacenRepuestosXamarin
             return base.OnOptionsItemSelected(item);
 
         }
-
 
         private async Task launchScaner()
         {
@@ -164,5 +209,6 @@ namespace AlmacenRepuestosXamarin
 
             this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
         }
+
     }
 }
