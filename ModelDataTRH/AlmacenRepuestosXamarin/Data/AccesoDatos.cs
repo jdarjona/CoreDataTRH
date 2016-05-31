@@ -92,6 +92,20 @@ namespace AlmacenRepuestosXamarin.Data
 
         }
 
+        public async Task<bool> deleteRepuesto(string key) {
+
+            string url = string.Format(@"api/EntregaAlmacen?key={0}", key);
+            var response = await client.DeleteAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                var result = JsonConvert.DeserializeObject<List<Empleados>>(content);
+                return true;
+            }
+            return false;
+        }
+
         public async Task<bool> registerEntrega(string codEmpleado) {
 
             try

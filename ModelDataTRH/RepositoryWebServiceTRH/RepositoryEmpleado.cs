@@ -98,7 +98,7 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public void Reove(Empleados entity)
+        public void Remove(Empleados entity)
         {
             throw new NotImplementedException();
         }
@@ -109,6 +109,16 @@ namespace RepositoryWebServiceTRH
         }
 
         public void UpdateRange(IEnumerable<Empleados> entitties)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveAll()
         {
             throw new NotImplementedException();
         }

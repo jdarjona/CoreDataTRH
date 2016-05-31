@@ -83,7 +83,7 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public void Reove(NuevaListaProductos entity)
+        public void Remove(NuevaListaProductos entity)
         {
             throw new NotImplementedException();
         }
@@ -94,6 +94,16 @@ namespace RepositoryWebServiceTRH
         }
 
         public void UpdateRange(IEnumerable<NuevaListaProductos> entitties)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveAll()
         {
             throw new NotImplementedException();
         }

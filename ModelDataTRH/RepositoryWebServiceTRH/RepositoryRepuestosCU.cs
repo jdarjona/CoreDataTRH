@@ -60,7 +60,7 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public void Reove(RegistrarEntrega entity)
+        public void Remove(RegistrarEntrega entity)
         {
             throw new NotImplementedException();
         }
@@ -71,6 +71,16 @@ namespace RepositoryWebServiceTRH
         }
 
         public void UpdateRange(IEnumerable<RegistrarEntrega> entitties)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveAll()
         {
             throw new NotImplementedException();
         }
