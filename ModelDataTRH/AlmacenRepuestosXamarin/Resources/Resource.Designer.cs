@@ -1627,8 +1627,8 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0019
 			public const int beginning = 2131427353;
 			
-			// aapt resource value: 0x7f0b0056
-			public const int btoAceptar = 2131427414;
+			// aapt resource value: 0x7f0b0057
+			public const int btoAceptar = 2131427415;
 			
 			// aapt resource value: 0x7f0b002c
 			public const int buttonPanel = 2131427372;
@@ -1735,8 +1735,8 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0029
 			public const int list_item = 2131427369;
 			
-			// aapt resource value: 0x7f0b0057
-			public const int main_content = 2131427415;
+			// aapt resource value: 0x7f0b0052
+			public const int main_content = 2131427410;
 			
 			// aapt resource value: 0x7f0b0063
 			public const int media_actions = 2131427427;
@@ -1840,11 +1840,11 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b002d
 			public const int spacer = 2131427373;
 			
-			// aapt resource value: 0x7f0b0054
-			public const int spinnerDestino = 2131427412;
-			
 			// aapt resource value: 0x7f0b0055
-			public const int spinnerMaquina = 2131427413;
+			public const int spinnerDestino = 2131427413;
+			
+			// aapt resource value: 0x7f0b0056
+			public const int spinnerMaquina = 2131427414;
 			
 			// aapt resource value: 0x7f0b0007
 			public const int split_action_bar = 2131427335;
@@ -1873,11 +1873,11 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0068
 			public const int text2 = 2131427432;
 			
-			// aapt resource value: 0x7f0b0053
-			public const int textCantidad = 2131427411;
+			// aapt resource value: 0x7f0b0054
+			public const int textCantidad = 2131427412;
 			
-			// aapt resource value: 0x7f0b0052
-			public const int textDescription = 2131427410;
+			// aapt resource value: 0x7f0b0053
+			public const int textDescription = 2131427411;
 			
 			// aapt resource value: 0x7f0b0035
 			public const int textSpacerNoButtons = 2131427381;

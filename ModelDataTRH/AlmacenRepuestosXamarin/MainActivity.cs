@@ -15,13 +15,12 @@ using Tesseract;
 using Tesseract.Droid;
 using RepositoryWebServiceTRH.EmpleadoContext;
 using AlmacenRepuestosXamarin.Model;
-
-
-
+using Android.Content.PM;
 
 namespace AlmacenRepuestosXamarin
 {
-    [Activity(Label = "Almacen Repuestos", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/Theme.AppCompat.Light")]
+    [Activity(Label = "Almacen Repuestos", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/Theme.AppCompat.Light", ScreenOrientation = ScreenOrientation.Portrait)]
+
     public class MainActivity : AppCompatActivity 
     {
 
@@ -44,8 +43,8 @@ namespace AlmacenRepuestosXamarin
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-           
             // var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SupportActionBar.SetDisplayShowHomeEnabled(true);
             //ActionBar.Title = "Almacen de Repuestos";

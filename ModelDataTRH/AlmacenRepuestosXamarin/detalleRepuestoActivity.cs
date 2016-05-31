@@ -1,12 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
@@ -17,10 +12,12 @@ using AlmacenRepuestosXamarin.Adapter;
 using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
 using Android.Graphics.Drawables;
 using Android.Views.InputMethods;
+using Android.Content.PM;
+using static Android.Views.View;
 
 namespace AlmacenRepuestosXamarin
 {
-    [Activity(Label = "detalleRepuestoActivity")]
+    [Activity(Label = "detalleRepuestoActivity", ScreenOrientation = ScreenOrientation.Portrait)]
     public class detalleRepuestoActivity : AppCompatActivity
     {
 
@@ -63,16 +60,43 @@ namespace AlmacenRepuestosXamarin
             this.RunOnUiThread(() => Toast.MakeText(this, id.ToString(), ToastLength.Short).Show());
 
              edittext = FindViewById<EditText>(Resource.Id.textCantidad);
+
+
+
+
+
+
+
+
             edittext.TextChanged += Edittext_TextChanged;
 
 
 
+            edittext.FocusChange += (sender, args) =>
+            {
+                if (args.HasFocus)
+                {
+                    
+                }
+                else
+                {
+                    spinner_OnClick(sender);
+                }
+            };
+
+
+
+
+
+
             spinnerDestino = (Spinner)FindViewById(Resource.Id.spinnerDestino);
+
             spinnerDestino.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerDestino_ItemSelected);
             //spinnerDestino.ItemClick += spinner_OnClick;
 
 
             spinnerMaquina = (Spinner)FindViewById(Resource.Id.spinnerMaquina);
+
             spinnerMaquina.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerMaquina_ItemSelected);
             spinnerMaquina.Visibility = ViewStates.Invisible;
             //spinnerMaquina.ItemClick += spinner_OnClick;
@@ -85,6 +109,10 @@ namespace AlmacenRepuestosXamarin
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
             spinnerDestino.Adapter=adapterDestinos;
+            
+            spinnerDestino.Focusable = true;
+            spinnerDestino.FocusableInTouchMode = true;
+            spinnerDestino.RequestFocus(FocusSearchDirection.Down);
 
             string[] Maquinas = new String[] { "M1", "M2", "M3", "M4", "R1", "R2", "R3", "R4", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8" };
             AdapterSpinner<String> adapterMaquinas = new AdapterSpinner<String>(this, Android.Resource.Layout.SimpleSpinnerItem, Maquinas); 
@@ -92,7 +120,9 @@ namespace AlmacenRepuestosXamarin
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
             spinnerMaquina.Adapter = adapterMaquinas;
-
+            spinnerMaquina.Focusable = true;
+            spinnerMaquina.FocusableInTouchMode = true;
+            spinnerMaquina.RequestFocus(FocusSearchDirection.Down);
 
             TextView textDescription = FindViewById<TextView>(Resource.Id.textDescription);
             textDescription.Text = repuesto.Descripcion_Producto;
@@ -107,6 +137,7 @@ namespace AlmacenRepuestosXamarin
 
             
             Button btoAceptar = FindViewById<Button>(Resource.Id.btoAceptar);
+        
             btoAceptar.Click += (object sender, EventArgs e) =>
             {
                 var _btoAceptar = (Button)sender;
@@ -127,13 +158,15 @@ namespace AlmacenRepuestosXamarin
 
         }
 
-        private void spinner_OnClick(object sender, ItemClickEventArgs e) {
+        private void spinner_OnFocus() { }
+
+        private void spinner_OnClick(object sender) {
 
             InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(Context.InputMethodService);
             inputMethodManager.HideSoftInputFromWindow(edittext.WindowToken, 0);
         }
 
-
+       
 
         private void Edittext_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
@@ -150,7 +183,7 @@ namespace AlmacenRepuestosXamarin
             }
 
             repuesto.Cantidad = cantidad;
-
+            
         }
 
         #region "Implementacion Interfaz ItemSelectedListener "
@@ -177,9 +210,11 @@ namespace AlmacenRepuestosXamarin
            // repuesto.maquina=spinner.SelectedItem.ToString();
 
         }
+
        
 
-     
+
+
 
         #endregion
 

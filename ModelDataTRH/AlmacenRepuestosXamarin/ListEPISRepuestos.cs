@@ -16,10 +16,11 @@ using Toolbar = Android.Support.V7.Widget.Toolbar;
 using AlmacenRepuestosXamarin.Model;
 using RepositoryWebServiceTRH.EmpleadoContext;
 using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
+using Android.Content.PM;
 
 namespace AlmacenRepuestosXamarin
 {
-    [Activity(Label = "ListEPISRepuestos")]
+    [Activity(Label = "ListEPISRepuestos",  ScreenOrientation = ScreenOrientation.Portrait)]
     public class ListEPISRepuestos : AppCompatActivity
     {
 
@@ -44,34 +45,6 @@ namespace AlmacenRepuestosXamarin
             SetSupportActionBar(toolbar);
            
             SupportActionBar.Title = empleado.FullName;
-
-            //var toolbarBottom = FindViewById<Toolbar>(Resource.Id.toolbar_bottom);
-            //SetSupportActionBar(toolbarBottom);
-
-            //toolbarBottom.Title = "Photo Editing";
-            //toolbarBottom.InflateMenu(Resource.Menu.menu_botton);
-            //toolbarBottom.MenuItemClick += (sender, e) =>
-            //{
-            //   // Toast.MakeText(this, "Bottom toolbar pressed: " + e.Item.TitleFormatted, ToastLength.Short).Show();
-            //    switch (e.Item.ItemId)
-            //    {
-            //        case Resource.Id.menu_scan:
-
-            //            var code = launchScaner();
-
-
-                        
-            //            break;
-
-            //        default:
-            //            Finish();
-                        
-            //            break;
-            //    }
-
-            //};
-
-            
 
             listRepuestosEpis =  ManagerRepuestos.getRepuestos() ;
             listRepuestosEpis.Clear();
