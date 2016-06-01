@@ -43,7 +43,8 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FortySevenDeg.SwipeListView">
+    <Reference Include="FortySevenDeg.SwipeListView, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Components\android-swipelistview-2.0.0\lib\android\FortySevenDeg.SwipeListView.dll</HintPath>
     </Reference>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -198,10 +199,6 @@
     <XamarinComponentReference Include="android-swipelistview">
       <Visible>False</Visible>
       <Version>2.0.0</Version>
-    </XamarinComponentReference>
-    <XamarinComponentReference Include="AndroidSwipeLayout">
-      <Visible>False</Visible>
-      <Version>1.2.0.0</Version>
     </XamarinComponentReference>
     <XamarinComponentReference Include="fab">
       <Visible>False</Visible>

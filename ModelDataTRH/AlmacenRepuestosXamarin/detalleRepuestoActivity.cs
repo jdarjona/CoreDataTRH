@@ -56,11 +56,15 @@ namespace AlmacenRepuestosXamarin
 
             SupportActionBar.Title = string.Format(@"{0} - {1}",repuesto.Cod_Producto,repuesto.Unit_of_Measure_Code);
 
+            
             this.RunOnUiThread(() => Toast.MakeText(this, id.ToString(), ToastLength.Short).Show());
 
             edittext = FindViewById<EditText>(Resource.Id.textCantidad);
+           
 
+                //edittext.SetText(Int32.Parse(repuesto.Cantidad.ToString()));
             edittext.TextChanged += Edittext_TextChanged;
+            
 
             edittext.FocusChange += (sender, args) =>
             {
@@ -74,7 +78,7 @@ namespace AlmacenRepuestosXamarin
                 //    spinner_OnClick(sender);
                 //}
             };
-
+            
             spinnerDestino = (Spinner)FindViewById(Resource.Id.spinnerDestino);
 
             spinnerDestino.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerDestino_ItemSelected);

@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using AlmacenRepuestosXamarin.Model;
 using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
+using FortySevenDeg.SwipeListView;
 
 namespace AlmacenRepuestosXamarin.Adapter
 {

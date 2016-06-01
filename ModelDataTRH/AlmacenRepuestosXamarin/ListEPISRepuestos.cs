@@ -60,6 +60,13 @@ namespace AlmacenRepuestosXamarin
             {
                 var code = launchScaner();
             };
+
+            listViewEmpleados.ItemClick += (sender,e) =>
+            {
+                var activityDetalleRepuestoActivity = new Intent(this, typeof(detalleRepuestoActivity));
+                activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", ManagerRepuestos.getRepuestos()[e.Position].Key);
+                StartActivity(activityDetalleRepuestoActivity);
+            };
         }
 
         protected override void OnDestroy()
@@ -120,11 +127,23 @@ namespace AlmacenRepuestosXamarin
 
             switch (item.ItemId)
             {
-                case Resource.Id.menu_scan:
+                case Resource.Id.registrar:
 
-                    var code = launchScaner();
+                    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                    alert.SetTitle("¿Estas seguro de registrar la lista?");
+                    alert.SetMessage("Si la registras esos datos no podrán ser modificados");
+                    alert.SetPositiveButton("SÍ", (s, e) =>
+                    {
+                        ManagerRepuestos.registrarLista(empleado.No);
+                        base.OnBackPressed();
+                    });
+                    alert.SetNegativeButton("NO", (s, e) =>
+                    {
 
+                    });
 
+                    Dialog dialog = alert.Create();
+                    dialog.Show();
 
                     break;
 

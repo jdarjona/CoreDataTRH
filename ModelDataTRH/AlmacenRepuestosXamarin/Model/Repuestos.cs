@@ -80,5 +80,10 @@ namespace AlmacenRepuestosXamarin.Model
 
             return aux;
         }
+
+        public static async void registrarLista(string emple)
+        {
+            await datos.registerEntrega(emple);
+        }
     }
 }
