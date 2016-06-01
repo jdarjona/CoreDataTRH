@@ -165,7 +165,7 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public void Reove(EntregaAlmacen entity)
+        public void Remove(EntregaAlmacen entity)
         {
             throw new NotImplementedException();
         }
@@ -211,8 +211,14 @@ namespace RepositoryWebServiceTRH
             }
         }
 
-    
+        public void Remove(string key)
+        {
+            throw new NotImplementedException();
+        }
 
-       
+        public void RemoveAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
