@@ -43,6 +43,9 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FortySevenDeg.SwipeListView">
+      <HintPath>..\Components\android-swipelistview-2.0.0\lib\android\FortySevenDeg.SwipeListView.dll</HintPath>
+    </Reference>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\modernhttpclient.2.4.2\lib\MonoAndroid\ModernHttpClient.dll</HintPath>
       <Private>True</Private>
@@ -192,6 +195,14 @@
     <AndroidResource Include="Resources\menu\menu_botton.xml" />
   </ItemGroup>
   <ItemGroup>
+    <XamarinComponentReference Include="android-swipelistview">
+      <Visible>False</Visible>
+      <Version>2.0.0</Version>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="AndroidSwipeLayout">
+      <Visible>False</Visible>
+      <Version>1.2.0.0</Version>
+    </XamarinComponentReference>
     <XamarinComponentReference Include="fab">
       <Visible>False</Visible>
       <Version>1.3.0</Version>

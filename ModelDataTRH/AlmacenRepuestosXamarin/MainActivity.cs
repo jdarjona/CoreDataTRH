@@ -23,50 +23,50 @@ namespace AlmacenRepuestosXamarin
 
     public class MainActivity : AppCompatActivity 
     {
+        LinearLayout progressLayout;
 
-
-        bool indeterminateVisible;
+        //bool indeterminateVisible;
         List<Empleados> empleados=new List<Empleados>();
         Data.AccesoDatos restService = new Data.AccesoDatos();
-        //ArrayAdapter adapterEmpleados;
+        
         Adapter.AdapterEmpleados adaptadorEmpleados;
         private Android.Support.V7.Widget.SearchView _searchView;
-        //private ArrayAdapter _adapter;
-
-        //private Task<bool> api;
+        
 
         protected override  void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-          
-
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
-            //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-            // var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            progressLayout = FindViewById<LinearLayout>(Resource.Id.progressLayout);
+            
             SupportActionBar.SetDisplayShowHomeEnabled(true);
-            //ActionBar.Title = "Almacen de Repuestos";
-            //
-            //SetSupportActionBar(toolbar);
-            //SupportActionBar.Title = "Almacen Repuestos";
 
             ITesseractApi api = new TesseractApi(this, AssetsDeployment.OncePerInitialization);
-
+            
             fillListView();
-
         }
 
 
         private async void fillListView() {
-
-            empleados = await getEmpleados();
-            ListView listViewEmpleados = (ListView)FindViewById(Resource.Id.listEmpleados);
-            adaptadorEmpleados = new AdapterEmpleados(this, empleados);
-            listViewEmpleados.ItemClick += OnListItemClick;
-            listViewEmpleados.Adapter = adaptadorEmpleados;
-            
+            try
+            {
+                progressLayout.Visibility = ViewStates.Visible;
+                empleados = await getEmpleados();
+                ListView listViewEmpleados = (ListView)FindViewById(Resource.Id.listEmpleados);
+                adaptadorEmpleados = new AdapterEmpleados(this, empleados);
+                listViewEmpleados.ItemClick += OnListItemClick;
+                listViewEmpleados.Adapter = adaptadorEmpleados;
+                progressLayout.Visibility = ViewStates.Gone;
+            }
+            catch (Exception e)
+            {
+                progressLayout.Visibility = ViewStates.Gone;
+            }
+            finally {
+                progressLayout.Visibility = ViewStates.Gone;
+            }
         }
         
         private async Task<List<Empleados>> getEmpleados()
@@ -76,7 +76,6 @@ namespace AlmacenRepuestosXamarin
             return query;
 
         }
-
 
         public override  bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -127,7 +126,6 @@ namespace AlmacenRepuestosXamarin
                 return true;
             }
         }
-
 
         void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {

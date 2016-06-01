@@ -56,38 +56,24 @@ namespace AlmacenRepuestosXamarin
 
             SupportActionBar.Title = string.Format(@"{0} - {1}",repuesto.Cod_Producto,repuesto.Unit_of_Measure_Code);
 
-            
             this.RunOnUiThread(() => Toast.MakeText(this, id.ToString(), ToastLength.Short).Show());
 
-             edittext = FindViewById<EditText>(Resource.Id.textCantidad);
-
-
-
-
-
-
-
+            edittext = FindViewById<EditText>(Resource.Id.textCantidad);
 
             edittext.TextChanged += Edittext_TextChanged;
 
-
-
             edittext.FocusChange += (sender, args) =>
             {
-                if (args.HasFocus)
-                {
-                    
-                }
-                else
+                bool isFocused = args.HasFocus;
+                if (!isFocused)
                 {
                     spinner_OnClick(sender);
                 }
+                //else
+                //{
+                //    spinner_OnClick(sender);
+                //}
             };
-
-
-
-
-
 
             spinnerDestino = (Spinner)FindViewById(Resource.Id.spinnerDestino);
 
@@ -110,9 +96,9 @@ namespace AlmacenRepuestosXamarin
             // Apply the adapter to the spinner
             spinnerDestino.Adapter=adapterDestinos;
             
-            spinnerDestino.Focusable = true;
-            spinnerDestino.FocusableInTouchMode = true;
-            spinnerDestino.RequestFocus(FocusSearchDirection.Down);
+            //spinnerDestino.Focusable = true;
+            //spinnerDestino.FocusableInTouchMode = true;
+            //spinnerDestino.RequestFocus(FocusSearchDirection.Up);
 
             string[] Maquinas = new String[] { "M1", "M2", "M3", "M4", "R1", "R2", "R3", "R4", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8" };
             AdapterSpinner<String> adapterMaquinas = new AdapterSpinner<String>(this, Android.Resource.Layout.SimpleSpinnerItem, Maquinas); 
@@ -120,9 +106,9 @@ namespace AlmacenRepuestosXamarin
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
             spinnerMaquina.Adapter = adapterMaquinas;
-            spinnerMaquina.Focusable = true;
-            spinnerMaquina.FocusableInTouchMode = true;
-            spinnerMaquina.RequestFocus(FocusSearchDirection.Down);
+            //spinnerMaquina.Focusable = true;
+            //spinnerMaquina.FocusableInTouchMode = true;
+            //spinnerMaquina.RequestFocus(FocusSearchDirection.Up);
 
             TextView textDescription = FindViewById<TextView>(Resource.Id.textDescription);
             textDescription.Text = repuesto.Descripcion_Producto;

@@ -168,18 +168,26 @@ namespace AlmacenRepuestosXamarin
             if (result != null && !string.IsNullOrEmpty(result.Text)) { 
                 msg = "Found Barcode: " + result.Text;
 
+                if (ManagerRepuestos.existeRepuestoEnLista(empleado.No, result.Text))
+                {
+                    msg = "Ya fue esaneado ese producto!!";
+                }
+                else
+                {
 
-                EntregaAlmacen rep = await ManagerRepuestos.addRepuesto(empleado.No,result.Text) ;
-                
+                    EntregaAlmacen rep = await ManagerRepuestos.addRepuesto(empleado.No, result.Text);
 
-                this.adapterRepuestos.NotifyDataSetChanged();
-                var activityDetalleRepuestoActivity = new Intent(this, typeof(detalleRepuestoActivity));
-                activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", rep.Key);
-                StartActivity(activityDetalleRepuestoActivity);
+
+                    this.adapterRepuestos.NotifyDataSetChanged();
+                    var activityDetalleRepuestoActivity = new Intent(this, typeof(detalleRepuestoActivity));
+                    activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", rep.Key);
+                    StartActivity(activityDetalleRepuestoActivity);
+                }
             }
             else
                 msg = "Scanning Canceled!";
 
+            
             this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
         }
 

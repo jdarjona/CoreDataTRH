@@ -45,8 +45,6 @@ namespace AlmacenRepuestosXamarin.Adapter
         {
             View view = convertView;
 
-            // re-use an existing view, if one is available
-            // otherwise create a new one
             if (view == null)
                 view = context.LayoutInflater.Inflate(Resource.Layout.listRowRepuestos, parent, false);
 
@@ -55,14 +53,6 @@ namespace AlmacenRepuestosXamarin.Adapter
             view.FindViewById<TextView>(Resource.Id.Description).Text = item.Descripcion_Producto;
             view.FindViewById<TextView>(Resource.Id.Cantidad).Text = item.Cantidad.ToString("N0");
 
-            //using (var imageView = view.FindViewById<ImageView>(Resource.Id.Thumbnail))
-            //{
-            //    string url = Android.Text.Html.FromHtml(item.thumbnail).ToString();
-
-            //    //Download and display image
-            //    Koush.UrlImageViewHelper.SetUrlDrawable(imageView,
-            //        url, Resource.Drawable.Placeholder);
-            //}
             return view;
         }
     }

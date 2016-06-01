@@ -66,5 +66,19 @@ namespace AlmacenRepuestosXamarin.Model
         {
             repuestos.Clear();
         }
+
+        public static bool existeRepuestoEnLista(string emple, string n)
+        {
+            bool aux = false;
+            foreach (EntregaAlmacen repuesto in repuestos)
+            {
+                if (repuesto.Cod_Producto.Equals(n) && repuesto.Cod_Empleado.Equals(emple))
+                {
+                    aux = true;
+                }
+            }
+
+            return aux;
+        }
     }
 }
