@@ -56,7 +56,9 @@ namespace AlmacenRepuestosXamarin
 
             SupportActionBar.Title = string.Format(@"{0} - {1}",repuesto.Cod_Producto,repuesto.Unit_of_Measure_Code);
 
-            
+          
+
+
             this.RunOnUiThread(() => Toast.MakeText(this, id.ToString(), ToastLength.Short).Show());
 
             edittext = FindViewById<EditText>(Resource.Id.textCantidad);

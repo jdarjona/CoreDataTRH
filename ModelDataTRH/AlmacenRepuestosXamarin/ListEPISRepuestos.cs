@@ -32,6 +32,8 @@ namespace AlmacenRepuestosXamarin
         ListView listViewEmpleados;
 
 
+        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -237,7 +239,7 @@ namespace AlmacenRepuestosXamarin
             return false;
         }
 
-        public void OnSwipe(int[] positionList, SwipeDirection[] directionList)
+        public  void OnSwipe(int[] positionList, SwipeDirection[] directionList)
         {
             for (int i = 0; i < positionList.Length; i++)
             {
@@ -259,10 +261,24 @@ namespace AlmacenRepuestosXamarin
                 }
                 else if (direction == SwipeDirection.DirectionNormalRight)
                 {
-                    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+                    //Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
 
-                    builder.SetTitle("Test Dialog").SetMessage("You swiped right").Create().Show();
-                    dir = "Right";
+                    //builder.SetTitle("Test Dialog").SetMessage("You swiped right").Create().Show();
+                    //dir = "Right";
+                    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                    alert.SetTitle("¿Estas seguro de eliminar el repuesto?");
+                    //alert.SetMessage("Si ");
+                    alert.SetPositiveButton("SÍ", (s, e) =>
+                    {
+                        ManagerRepuestos.eliminarRepuesto(ManagerRepuestos.getRepuestos()[position].Key);
+                    });
+                    alert.SetNegativeButton("NO", (s, e) =>
+                    {
+
+                    });
+
+                    Dialog dialog = alert.Create();
+                    dialog.Show();
                 }
 
 
