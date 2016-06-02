@@ -26,9 +26,8 @@ namespace AlmacenRepuestosXamarin
 
         List<EntregaAlmacen> listRepuestosEpis;
         Empleados empleado;
-        AdapterRepuestos adapterRepuestos;
+        static AdapterRepuestos adapterRepuestos;
         ListView listViewEmpleados;
-
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,6 +37,7 @@ namespace AlmacenRepuestosXamarin
 
             empleado = ManagerRepuestos.getEmpleado();
 
+            
 
             MobileBarcodeScanner.Initialize(Application);
 
@@ -74,9 +74,11 @@ namespace AlmacenRepuestosXamarin
             base.OnDestroy();
         }
 
-
-
-
+      
+        public static void actualizarLista()
+        {
+            adapterRepuestos.NotifyDataSetChanged();
+        }
 
         public override void OnBackPressed()
         {
@@ -110,10 +112,9 @@ namespace AlmacenRepuestosXamarin
         }
         protected override void OnResume()
         {
+            
             base.OnResume();
-
-            this.adapterRepuestos.NotifyDataSetChanged();
-
+            adapterRepuestos.NotifyDataSetChanged();
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -197,7 +198,7 @@ namespace AlmacenRepuestosXamarin
                     EntregaAlmacen rep = await ManagerRepuestos.addRepuesto(empleado.No, result.Text);
 
 
-                    this.adapterRepuestos.NotifyDataSetChanged();
+                    adapterRepuestos.NotifyDataSetChanged();
                     var activityDetalleRepuestoActivity = new Intent(this, typeof(detalleRepuestoActivity));
                     activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", rep.Key);
                     StartActivity(activityDetalleRepuestoActivity);

@@ -64,8 +64,16 @@ namespace AlmacenRepuestosXamarin
 
                 //edittext.SetText(Int32.Parse(repuesto.Cantidad.ToString()));
             edittext.TextChanged += Edittext_TextChanged;
-            
+            if (repuesto.Cantidad != 0)
+            {
+                edittext.Text = repuesto.Cantidad.ToString();
+            }
+            else
+            {
+                edittext.Text = string.Empty;
+            }
 
+            //spinnerDestino.SetSelection(repuesto.) = 0;
             edittext.FocusChange += (sender, args) =>
             {
                 bool isFocused = args.HasFocus;
@@ -73,12 +81,8 @@ namespace AlmacenRepuestosXamarin
                 {
                     spinner_OnClick(sender);
                 }
-                //else
-                //{
-                //    spinner_OnClick(sender);
-                //}
             };
-            
+
             spinnerDestino = (Spinner)FindViewById(Resource.Id.spinnerDestino);
 
             spinnerDestino.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerDestino_ItemSelected);
@@ -99,10 +103,10 @@ namespace AlmacenRepuestosXamarin
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
             spinnerDestino.Adapter=adapterDestinos;
-            
-            //spinnerDestino.Focusable = true;
-            //spinnerDestino.FocusableInTouchMode = true;
-            //spinnerDestino.RequestFocus(FocusSearchDirection.Up);
+
+            spinnerDestino.Focusable = true;
+            spinnerDestino.FocusableInTouchMode = true;
+            spinnerDestino.RequestFocus(FocusSearchDirection.Up);
 
             string[] Maquinas = new String[] { "M1", "M2", "M3", "M4", "R1", "R2", "R3", "R4", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8" };
             AdapterSpinner<String> adapterMaquinas = new AdapterSpinner<String>(this, Android.Resource.Layout.SimpleSpinnerItem, Maquinas); 
@@ -110,9 +114,9 @@ namespace AlmacenRepuestosXamarin
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
             spinnerMaquina.Adapter = adapterMaquinas;
-            //spinnerMaquina.Focusable = true;
-            //spinnerMaquina.FocusableInTouchMode = true;
-            //spinnerMaquina.RequestFocus(FocusSearchDirection.Up);
+            spinnerMaquina.Focusable = true;
+            spinnerMaquina.FocusableInTouchMode = true;
+            spinnerMaquina.RequestFocus(FocusSearchDirection.Up);
 
             TextView textDescription = FindViewById<TextView>(Resource.Id.textDescription);
             textDescription.Text = repuesto.Descripcion_Producto;
@@ -123,9 +127,14 @@ namespace AlmacenRepuestosXamarin
             Resources.GetDrawable(Android.Resource.Drawable.AlertLightFrame);
              warning = (Drawable)Resources.GetDrawable(Android.Resource.Drawable.AlertLightFrame);
 
-            
+         
+            //spinnerDestino.Click += (object sender, EventArgs e) =>
+            //{
+            //    InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            //    imm.HideSoftInputFromWindow(edittext.WindowToken, 0);
+            //};
 
-            
+
             Button btoAceptar = FindViewById<Button>(Resource.Id.btoAceptar);
         
             btoAceptar.Click += (object sender, EventArgs e) =>
@@ -140,9 +149,6 @@ namespace AlmacenRepuestosXamarin
 
                     _btoAceptar.SetError("Introduza una cantidad antes de aceptar", warning); 
                 }
-                    
-
-
             };
             
 
@@ -150,7 +156,7 @@ namespace AlmacenRepuestosXamarin
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            MenuInflater.Inflate(Resource.Menu.menuDetalle, menu);
             return base.OnCreateOptionsMenu(menu);
         }
 
@@ -162,8 +168,10 @@ namespace AlmacenRepuestosXamarin
             {
                 case Resource.Id.eliminar:
 
-                    Toast.MakeText(this, "Se eliminó el repuesto "+repuesto.Cod_Producto+" de la lista", ToastLength.Short).Show();
+                    ManagerRepuestos.eliminarRepuesto(repuesto.Key);
 
+                    Toast.MakeText(this, "Se eliminó el repuesto "+repuesto.Cod_Producto+" de la lista", ToastLength.Short).Show();
+                    Finish();
                     break;
 
                 default:

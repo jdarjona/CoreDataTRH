@@ -39,7 +39,6 @@ namespace AlmacenRepuestosXamarin.Model
 
             EntregaAlmacen repuesto=await datos.addRepuesto(codEmpleado, codRepuesto);
             repuestos.Add(repuesto);
-
             return repuesto;
         }
 
@@ -64,7 +63,10 @@ namespace AlmacenRepuestosXamarin.Model
 
         public static void limpiarRepuestos()
         {
-            repuestos.Clear();
+            foreach(EntregaAlmacen rep in repuestos)
+            {
+                eliminarRepuesto(rep.Key);
+            }
         }
 
         public static bool existeRepuestoEnLista(string emple, string n)
@@ -81,9 +83,17 @@ namespace AlmacenRepuestosXamarin.Model
             return aux;
         }
 
+        public static async void eliminarRepuesto(string key)
+        {
+            await datos.deleteRepuesto(key);
+            repuestos.Remove(repuestos.Single(r => r.Key == key));
+            ListEPISRepuestos.actualizarLista();
+        }
+        
         public static async void registrarLista(string emple)
         {
             await datos.registerEntrega(emple);
+            repuestos.Clear();
         }
     }
 }
