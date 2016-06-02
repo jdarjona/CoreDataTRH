@@ -86,7 +86,9 @@ namespace AlmacenRepuestosXamarin.Model
         public static async void eliminarRepuesto(string key)
         {
             await datos.deleteRepuesto(key);
-            repuestos.Remove(repuestos.Single(r => r.Key == key));
+            var item = repuestos.Single(r => r.Key == key);
+            
+            repuestos.Remove(item);
            // ListEPISRepuestos.actualizarLista();
         }
         

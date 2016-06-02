@@ -271,6 +271,9 @@ namespace AlmacenRepuestosXamarin
                     alert.SetPositiveButton("SÍ", (s, e) =>
                     {
                         ManagerRepuestos.eliminarRepuesto(ManagerRepuestos.getRepuestos()[position].Key);
+                        this.adapterRepuestos.NotifyDataSetChanged();
+                        adaptarSwipe.NotifyDataSetChanged();
+
                     });
                     alert.SetNegativeButton("NO", (s, e) =>
                     {
@@ -287,7 +290,7 @@ namespace AlmacenRepuestosXamarin
                 //        dir + " swipe Action triggered on " + mAdapter.getItem(position),
                 //        Toast.LENGTH_SHORT
                 //).show();
-                adaptarSwipe.NotifyDataSetChanged();
+               
             }
         }
         public bool ShouldDismiss(int p0, SwipeDirection direction)
