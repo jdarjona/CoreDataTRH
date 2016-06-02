@@ -213,7 +213,7 @@ namespace RepositoryWebServiceTRH
 
         public void Remove(string key)
         {
-            throw new NotImplementedException();
+            Context.contextEntregaAlmacenEpis.Delete(key);
         }
 
         public void RemoveAll()

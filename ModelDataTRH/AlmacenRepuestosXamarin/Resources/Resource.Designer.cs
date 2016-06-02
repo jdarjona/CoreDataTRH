@@ -2191,6 +2191,18 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0d0003
 			public const int menuDetalle = 2131558403;
 			
+			// aapt resource value: 0x7f0d0004
+			public const int row_bg_left = 2131558404;
+			
+			// aapt resource value: 0x7f0d0005
+			public const int row_bg_left_far = 2131558405;
+			
+			// aapt resource value: 0x7f0d0006
+			public const int row_bg_right = 2131558406;
+			
+			// aapt resource value: 0x7f0d0007
+			public const int row_bg_right_far = 2131558407;
+			
 			static Menu()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

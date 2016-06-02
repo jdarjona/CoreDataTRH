@@ -17,16 +17,18 @@ using AlmacenRepuestosXamarin.Model;
 using RepositoryWebServiceTRH.EmpleadoContext;
 using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
 using Android.Content.PM;
+using Com.Wdullaer.Swipeactionadapter;
 
 namespace AlmacenRepuestosXamarin
 {
     [Activity(Label = "ListEPISRepuestos",  ScreenOrientation = ScreenOrientation.Portrait)]
-    public class ListEPISRepuestos : AppCompatActivity
+    public class ListEPISRepuestos : AppCompatActivity, SwipeActionAdapter.ISwipeActionListener
     {
 
         List<EntregaAlmacen> listRepuestosEpis;
         Empleados empleado;
         AdapterRepuestos adapterRepuestos;
+        SwipeActionAdapter adaptarSwipe;
         ListView listViewEmpleados;
 
 
@@ -51,8 +53,26 @@ namespace AlmacenRepuestosXamarin
             listViewEmpleados = (ListView)FindViewById(Resource.Id.listProductos);
             adapterRepuestos = new AdapterRepuestos(this, listRepuestosEpis);//new ArrayAdapter<string>(this,Android.Resource.Layout.SimpleListItem1, listRepuestosEpis);
 
+            // adapterRepuestos;
+
+            adaptarSwipe = new SwipeActionAdapter(adapterRepuestos);
+
+            adaptarSwipe.SetSwipeActionListener(this)
+                   .SetDimBackgrounds(true)
+                   .SetListView(this.listViewEmpleados);
+
+            listViewEmpleados.Adapter = adaptarSwipe;
+            adaptarSwipe.AddBackground(SwipeDirection.DirectionFarLeft, Resource.Menu.row_bg_left_far);
+            adaptarSwipe.AddBackground(SwipeDirection.DirectionNormalLeft, Resource.Menu.row_bg_left);
+            adaptarSwipe.AddBackground(SwipeDirection.DirectionFarRight, Resource.Menu.row_bg_right_far);
+            adaptarSwipe.AddBackground(SwipeDirection.DirectionNormalRight, Resource.Menu.row_bg_right);
+
+           
+
+
+
             //listViewEmpleados.ItemClick += OnListItemClick;
-            listViewEmpleados.Adapter = adapterRepuestos;
+
             var fab = FindViewById<com.refractored.fab.FloatingActionButton>(Resource.Id.floating);
             fab.AttachToListView(listViewEmpleados);
            // Button btoScan = FindViewById<Button>(Resource.Id.btoScanear);
@@ -196,8 +216,8 @@ namespace AlmacenRepuestosXamarin
 
                     EntregaAlmacen rep = await ManagerRepuestos.addRepuesto(empleado.No, result.Text);
 
-
-                    this.adapterRepuestos.NotifyDataSetChanged();
+                    adaptarSwipe.NotifyDataSetChanged();
+                    //this.adapterRepuestos.NotifyDataSetChanged();
                     var activityDetalleRepuestoActivity = new Intent(this, typeof(detalleRepuestoActivity));
                     activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", rep.Key);
                     StartActivity(activityDetalleRepuestoActivity);
@@ -209,6 +229,57 @@ namespace AlmacenRepuestosXamarin
             
             this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
         }
+
+        public bool HasActions(int p0, SwipeDirection direction)
+        {
+            if (direction.IsLeft) return true; // Change this to false to disable left swipes
+            if (direction.IsRight) return true;
+            return false;
+        }
+
+        public void OnSwipe(int[] positionList, SwipeDirection[] directionList)
+        {
+            for (int i = 0; i < positionList.Length; i++)
+            {
+                SwipeDirection direction = directionList[i];
+                int position = positionList[i];
+                String dir = "";
+
+                if (direction == SwipeDirection.DirectionFarLeft)
+                {
+                    dir = "Far left";
+                }
+                else if (direction == SwipeDirection.DirectionNormalLeft)
+                {
+                    dir = "Left";
+                }
+                else if (direction == SwipeDirection.DirectionFarRight)
+                {
+                    dir = "Far right";
+                }
+                else if (direction == SwipeDirection.DirectionNormalRight)
+                {
+                    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+
+                    builder.SetTitle("Test Dialog").SetMessage("You swiped right").Create().Show();
+                    dir = "Right";
+                }
+
+
+                //Toast.makeText(
+                //        this,
+                //        dir + " swipe Action triggered on " + mAdapter.getItem(position),
+                //        Toast.LENGTH_SHORT
+                //).show();
+                adaptarSwipe.NotifyDataSetChanged();
+            }
+        }
+        public bool ShouldDismiss(int p0, SwipeDirection direction)
+        {
+            return direction == SwipeDirection.DirectionNormalLeft;
+        }
+
+       
 
     }
 }
