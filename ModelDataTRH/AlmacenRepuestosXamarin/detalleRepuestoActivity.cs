@@ -148,6 +148,33 @@ namespace AlmacenRepuestosXamarin
 
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+
+
+            switch (item.ItemId)
+            {
+                case Resource.Id.eliminar:
+
+                    Toast.MakeText(this, "Se eliminó el repuesto "+repuesto.Cod_Producto+" de la lista", ToastLength.Short).Show();
+
+                    break;
+
+                default:
+                    Finish();
+
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+
+        }
+
         private void spinner_OnFocus() { }
 
         private void spinner_OnClick(object sender) {

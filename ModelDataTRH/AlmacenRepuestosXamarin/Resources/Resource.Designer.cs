@@ -1717,6 +1717,9 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b004a
 			public const int edit_query = 2131427402;
 			
+			// aapt resource value: 0x7f0b0082
+			public const int eliminar = 2131427458;
+			
 			// aapt resource value: 0x7f0b001a
 			public const int end = 2131427354;
 			
@@ -2184,6 +2187,9 @@ namespace AlmacenRepuestosXamarin
 			
 			// aapt resource value: 0x7f0d0002
 			public const int menu_botton = 2131558402;
+			
+			// aapt resource value: 0x7f0d0003
+			public const int menuDetalle = 2131558403;
 			
 			static Menu()
 			{
