@@ -18,7 +18,7 @@ namespace AlmacenRepuestosXamarin.Adapter
     public class AdapterRepuestos : BaseAdapter<EntregaAlmacen>
     {
         Activity context;
-        List<EntregaAlmacen> list;
+        public List<EntregaAlmacen> list;
 
         public AdapterRepuestos(Activity _context, List<EntregaAlmacen> _list)
             : base()

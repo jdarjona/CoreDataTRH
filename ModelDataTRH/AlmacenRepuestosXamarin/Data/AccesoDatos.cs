@@ -20,8 +20,8 @@ namespace AlmacenRepuestosXamarin.Data
 {
     public  class AccesoDatos
     {
-       private const string webBase = @"http://intranet.trh-be.com/WSTRH/";
-      //  private const string webBase = @"http://192.168.1.2/WSTRH/";
+      // private const string webBase = @"http://intranet.trh-be.com/WSTRH/";
+        private const string webBase = @"http://192.168.1.2/WSTRH/";
         private  HttpClient client = new HttpClient(new NativeMessageHandler());
 
 
@@ -92,6 +92,8 @@ namespace AlmacenRepuestosXamarin.Data
 
         }
 
+
+
         public async Task<bool> deleteRepuesto(string key) {
 
             string url = string.Format(@"api/EntregaAlmacen?key={0}", key);
@@ -106,11 +108,12 @@ namespace AlmacenRepuestosXamarin.Data
             return false;
         }
 
-        public async Task<bool> registerEntrega(string codEmpleado) {
+        public async Task<bool> registerEntrega(string codEmpleado, EntregaAlmacen[] repuestos) {
 
             try
             {
-                var contentPost = new StringContent(null, Encoding.UTF8, "application/json");
+                var respustosJson = JsonConvert.SerializeObject(repuestos);
+                var contentPost = new StringContent(respustosJson, Encoding.UTF8, "application/json");
                 string url = string.Format(@"api/EntregaAlmacen?codEmpleado={0}",  codEmpleado);
                 var response = await client.PutAsync(url, contentPost);
                 if (response.IsSuccessStatusCode)

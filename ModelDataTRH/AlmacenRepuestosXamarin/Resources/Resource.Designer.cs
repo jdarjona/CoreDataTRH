@@ -1954,6 +1954,9 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0079
 			public const int textView3 = 2131427449;
 			
+			// aapt resource value: 0x7f0b0083
+			public const int textoRowRightFar = 2131427459;
+			
 			// aapt resource value: 0x7f0b007b
 			public const int textoSpinner = 2131427451;
 			
