@@ -83,19 +83,25 @@ namespace AlmacenRepuestosXamarin.Model
             return aux;
         }
 
-        public static async void eliminarRepuesto(string key)
+        public static async Task<bool> eliminarRepuesto(string key)
         {
             await datos.deleteRepuesto(key);
             var item = repuestos.Single(r => r.Key == key);
             
             repuestos.Remove(item);
+
+            return true;
            // ListEPISRepuestos.actualizarLista();
         }
         
-        public static async void registrarLista(string emple)
+        public static async void registrarLista(string emple, EntregaAlmacen[] _repuestos)
         {
-            await datos.registerEntrega(emple);
-            repuestos.Clear();
+           
+            var ok=await datos.registerEntrega(emple, _repuestos);
+            if (ok) {
+                repuestos.Clear();
+            }
+           
         }
     }
 }

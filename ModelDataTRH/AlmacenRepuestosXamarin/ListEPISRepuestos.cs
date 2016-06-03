@@ -134,7 +134,8 @@ namespace AlmacenRepuestosXamarin
         {
             base.OnResume();
 
-            this.adapterRepuestos.NotifyDataSetChanged();
+            this.adaptarSwipe.NotifyDataSetChanged();
+            //this.adapterRepuestos.NotifyDataSetChanged();
 
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -156,7 +157,8 @@ namespace AlmacenRepuestosXamarin
                     alert.SetMessage("Si la registras esos datos no podrán ser modificados");
                     alert.SetPositiveButton("SÍ", (s, e) =>
                     {
-                        ManagerRepuestos.registrarLista(empleado.No);
+                       
+                        ManagerRepuestos.registrarLista(empleado.No,adapterRepuestos.list.ToArray<EntregaAlmacen>());
                         base.OnBackPressed();
                     });
                     alert.SetNegativeButton("NO", (s, e) =>
@@ -255,22 +257,14 @@ namespace AlmacenRepuestosXamarin
                 }
                 else if (direction == SwipeDirection.DirectionFarRight)
                 {
-                    dir = "Far right";
-                }
-                else if (direction == SwipeDirection.DirectionNormalRight)
-                {
-                    //Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
-
-                    //builder.SetTitle("Test Dialog").SetMessage("You swiped right").Create().Show();
-                    //dir = "Right";
                     Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
                     alert.SetTitle("¿Estas seguro de eliminar el repuesto?");
                     //alert.SetMessage("Si ");
                     alert.SetPositiveButton("SÍ", (s, e) =>
                     {
-                        ManagerRepuestos.eliminarRepuesto(ManagerRepuestos.getRepuestos()[position].Key);
-                        this.adapterRepuestos.NotifyDataSetChanged();
-                        adaptarSwipe.NotifyDataSetChanged();
+                        var item = adapterRepuestos.list[position];
+
+                        eliminarRepuesto(item);
 
                     });
                     alert.SetNegativeButton("NO", (s, e) =>
@@ -281,14 +275,14 @@ namespace AlmacenRepuestosXamarin
                     Dialog dialog = alert.Create();
                     dialog.Show();
                 }
+                else if (direction == SwipeDirection.DirectionNormalRight)
+                {
+                    
+                   
+                }
 
 
-                //Toast.makeText(
-                //        this,
-                //        dir + " swipe Action triggered on " + mAdapter.getItem(position),
-                //        Toast.LENGTH_SHORT
-                //).show();
-               
+                
             }
         }
         public bool ShouldDismiss(int p0, SwipeDirection direction)
@@ -296,7 +290,12 @@ namespace AlmacenRepuestosXamarin
             return direction == SwipeDirection.DirectionNormalLeft;
         }
 
-       
+        private async void eliminarRepuesto(EntregaAlmacen item) {
+
+            await ManagerRepuestos.eliminarRepuesto(item.Key);
+            this.adaptarSwipe.NotifyDataSetChanged();
+            
+        }
 
     }
 }
