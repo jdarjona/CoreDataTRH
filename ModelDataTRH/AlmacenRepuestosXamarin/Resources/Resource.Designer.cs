@@ -1555,28 +1555,31 @@ namespace AlmacenRepuestosXamarin
 			public const int botonOK = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int descarga = 2130837579;
+			public const int carretilla = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int fab_128x128 = 2130837580;
+			public const int descarga = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int fab_512x512 = 2130837581;
+			public const int fab_128x128 = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int fab_shadow = 2130837582;
+			public const int fab_512x512 = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int fab_shadow_mini = 2130837583;
+			public const int fab_shadow = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int ic_tab_white = 2130837584;
+			public const int fab_shadow_mini = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int Icon = 2130837585;
+			public const int ic_tab_white = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int notification_template_icon_bg = 2130837586;
+			public const int Icon = 2130837586;
+			
+			// aapt resource value: 0x7f020053
+			public const int notification_template_icon_bg = 2130837587;
 			
 			static Drawable()
 			{

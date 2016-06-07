@@ -19,7 +19,7 @@ using Android.Content.PM;
 
 namespace AlmacenRepuestosXamarin
 {
-    [Activity(Label = "Almacen Repuestos", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/Theme.AppCompat.Light", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Almacen Repuestos", MainLauncher = true, Icon = "@drawable/carretilla", Theme = "@style/Theme.AppCompat.Light", ScreenOrientation = ScreenOrientation.Portrait)]
 
     public class MainActivity : AppCompatActivity 
     {
