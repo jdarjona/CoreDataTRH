@@ -22,7 +22,7 @@
     <MetadataSource Address="http://intranet.trh-es.com:7047/DynamicsNAV/WS/TRH Liege/Page/EntregaAlmacen" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="EntregaAlmacen.wsdl" MetadataType="Wsdl" ID="4e01bd6c-6b9f-4ea8-8c14-d997effd171e" SourceId="1" SourceUrl="http://intranet.trh-es.com:7047/DynamicsNAV/WS/TRH Liege/Page/EntregaAlmacen" />
+    <MetadataFile FileName="EntregaAlmacen.wsdl" MetadataType="Wsdl" ID="170819ab-5a78-4464-802c-f2c2f90c715f" SourceId="1" SourceUrl="http://intranet.trh-es.com:7047/DynamicsNAV/WS/TRH Liege/Page/EntregaAlmacen" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

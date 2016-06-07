@@ -4,6 +4,7 @@
     <xsd:schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/page/entregaalmacen" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <xsd:simpleType name="Destino">
         <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
           <xsd:enumeration value="Taller_Mecánico" />
           <xsd:enumeration value="Taller_Eléctrico" />
           <xsd:enumeration value="Máquina" />

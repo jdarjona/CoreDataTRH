@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -163,6 +164,41 @@ namespace AlmacenRepuestosXamarin.Data
                 throw new Exception("Se ha producido una excipcion no controlada", ex.InnerException);
             }
            
+
+        }
+
+        public async Task<string> downloadFile(string url) {
+
+
+            try
+            {
+                HttpClient  clientFile = new HttpClient(new NativeMessageHandler())
+                {
+                    BaseAddress = new Uri(@"http://192.168.1.2/Tablet/")
+                };
+                client.DefaultRequestHeaders.Accept.Clear();
+
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
+
+                url = @"Archivos/Disteel sa-nv_DEV-V16_0332.pdf";
+                var response =  await clientFile.GetStreamAsync(url);
+
+                var externalPath = global::Android.OS.Environment.ExternalStorageDirectory.Path + "/DEV-V16_0332.pdf";
+                byte[] bytes = new byte[response.Length];
+                response.Read(bytes, 0, (int)response.Length);
+
+
+                File.WriteAllBytes(externalPath, bytes);
+
+
+                return externalPath;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Se ha producido una excipcion no controlada", ex.InnerException);
+            }
+
+            return string.Empty;
 
         }
 

@@ -89,6 +89,9 @@ namespace AlmacenRepuestosXamarin
                 activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", ManagerRepuestos.getRepuestos()[e.Position].Key);
                 StartActivity(activityDetalleRepuestoActivity);
             };
+
+           // ManagerRepuestos.getAlbaran(string.Empty);
+
         }
 
         protected override void OnDestroy()

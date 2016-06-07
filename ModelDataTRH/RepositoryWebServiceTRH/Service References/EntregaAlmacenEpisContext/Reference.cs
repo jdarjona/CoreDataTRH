@@ -104,11 +104,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/entregaalmacen")]
-    [DataContract]
-    
-
     public partial class EntregaAlmacen : object, System.ComponentModel.INotifyPropertyChanged {
-
         [DataMember]
         private string keyField;
         [DataMember]
@@ -485,6 +481,9 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/entregaalmacen")]
     public enum Destino {
+        
+        /// <comentarios/>
+        _blank_,
         
         /// <comentarios/>
         Taller_Mecánico,

@@ -110,5 +110,11 @@ namespace AlmacenRepuestosXamarin.Model
             }
            
         }
+
+        public static async Task<string> getAlbaran(string url) {
+
+
+            return await datos.downloadFile(url);
+        }
     }
 }
