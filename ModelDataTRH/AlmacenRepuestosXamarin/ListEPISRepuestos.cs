@@ -217,9 +217,7 @@ namespace AlmacenRepuestosXamarin
                 }
                 else
                 {
-
                     EntregaAlmacen rep = await ManagerRepuestos.addRepuesto(empleado.No, result.Text);
-
                     adaptarSwipe.NotifyDataSetChanged();
                     //this.adapterRepuestos.NotifyDataSetChanged();
                     var activityDetalleRepuestoActivity = new Intent(this, typeof(detalleRepuestoActivity));
