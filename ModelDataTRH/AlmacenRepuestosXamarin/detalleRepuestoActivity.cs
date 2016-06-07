@@ -34,7 +34,11 @@ namespace AlmacenRepuestosXamarin
 
         }
 
-        private DestinosEnum destinos;
+        //private DestinosEnum destinos;
+        private Destino destinos;
+        private Maquina maquinas;
+        AdapterSpinner<DestinosEnum> adapterDestinos;
+        AdapterSpinner<Maquina> adapterMaquinas;
         EditText edittext;
         Drawable warning;
         private Spinner spinnerDestino;
@@ -100,7 +104,7 @@ namespace AlmacenRepuestosXamarin
 
             var s = (DestinosEnum[])Enum.GetValues(typeof(DestinosEnum));
             
-            AdapterSpinner<DestinosEnum> adapterDestinos = new AdapterSpinner<DestinosEnum>(this, Android.Resource.Layout.SimpleSpinnerItem,s);
+            adapterDestinos = new AdapterSpinner<DestinosEnum>(this, Android.Resource.Layout.SimpleSpinnerItem,s);
             // Specify the layout to use when the list of choices appears
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
@@ -110,8 +114,10 @@ namespace AlmacenRepuestosXamarin
             spinnerDestino.FocusableInTouchMode = true;
             spinnerDestino.RequestFocus(FocusSearchDirection.Up);
 
-            string[] Maquinas = new String[] { "M1", "M2", "M3", "M4", "R1", "R2", "R3", "R4", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8" };
-            AdapterSpinner<String> adapterMaquinas = new AdapterSpinner<String>(this, Android.Resource.Layout.SimpleSpinnerItem, Maquinas); 
+            //string[] Maquinas = new String[] { "M1", "M2", "M3", "M4", "R1", "R2", "R3", "R4", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8" };
+
+            var arrayMaquinas = (Maquina[])Enum.GetValues(typeof(Maquina));
+            adapterMaquinas = new AdapterSpinner<Maquina>(this, Android.Resource.Layout.SimpleSpinnerItem, arrayMaquinas); 
             // Specify the layout to use when the list of choices appears
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
@@ -138,21 +144,41 @@ namespace AlmacenRepuestosXamarin
 
 
             Button btoAceptar = FindViewById<Button>(Resource.Id.btoAceptar);
-        
-            btoAceptar.Click += (object sender, EventArgs e) =>
+
+            btoAceptar.Click += OnClik_btoAceptar;
+
+            //    (object sender, EventArgs e) =>
+            //{
+            //    var _btoAceptar = (Button)sender;
+            //    if (repuesto.Cantidad > 0)
+            //    {
+
+            //        Finish();
+            //    }
+            //    else {
+
+            //        _btoAceptar.SetError("Introduza una cantidad antes de aceptar", warning); 
+            //    }
+            //};
+
+
+        }
+
+        private async void OnClik_btoAceptar(object sender, EventArgs e) {
+
+            var _btoAceptar = (Button)sender;
+            if (repuesto.Cantidad > 0)
             {
-                var _btoAceptar = (Button)sender;
-                if (repuesto.Cantidad > 0)
-                {
 
-                    Finish();
-                }
-                else {
+                repuesto=await ManagerRepuestos.updateRepuesto(repuesto);
 
-                    _btoAceptar.SetError("Introduza una cantidad antes de aceptar", warning); 
-                }
-            };
-            
+                Finish();
+            }
+            else
+            {
+
+                _btoAceptar.SetError("Introduza una cantidad antes de aceptar", warning);
+            }
 
         }
 
@@ -223,8 +249,9 @@ namespace AlmacenRepuestosXamarin
             this.RunOnUiThread(() => Toast.MakeText(this, spinner.SelectedItem.ToString(), ToastLength.Short).Show());
             //repuesto.destino = spinner.SelectedItem.ToString();
 
+            repuesto.Destino = (Destino)adapterDestinos.arrayObjets[e.Position];
             this.spinnerMaquina.Visibility = ViewStates.Invisible;
-            if (spinner.SelectedItem.ToString() == DestinosEnum.Máquina.ToString())
+            if (spinner.SelectedItem.ToString() == Destino.Máquina.ToString())
             {
                 this.spinnerMaquina.Visibility = ViewStates.Visible;
             }
@@ -234,7 +261,8 @@ namespace AlmacenRepuestosXamarin
         private void spinnerMaquina_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e) {
 
             Spinner spinner = (Spinner)sender;
-           // repuesto.maquina=spinner.SelectedItem.ToString();
+            repuesto.Maquina= (Maquina)adapterMaquinas.arrayObjets[e.Position];
+            // repuesto.maquina=spinner.SelectedItem.ToString();
 
         }
 

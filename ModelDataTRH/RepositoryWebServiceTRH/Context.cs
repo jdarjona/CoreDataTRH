@@ -37,7 +37,9 @@ namespace RepositoryWebServiceTRH
 
             initEmpleadosPortCliente(navisionWSBinding, hostWS);
             initEntregaAlmacenEpisPortCliente(navisionWSBinding, hostWS);
+            hostWS.tipoServicioWeb = HostWebService.tipoWebService.Codeunit;
             initAlmacenesClientesPortCliente(navisionWSBinding, hostWS);
+            hostWS.tipoServicioWeb = HostWebService.tipoWebService.Page;
             initItemPortCliente(navisionWSBinding, hostWS);
         }
         private static BasicHttpBinding CreateBasicHttp()
@@ -62,7 +64,7 @@ namespace RepositoryWebServiceTRH
         {
            
             
-            contextEmpleado = new Empleados_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "Empleados")));
+            contextEmpleado = new Empleados_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "Empleados", HostWebService.tipoWebService.Page.ToString())));
             contextEmpleado.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Delegation;
             contextEmpleado.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential(hostWs.user, hostWs.password);
           
@@ -72,27 +74,27 @@ namespace RepositoryWebServiceTRH
 
         private static void initEntregaAlmacenEpisPortCliente(BasicHttpBinding navisionWSBinding, HostWebService hostWs)
         {
-            contextEntregaAlmacenEpis = new EntregaAlmacen_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "EntregaAlmacen")));
+            contextEntregaAlmacenEpis = new EntregaAlmacen_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "EntregaAlmacen", HostWebService.tipoWebService.Page.ToString())));
             contextEntregaAlmacenEpis.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Delegation;
             contextEntregaAlmacenEpis.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential(hostWs.user, hostWs.password);
         }
 
         private static void initAlmacenesClientesPortCliente(BasicHttpBinding navisionWSBinding, HostWebService hostWs)
         {
-            contextAlmacenesRepuestos = new AlmacenRepuestos_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "AlmacenRepuestos")));
+            contextAlmacenesRepuestos = new AlmacenRepuestos_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "AlmacenRepuestos", HostWebService.tipoWebService.Codeunit.ToString())));
             contextAlmacenesRepuestos.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Delegation;
             contextAlmacenesRepuestos.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential(hostWs.user, hostWs.password);
         }
         private static void initItemPortCliente(BasicHttpBinding navisionWSBinding, HostWebService hostWs)
         {
-            contextItem = new NuevaListaProductos_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "NuevaListaProductos")));
+            contextItem = new NuevaListaProductos_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "NuevaListaProductos", HostWebService.tipoWebService.Page.ToString())));
             contextItem.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Delegation;
             contextItem.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential(hostWs.user, hostWs.password);
         }
 
         private static void DatosEntreEmpresas_PortClient(BasicHttpBinding navisionWSBinding, HostWebService hostWs)
         {
-            contextDatosEntreEmpresas = new DatosEntreEmpresas_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "DatosEntreEmpresas")));
+            contextDatosEntreEmpresas = new DatosEntreEmpresas_PortClient(navisionWSBinding, new EndpointAddress(string.Format(hostWs.urlHost, "DatosEntreEmpresas", HostWebService.tipoWebService.Codeunit.ToString())));
             contextDatosEntreEmpresas.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Delegation;
             contextDatosEntreEmpresas.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential(hostWs.user, hostWs.password);
         }
@@ -106,7 +108,7 @@ namespace RepositoryWebServiceTRH
         public enum tipoWebService
         {
             Page
-           , CodeUnit
+           , Codeunit
         }
         public enum tipoIp {
             publica,
@@ -132,13 +134,16 @@ namespace RepositoryWebServiceTRH
 
             this.user = user;
             this.password = password;
+            
 
             switch (tipoWS)
             {
                 case tipoWebService.Page:
+                  
                     this.tipoWS = "Page";
                     break;
-                case tipoWebService.CodeUnit:
+                case tipoWebService.Codeunit:
+                   
                     this.tipoWS = "Codeunit";
                     break;
                
@@ -148,6 +153,7 @@ namespace RepositoryWebServiceTRH
             {
                 case empresaWS.TRHSevilla:
                     this.empresaServicio = "T.R.H.";
+                   
                     break;
                 case empresaWS.TRHLieja:
                     this.empresaServicio = "TRH Liege";
@@ -167,8 +173,11 @@ namespace RepositoryWebServiceTRH
                 default:
                     break;
             }
-            urlHost = string.Format(@"http://{0}:7047/DynamicsNAV/WS/{1}/{2}/{3}",this.IpHost,this.empresaServicio,this.tipoWS,@"{0}");
-    }
+            urlHost = string.Format(@"http://{0}:7047/DynamicsNAV/WS/{1}/{2}/{3}",this.IpHost,this.empresaServicio,@"{1}",@"{0}");
+
+           
+
+        }
 
 
     }

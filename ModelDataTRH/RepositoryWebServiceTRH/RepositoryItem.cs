@@ -88,12 +88,12 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public void Update(NuevaListaProductos entity)
+        public void Update(ref NuevaListaProductos entity)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateRange(IEnumerable<NuevaListaProductos> entitties)
+        public void UpdateRange(ref NuevaListaProductos[] entitties)
         {
             throw new NotImplementedException();
         }

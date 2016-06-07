@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="6lMHGilY/4gq129HjZ0NOi5OdTA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ci1UwGspsuJg7tvhPLxB9ZSqhXo=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="EntregaAlmacen_Binding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="EntregaAlmacen_Port" contract="EntregaAlmacenEpisContext.EntregaAlmacen_Port" bindingType="basicHttpBinding" address="http://192.168.1.2:7047/DynamicsNAV/WS/TRH Liege/Page/EntregaAlmacen" bindingConfiguration="EntregaAlmacen_Binding">
+    <endpoint name="EntregaAlmacen_Port" contract="EntregaAlmacenEpisContext.EntregaAlmacen_Port" bindingType="basicHttpBinding" address="http://intranet.trh-es.com:7047/DynamicsNAV/WS/TRH Liege/Page/EntregaAlmacen" bindingConfiguration="EntregaAlmacen_Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.1.2:7047/DynamicsNAV/WS/TRH%20Liege/Page/EntregaAlmacen</serializedValue>
+          <serializedValue>http://intranet.trh-es.com:7047/DynamicsNAV/WS/TRH%20Liege/Page/EntregaAlmacen</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

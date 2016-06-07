@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.Serialization;
+
 namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
     
     
@@ -102,50 +104,63 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/entregaalmacen")]
+    [DataContract]
+    
+
     public partial class EntregaAlmacen : object, System.ComponentModel.INotifyPropertyChanged {
-        
+
+        [DataMember]
         private string keyField;
-        
+        [DataMember]
         private string cod_EmpleadoField;
-        
+        [DataMember]
         private string cod_ProductoField;
-        
+        [DataMember]
         private decimal inventoryField;
-        
+        [DataMember]
         private bool inventoryFieldSpecified;
-        
+        [DataMember]
         private string descripcion_ProductoField;
-        
+        [DataMember]
         private System.DateTime fechaField;
-        
+        [DataMember]
         private bool fechaFieldSpecified;
-        
-        private decimal cantidadField;
-        
+        [DataMember]
+        private int cantidadField;
+        [DataMember]
         private bool cantidadFieldSpecified;
-        
+        [DataMember]
         private string unit_of_Measure_CodeField;
-        
+        [DataMember]
         private string no_DocumentoField;
-        
+        [DataMember]
         private string comentarioField;
-        
+        [DataMember]
         private string cod_AlmacenField;
-        
+        [DataMember]
         private bool entregadoField;
-        
+        [DataMember]
         private bool entregadoFieldSpecified;
-        
+        [DataMember]
         private bool epiField;
-        
+        [DataMember]
         private bool epiFieldSpecified;
-        
+        [DataMember]
         private int no_LineaField;
-        
+        [DataMember]
         private bool no_LineaFieldSpecified;
+        [DataMember]
+        private Destino destinoField;
+        [DataMember]
+        private bool destinoFieldSpecified;
+        [DataMember]
+        private Maquina maquinaField;
+        [DataMember]
+        private bool maquinaFieldSpecified;
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [DataMember]
         public string Key {
             get {
                 return this.keyField;
@@ -158,6 +173,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [DataMember]
         public string Cod_Empleado {
             get {
                 return this.cod_EmpleadoField;
@@ -170,6 +186,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [DataMember]
         public string Cod_Producto {
             get {
                 return this.cod_ProductoField;
@@ -182,6 +199,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [DataMember]
         public decimal Inventory {
             get {
                 return this.inventoryField;
@@ -194,6 +212,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
         public bool InventorySpecified {
             get {
                 return this.inventoryFieldSpecified;
@@ -206,6 +225,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute("<Descripcion_Producto>", Order=4)]
+        [DataMember]
         public string Descripcion_Producto {
             get {
                 return this.descripcion_ProductoField;
@@ -218,6 +238,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=5)]
+        [DataMember]
         public System.DateTime Fecha {
             get {
                 return this.fechaField;
@@ -230,6 +251,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
         public bool FechaSpecified {
             get {
                 return this.fechaFieldSpecified;
@@ -242,7 +264,8 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public decimal Cantidad {
+        [DataMember]
+        public int Cantidad {
             get {
                 return this.cantidadField;
             }
@@ -254,6 +277,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
         public bool CantidadSpecified {
             get {
                 return this.cantidadFieldSpecified;
@@ -266,6 +290,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [DataMember]
         public string Unit_of_Measure_Code {
             get {
                 return this.unit_of_Measure_CodeField;
@@ -278,6 +303,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [DataMember]
         public string No_Documento {
             get {
                 return this.no_DocumentoField;
@@ -290,6 +316,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [DataMember]
         public string Comentario {
             get {
                 return this.comentarioField;
@@ -302,6 +329,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [DataMember]
         public string Cod_Almacen {
             get {
                 return this.cod_AlmacenField;
@@ -314,6 +342,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [DataMember]
         public bool Entregado {
             get {
                 return this.entregadoField;
@@ -326,6 +355,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
         public bool EntregadoSpecified {
             get {
                 return this.entregadoFieldSpecified;
@@ -338,6 +368,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [DataMember]
         public bool Epi {
             get {
                 return this.epiField;
@@ -350,6 +381,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
         public bool EpiSpecified {
             get {
                 return this.epiFieldSpecified;
@@ -362,6 +394,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [DataMember]
         public int No_Linea {
             get {
                 return this.no_LineaField;
@@ -374,6 +407,7 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
         public bool No_LineaSpecified {
             get {
                 return this.no_LineaFieldSpecified;
@@ -381,6 +415,58 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
             set {
                 this.no_LineaFieldSpecified = value;
                 this.RaisePropertyChanged("No_LineaSpecified");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [DataMember]
+        public Destino Destino {
+            get {
+                return this.destinoField;
+            }
+            set {
+                this.destinoField = value;
+                this.RaisePropertyChanged("Destino");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
+        public bool DestinoSpecified {
+            get {
+                return this.destinoFieldSpecified;
+            }
+            set {
+                this.destinoFieldSpecified = value;
+                this.RaisePropertyChanged("DestinoSpecified");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [DataMember]
+        public Maquina Maquina {
+            get {
+                return this.maquinaField;
+            }
+            set {
+                this.maquinaField = value;
+                this.RaisePropertyChanged("Maquina");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
+        public bool MaquinaSpecified {
+            get {
+                return this.maquinaFieldSpecified;
+            }
+            set {
+                this.maquinaFieldSpecified = value;
+                this.RaisePropertyChanged("MaquinaSpecified");
             }
         }
         
@@ -392,6 +478,92 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/entregaalmacen")]
+    public enum Destino {
+        
+        /// <comentarios/>
+        Taller_Mecánico,
+        
+        /// <comentarios/>
+        Taller_Eléctrico,
+        
+        /// <comentarios/>
+        Máquina,
+        
+        /// <comentarios/>
+        Sevilla,
+        
+        /// <comentarios/>
+        Liege,
+        
+        /// <comentarios/>
+        Servicios_Generales,
+        
+        /// <comentarios/>
+        Otros,
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/entregaalmacen")]
+    public enum Maquina {
+        
+        /// <comentarios/>
+        _blank_,
+        
+        /// <comentarios/>
+        M1,
+        
+        /// <comentarios/>
+        M2,
+        
+        /// <comentarios/>
+        M3,
+        
+        /// <comentarios/>
+        M4,
+        
+        /// <comentarios/>
+        R1,
+        
+        /// <comentarios/>
+        R2,
+        
+        /// <comentarios/>
+        E1,
+        
+        /// <comentarios/>
+        E2,
+        
+        /// <comentarios/>
+        T1,
+        
+        /// <comentarios/>
+        T2,
+        
+        /// <comentarios/>
+        T3,
+        
+        /// <comentarios/>
+        T4,
+        
+        /// <comentarios/>
+        T5,
+        
+        /// <comentarios/>
+        T6,
+        
+        /// <comentarios/>
+        T7,
+        
+        /// <comentarios/>
+        T8,
     }
     
     /// <comentarios/>
@@ -484,6 +656,12 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
         
         /// <comentarios/>
         No_Linea,
+        
+        /// <comentarios/>
+        Destino,
+        
+        /// <comentarios/>
+        Maquina,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

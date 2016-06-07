@@ -103,12 +103,12 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public void Update(Empleados entity)
+        public void Update(ref Empleados entity)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateRange(IEnumerable<Empleados> entitties)
+        public void UpdateRange(ref Empleados[] entitties)
         {
             throw new NotImplementedException();
         }

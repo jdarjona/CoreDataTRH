@@ -42,6 +42,13 @@ namespace AlmacenRepuestosXamarin.Model
             return repuesto;
         }
 
+        public static async Task<EntregaAlmacen> updateRepuesto(EntregaAlmacen repuesto)
+        {
+
+            return await datos.updateRepuesto(repuesto);
+
+
+        }
         public static List<EntregaAlmacen> getRepuestos() {
             return repuestos;
         }
@@ -94,10 +101,10 @@ namespace AlmacenRepuestosXamarin.Model
            // ListEPISRepuestos.actualizarLista();
         }
         
-        public static async void registrarLista(string emple, EntregaAlmacen[] _repuestos)
+        public static async void registrarLista(string emple)
         {
            
-            var ok=await datos.registerEntrega(emple, _repuestos);
+            var ok=await datos.registerEntrega(emple);
             if (ok) {
                 repuestos.Clear();
             }

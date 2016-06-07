@@ -2,6 +2,38 @@
 <definitions xmlns:tns="urn:microsoft-dynamics-schemas/page/entregaalmacen" targetNamespace="urn:microsoft-dynamics-schemas/page/entregaalmacen" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/page/entregaalmacen" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:simpleType name="Destino">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Taller_Mecánico" />
+          <xsd:enumeration value="Taller_Eléctrico" />
+          <xsd:enumeration value="Máquina" />
+          <xsd:enumeration value="Sevilla" />
+          <xsd:enumeration value="Liege" />
+          <xsd:enumeration value="Servicios_Generales" />
+          <xsd:enumeration value="Otros" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Maquina">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="M1" />
+          <xsd:enumeration value="M2" />
+          <xsd:enumeration value="M3" />
+          <xsd:enumeration value="M4" />
+          <xsd:enumeration value="R1" />
+          <xsd:enumeration value="R2" />
+          <xsd:enumeration value="E1" />
+          <xsd:enumeration value="E2" />
+          <xsd:enumeration value="T1" />
+          <xsd:enumeration value="T2" />
+          <xsd:enumeration value="T3" />
+          <xsd:enumeration value="T4" />
+          <xsd:enumeration value="T5" />
+          <xsd:enumeration value="T6" />
+          <xsd:enumeration value="T7" />
+          <xsd:enumeration value="T8" />
+        </xsd:restriction>
+      </xsd:simpleType>
       <xsd:complexType name="EntregaAlmacen">
         <xsd:sequence>
           <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
@@ -10,7 +42,7 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="Inventory" type="xsd:decimal" />
           <xsd:element minOccurs="0" maxOccurs="1" name="_x003C_Descripcion_Producto_x003E_" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Fecha" type="xsd:date" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Cantidad" type="xsd:int" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Unit_of_Measure_Code" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="No_Documento" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Comentario" type="xsd:string" />
@@ -18,6 +50,8 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="Entregado" type="xsd:boolean" />
           <xsd:element minOccurs="0" maxOccurs="1" name="Epi" type="xsd:boolean" />
           <xsd:element minOccurs="0" maxOccurs="1" name="No_Linea" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Destino" type="tns:Destino" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Maquina" type="tns:Maquina" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="EntregaAlmacen_List">
@@ -40,6 +74,8 @@
           <xsd:enumeration value="Entregado" />
           <xsd:enumeration value="Epi" />
           <xsd:enumeration value="No_Linea" />
+          <xsd:enumeration value="Destino" />
+          <xsd:enumeration value="Maquina" />
         </xsd:restriction>
       </xsd:simpleType>
       <xsd:complexType name="EntregaAlmacen_Filter">
@@ -392,7 +428,7 @@
   </binding>
   <service name="EntregaAlmacen_Service">
     <port name="EntregaAlmacen_Port" binding="tns:EntregaAlmacen_Binding">
-      <address location="http://192.168.1.2:7047/DynamicsNAV/WS/TRH%20Liege/Page/EntregaAlmacen" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://intranet.trh-es.com:7047/DynamicsNAV/WS/TRH%20Liege/Page/EntregaAlmacen" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

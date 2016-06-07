@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.Serialization;
+
 namespace RepositoryWebServiceTRH.EmpleadoContext {
     
     
@@ -62,6 +64,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/empleados")]
+    [DataContract]
     public partial class Empleados : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -108,6 +111,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [DataMember]
         public string Key {
             get {
                 return this.keyField;
@@ -120,6 +124,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [DataMember]
         public string No {
             get {
                 return this.noField;
@@ -132,6 +137,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [DataMember]
         public string FullName {
             get {
                 return this.fullNameField;
@@ -144,6 +150,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [DataMember]
         public string First_Name {
             get {
                 return this.first_NameField;
@@ -156,6 +163,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [DataMember]
         public string Middle_Name {
             get {
                 return this.middle_NameField;
@@ -168,6 +176,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [DataMember]
         public string Last_Name {
             get {
                 return this.last_NameField;
@@ -180,6 +189,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [DataMember]
         public string Initials {
             get {
                 return this.initialsField;
@@ -192,6 +202,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [DataMember]
         public string Job_Title {
             get {
                 return this.job_TitleField;
@@ -204,6 +215,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [DataMember]
         public int Nº_Taquilla {
             get {
                 return this.nº_TaquillaField;
@@ -216,6 +228,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [DataMember]
         public bool Nº_TaquillaSpecified {
             get {
                 return this.nº_TaquillaFieldSpecified;
@@ -228,6 +241,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [DataMember]
         public string Post_Code {
             get {
                 return this.post_CodeField;
@@ -240,6 +254,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [DataMember]
         public string Country_Region_Code {
             get {
                 return this.country_Region_CodeField;
@@ -252,6 +267,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [DataMember]
         public string Extension {
             get {
                 return this.extensionField;
@@ -264,6 +280,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [DataMember]
         public string Phone_No {
             get {
                 return this.phone_NoField;
@@ -276,6 +293,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [DataMember]
         public string Mobile_Phone_No {
             get {
                 return this.mobile_Phone_NoField;
@@ -288,6 +306,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [DataMember]
         public string E_Mail {
             get {
                 return this.e_MailField;
@@ -300,6 +319,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [DataMember]
         public string Statistics_Group_Code {
             get {
                 return this.statistics_Group_CodeField;
@@ -312,6 +332,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [DataMember]
         public string Resource_No {
             get {
                 return this.resource_NoField;
@@ -324,6 +345,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [DataMember]
         public string Search_Name {
             get {
                 return this.search_NameField;
@@ -336,6 +358,7 @@ namespace RepositoryWebServiceTRH.EmpleadoContext {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [DataMember]
         public bool Comment {
             get {
                 return this.commentField;

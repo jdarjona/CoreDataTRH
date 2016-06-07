@@ -158,7 +158,7 @@ namespace AlmacenRepuestosXamarin
                     alert.SetPositiveButton("SÍ", (s, e) =>
                     {
                        
-                        ManagerRepuestos.registrarLista(empleado.No,adapterRepuestos.list.ToArray<EntregaAlmacen>());
+                        ManagerRepuestos.registrarLista(empleado.No);
                         base.OnBackPressed();
                     });
                     alert.SetNegativeButton("NO", (s, e) =>

@@ -130,9 +130,11 @@ namespace AlmacenRepuestosXamarin.Adapter
                 view = context.LayoutInflater.Inflate(Resource.Layout.spinnerLayout, parent, false);
 
             Empleados item = this[position];
+            string text= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.FullName.ToLower());
+            view.FindViewById<TextView>(Resource.Id.textoSpinner).Text = text;
 
-            view.FindViewById<TextView>(Resource.Id.textoSpinner).Text = item.FullName.ToString();
-           
+
+
 
             return view;
         }

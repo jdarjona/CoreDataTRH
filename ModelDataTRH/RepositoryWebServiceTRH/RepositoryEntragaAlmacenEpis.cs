@@ -172,10 +172,31 @@ namespace RepositoryWebServiceTRH
 
         public EntregaAlmacen Get(string id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntregaAlmacen_Filter[] filtro = new EntregaAlmacen_Filter[1];
+
+                //Filtro Empleado
+                filtro[0] = new EntregaAlmacen_Filter();
+                filtro[0].Field = EntregaAlmacen_Fields.Cod_Producto;
+                filtro[0].Criteria = id;
+              
+
+                
+                return Context.contextEntregaAlmacenEpis.ReadMultiple(filtro, null, 0).First();
+
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("id", "El parametro 'id' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo GetbyIdKey] [id] ", ex.Message), ex.InnerException);
+            }
         }
 
-        public void Update(EntregaAlmacen entity)
+        public void Update(ref EntregaAlmacen entity)
         {
             try
             {
@@ -193,12 +214,12 @@ namespace RepositoryWebServiceTRH
             }
         }
 
-        public void UpdateRange(IEnumerable<EntregaAlmacen> entitties)
+        public void UpdateRange(ref EntregaAlmacen[] entitties)
         {
             try
             {
-                EntregaAlmacen[] entregaAlmacenArray = entitties.ToArray<EntregaAlmacen>();
-                Context.contextEntregaAlmacenEpis.CreateMultiple(ref entregaAlmacenArray);
+              
+                Context.contextEntregaAlmacenEpis.UpdateMultiple(ref entitties);
             }
             catch (ArgumentNullException)
             {

@@ -65,12 +65,12 @@ namespace RepositoryWebServiceTRH
             throw new NotImplementedException();
         }
 
-        public void Update(RegistrarEntrega entity)
+        public void Update(ref RegistrarEntrega entity)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateRange(IEnumerable<RegistrarEntrega> entitties)
+        public void UpdateRange(ref RegistrarEntrega[] entitties)
         {
             throw new NotImplementedException();
         }

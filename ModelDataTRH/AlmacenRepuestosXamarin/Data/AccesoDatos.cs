@@ -20,8 +20,8 @@ namespace AlmacenRepuestosXamarin.Data
 {
     public  class AccesoDatos
     {
-      // private const string webBase = @"http://intranet.trh-be.com/WSTRH/";
-        private const string webBase = @"http://192.168.1.2/WSTRH/";
+       private const string webBase = @"http://intranet.trh-es.com/WSTRH/";
+      //  private const string webBase = @"http://192.168.1.2/WSTRH/";
         private  HttpClient client = new HttpClient(new NativeMessageHandler());
 
 
@@ -92,7 +92,38 @@ namespace AlmacenRepuestosXamarin.Data
 
         }
 
+        public async Task<EntregaAlmacen> updateRepuesto( EntregaAlmacen repuesto) {
 
+
+            try
+            {
+
+                
+                var contentPost = new StringContent("", Encoding.UTF8, "application/json");
+                string url = string.Format(@"api/EntregaAlmacen?key={0}&cantidad={1}&destino={2}&maquina={3}"
+                                                      , repuesto.Cod_Producto,repuesto.Cantidad,repuesto.Destino,repuesto.Maquina);
+                var response = await client.PutAsync(url, contentPost);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    repuesto = JsonConvert.DeserializeObject<EntregaAlmacen>(content);
+
+                    return repuesto;
+                  
+                }
+               
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Se ha producido una excipcion no controlada", ex.InnerException);
+
+
+            }
+
+            return null;
+        }
 
         public async Task<bool> deleteRepuesto(string key) {
 
@@ -108,28 +139,30 @@ namespace AlmacenRepuestosXamarin.Data
             return false;
         }
 
-        public async Task<bool> registerEntrega(string codEmpleado, EntregaAlmacen[] repuestos) {
+        public async Task<bool> registerEntrega(string codEmpleado) {
 
             try
             {
-                var respustosJson = JsonConvert.SerializeObject(repuestos);
-                var contentPost = new StringContent(respustosJson, Encoding.UTF8, "application/json");
+                
+              //  var respustosJson = JsonConvert.SerializeObject(repuestos);
+                var contentPost = new StringContent("", Encoding.UTF8, "application/json");
                 string url = string.Format(@"api/EntregaAlmacen?codEmpleado={0}",  codEmpleado);
                 var response = await client.PutAsync(url, contentPost);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
 
-                    var result = JsonConvert.DeserializeObject<bool>(content);
-                    return result;
+                   // var result = JsonConvert.DeserializeObject<bool>(content);
+                    return true;
                 }
+                return false;
             }
             catch (Exception ex)
             {
 
                 throw new Exception("Se ha producido una excipcion no controlada", ex.InnerException);
             }
-            return false;
+           
 
         }
 

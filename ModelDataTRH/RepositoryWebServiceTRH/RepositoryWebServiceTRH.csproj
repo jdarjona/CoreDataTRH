@@ -117,7 +117,7 @@
     <None Include="Service References\EmpleadoContext\RepositoryWebServiceTRH.EmpleadoContext.Read_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\EntregaAlmacenEpisContext\EntregaAlmacen1.wsdl" />
+    <None Include="Service References\EntregaAlmacenEpisContext\EntregaAlmacen.wsdl" />
     <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.CreateMultiple_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

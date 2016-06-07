@@ -16,7 +16,7 @@ namespace AlmacenRepuestosXamarin.Adapter
     {
 
         private Activity context;
-        private T[] arrayObjets;
+        public T[] arrayObjets;
         public AdapterSpinner(Activity _context, int textViewResourceId,T[] objects):base(_context,textViewResourceId,objects)
         {
             this.context = _context;
