@@ -14,6 +14,7 @@ using Android.Graphics.Drawables;
 using Android.Views.InputMethods;
 using Android.Content.PM;
 using static Android.Views.View;
+using System.Text;
 
 namespace AlmacenRepuestosXamarin
 {
@@ -236,7 +237,7 @@ namespace AlmacenRepuestosXamarin
             Spinner spinner = (Spinner)sender;
 
 
-            this.RunOnUiThread(() => Toast.MakeText(this, spinner.SelectedItem.ToString(), ToastLength.Short).Show());
+            //this.RunOnUiThread(() => Toast.MakeText(this, spinner.SelectedItem.ToString(), ToastLength.Short).Show());
             //repuesto.destino = spinner.SelectedItem.ToString();
 
             repuesto.Destino = (Destino)adapterDestinos.arrayObjets[e.Position];
@@ -245,7 +246,8 @@ namespace AlmacenRepuestosXamarin
             {
                 this.spinnerMaquina.Visibility = ViewStates.Visible;
             }
-           
+
+          
         }
 
         private void spinnerMaquina_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e) {
@@ -256,6 +258,45 @@ namespace AlmacenRepuestosXamarin
 
         }
 
+        private bool validar() {
+            StringBuilder error = new StringBuilder(); ;
+            error.Append(string.Empty);
+            bool valido = true;
+            if (repuesto.Destino == Destino._blank_)
+            {
+                error.Append("Debe seleccionar un destino");
+                error.Append("\n");
+                valido = false;
+
+                    
+            }
+            if (repuesto.Destino== Destino.Máquina && repuesto.Maquina == Maquina._blank_)
+            {
+                error.Append("Debe seleccionar un maquina");
+                error.Append("\n");
+                valido = false;
+
+
+            }
+            if (repuesto.Cantidad<=0)
+            {
+                error.Append("Introduzca cantidad");
+                error.Append("\n");
+                valido = false;
+
+
+            }
+            if (!valido) {
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                alert.SetTitle("Registro");
+                alert.SetIcon(Android.Resource.Drawable.ButtonStar);
+                alert.SetMessage(error.ToString());
+                alert.SetNeutralButton("Ok", (s, e) => { });
+
+            }
+
+            return valido;
+        }
        
 
 
