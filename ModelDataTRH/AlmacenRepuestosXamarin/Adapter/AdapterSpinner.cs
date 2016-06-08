@@ -43,7 +43,7 @@ namespace AlmacenRepuestosXamarin.Adapter
                 row = context.LayoutInflater.Inflate(Resource.Layout.spinnerLayout, parent, false);
 
             TextView label = (TextView)row.FindViewById(Resource.Id.textoSpinner);
-            label.Text = arrayObjets[position].ToString().Replace("_"," ");
+            label.Text = arrayObjets[position].ToString().Replace("_blank_", String.Empty).Replace("_"," ");
 
 
             return row;

@@ -22,22 +22,12 @@ namespace AlmacenRepuestosXamarin
     {
 
 
-        enum DestinosEnum
-        {
-            Taller_Mecánico,
-            Taller_Eléctrico, 
-            Máquina, 
-            Sevilla, 
-            Liege, 
-            Servicios_Generales, 
-            Otros
-
-        }
+       
 
         //private DestinosEnum destinos;
         private Destino destinos;
         private Maquina maquinas;
-        AdapterSpinner<DestinosEnum> adapterDestinos;
+        AdapterSpinner<Destino> adapterDestinos;
         AdapterSpinner<Maquina> adapterMaquinas;
         EditText edittext;
         Drawable warning;
@@ -61,7 +51,7 @@ namespace AlmacenRepuestosXamarin
             SupportActionBar.Title = string.Format(@"{0} - {1}",repuesto.Cod_Producto,repuesto.Unit_of_Measure_Code);
 
           
-
+           
 
             this.RunOnUiThread(() => Toast.MakeText(this, id.ToString(), ToastLength.Short).Show());
 
@@ -101,10 +91,10 @@ namespace AlmacenRepuestosXamarin
             spinnerMaquina.Visibility = ViewStates.Invisible;
             //spinnerMaquina.ItemClick += spinner_OnClick;
 
-
-            var s = (DestinosEnum[])Enum.GetValues(typeof(DestinosEnum));
+         
+            var s = (Destino[])Enum.GetValues(typeof(Destino));
             
-            adapterDestinos = new AdapterSpinner<DestinosEnum>(this, Android.Resource.Layout.SimpleSpinnerItem,s);
+            adapterDestinos = new AdapterSpinner<Destino>(this, Android.Resource.Layout.SimpleSpinnerItem,s);
             // Specify the layout to use when the list of choices appears
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             // Apply the adapter to the spinner
