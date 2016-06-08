@@ -15,6 +15,7 @@ using Android.Views.InputMethods;
 using Android.Content.PM;
 using static Android.Views.View;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AlmacenRepuestosXamarin
 {
@@ -173,6 +174,11 @@ namespace AlmacenRepuestosXamarin
 
         }
 
+        public override void OnBackPressed()
+        {
+            validar();
+            //base.OnBackPressed();
+        }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menuDetalle, menu);
@@ -185,13 +191,14 @@ namespace AlmacenRepuestosXamarin
 
             switch (item.ItemId)
             {
-                //case Resource.Id.eliminar:
+                case Resource.Id.eliminar:
 
-                //    ManagerRepuestos.eliminarRepuesto(repuesto.Key);
+                    eliminarRepuesto();
+                    //ManagerRepuestos.eliminarRepuesto(repuesto.Key);
 
-                //    Toast.MakeText(this, "Se eliminó el repuesto "+repuesto.Cod_Producto+" de la lista", ToastLength.Short).Show();
-                //    Finish();
-                //    break;
+                    //Toast.MakeText(this, "Se eliminó el repuesto " + repuesto.Cod_Producto + " de la lista", ToastLength.Short).Show();
+                    //Finish();
+                    break;
 
                 default:
                     Finish();
@@ -202,6 +209,16 @@ namespace AlmacenRepuestosXamarin
 
         }
 
+        private async Task<bool> eliminarRepuesto()
+        {
+             await ManagerRepuestos.eliminarRepuesto(repuesto.Key);
+
+            Toast.MakeText(this, "Se eliminó el repuesto " + repuesto.Cod_Producto + " de la lista", ToastLength.Short).Show();
+            Finish();
+
+            return true;
+
+        }
 
         private void spinner_OnFocus() { }
 

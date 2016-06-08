@@ -155,22 +155,28 @@ namespace AlmacenRepuestosXamarin
             {
                 case Resource.Id.registrar:
 
-                    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
-                    alert.SetTitle("¿Estas seguro de registrar la lista?");
-                    alert.SetMessage("Si la registras esos datos no podrán ser modificados");
-                    alert.SetPositiveButton("SÍ", (s, e) =>
+                    if (ManagerRepuestos.getRepuestos().Count() > 0)
                     {
+                        Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                        alert.SetTitle("¿Estas seguro de registrar la lista?");
+                        alert.SetMessage("Si la registras esos datos no podrán ser modificados");
+                        alert.SetPositiveButton("SÍ", (s, e) =>
+                        {
 
-                        RegistrarSalida();
-                    });
-                    alert.SetNegativeButton("NO", (s, e) =>
-                    {
+                            RegistrarSalida();
+                        });
+                        alert.SetNegativeButton("NO", (s, e) =>
+                        {
 
-                    });
+                        });
 
-                    Dialog dialog = alert.Create();
-                    dialog.Show();
+                        Dialog dialog = alert.Create();
+                        dialog.Show();
+                    }
+                    else {
 
+                        Toast.MakeText(this, "No hay repuestos para registrar!!!", ToastLength.Short).Show();
+                    }
                     break;
 
                 default:
