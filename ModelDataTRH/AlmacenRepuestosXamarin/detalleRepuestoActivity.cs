@@ -289,7 +289,7 @@ namespace AlmacenRepuestosXamarin
             if (!valido) {
                 Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
                 alert.SetTitle("Registro");
-                alert.SetIcon(Android.Resource.Drawable.ButtonDefault);
+               // alert.SetIcon(Android.Resource.Drawable.ButtonDefault);
                 alert.SetMessage(error.ToString());
                 alert.SetNeutralButton("Ok", (s, e) => { });
                 alert.Show();
