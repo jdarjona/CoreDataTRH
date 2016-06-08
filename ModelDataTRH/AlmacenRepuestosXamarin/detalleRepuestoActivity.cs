@@ -185,13 +185,13 @@ namespace AlmacenRepuestosXamarin
 
             switch (item.ItemId)
             {
-                case Resource.Id.eliminar:
+                //case Resource.Id.eliminar:
 
-                    ManagerRepuestos.eliminarRepuesto(repuesto.Key);
+                //    ManagerRepuestos.eliminarRepuesto(repuesto.Key);
 
-                    Toast.MakeText(this, "Se eliminó el repuesto "+repuesto.Cod_Producto+" de la lista", ToastLength.Short).Show();
-                    Finish();
-                    break;
+                //    Toast.MakeText(this, "Se eliminó el repuesto "+repuesto.Cod_Producto+" de la lista", ToastLength.Short).Show();
+                //    Finish();
+                //    break;
 
                 default:
                     Finish();
