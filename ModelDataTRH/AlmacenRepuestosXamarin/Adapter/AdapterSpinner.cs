@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
 
 namespace AlmacenRepuestosXamarin.Adapter
 {
@@ -42,8 +43,22 @@ namespace AlmacenRepuestosXamarin.Adapter
             if (row == null)
                 row = context.LayoutInflater.Inflate(Resource.Layout.spinnerLayout, parent, false);
 
+
             TextView label = (TextView)row.FindViewById(Resource.Id.textoSpinner);
-            label.Text = arrayObjets[position].ToString().Replace("_blank_", String.Empty).Replace("_"," ");
+            string mensajePlaceHolder = string.Empty;
+            if (typeof(T) == typeof(Destino))
+            {
+                mensajePlaceHolder = "Destino";
+
+            }
+            else if (typeof(T) == typeof(Maquina)) {
+                mensajePlaceHolder = "Máquina";
+            }
+
+           
+           
+
+            label.Text = arrayObjets[position].ToString().Replace("_blank_", mensajePlaceHolder).Replace("_"," ");
 
 
             return row;

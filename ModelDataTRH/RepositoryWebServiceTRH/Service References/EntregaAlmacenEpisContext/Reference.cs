@@ -513,114 +513,114 @@ namespace RepositoryWebServiceTRH.EntregaAlmacenEpisContext {
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/entregaalmacen")]
     ///Sevilla
-    //public enum Maquina
-    //{
+    public enum Maquina
+    {
+
+        /// <comentarios/>
+        _blank_,
+
+        /// <comentarios/>
+        M1,
+
+        /// <comentarios/>
+        M2,
+
+        /// <comentarios/>
+        M3,
+
+        /// <comentarios/>
+        M4,
+
+        /// <comentarios/>
+        R1,
+
+        /// <comentarios/>
+        R2,
+
+        /// <comentarios/>
+        E1,
+
+        /// <comentarios/>
+        E2,
+
+        /// <comentarios/>
+        T1,
+
+        /// <comentarios/>
+        T2,
+
+        /// <comentarios/>
+        T3,
+
+        /// <comentarios/>
+        T4,
+
+        /// <comentarios/>
+        T5,
+
+        /// <comentarios/>
+        T6,
+
+        /// <comentarios/>
+        T7,
+
+        /// <comentarios/>
+        T8,
+    }
+    /////Lieja
+    //public enum Maquina {
 
     //    /// <comentarios/>
     //    _blank_,
 
     //    /// <comentarios/>
-    //    M1,
+    //    M5,
 
     //    /// <comentarios/>
-    //    M2,
+    //    M6,
 
     //    /// <comentarios/>
-    //    M3,
+    //    M7,
 
     //    /// <comentarios/>
-    //    M4,
+    //    M8,
 
     //    /// <comentarios/>
-    //    R1,
+    //    R3,
 
     //    /// <comentarios/>
-    //    R2,
+    //    R4,
 
     //    /// <comentarios/>
-    //    E1,
+    //    E3,
 
     //    /// <comentarios/>
-    //    E2,
+    //    E4,
 
     //    /// <comentarios/>
-    //    T1,
+    //    T9,
 
     //    /// <comentarios/>
-    //    T2,
+    //    T10,
 
     //    /// <comentarios/>
-    //    T3,
+    //    T11,
 
     //    /// <comentarios/>
-    //    T4,
+    //    T12,
 
     //    /// <comentarios/>
-    //    T5,
+    //    T13,
 
     //    /// <comentarios/>
-    //    T6,
+    //    T14,
 
     //    /// <comentarios/>
-    //    T7,
+    //    T15
 
-    //    /// <comentarios/>
-    //    T8,
+
     //}
-    ///Lieja
-    public enum Maquina {
-        
-        /// <comentarios/>
-        _blank_,
-        
-        /// <comentarios/>
-        M5,
-        
-        /// <comentarios/>
-        M6,
-        
-        /// <comentarios/>
-        M7,
-        
-        /// <comentarios/>
-        M8,
-        
-        /// <comentarios/>
-        R3,
-        
-        /// <comentarios/>
-        R4,
-        
-        /// <comentarios/>
-        E3,
-        
-        /// <comentarios/>
-        E4,
-        
-        /// <comentarios/>
-        T9,
-        
-        /// <comentarios/>
-        T10,
-        
-        /// <comentarios/>
-        T11,
-        
-        /// <comentarios/>
-        T12,
-        
-        /// <comentarios/>
-        T13,
-        
-        /// <comentarios/>
-        T14,
-        
-        /// <comentarios/>
-        T15
-        
-        
-    }
-    
+
     /// <comentarios/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]

@@ -243,7 +243,7 @@ namespace AlmacenRepuestosXamarin
 
                 if (ManagerRepuestos.existeRepuestoEnLista(empleado.No, result.Text))
                 {
-                    msg = "Ya fue esaneado ese producto!!";
+                    msg = "Ya fue escaneado ese producto!!";
                 }
                 else
                 {
