@@ -202,6 +202,7 @@ namespace AlmacenRepuestosXamarin
 
         }
 
+
         private void spinner_OnFocus() { }
 
         private void spinner_OnClick(object sender) {
@@ -262,6 +263,14 @@ namespace AlmacenRepuestosXamarin
             StringBuilder error = new StringBuilder(); ;
             error.Append(string.Empty);
             bool valido = true;
+            if (repuesto.Cantidad <= 0)
+            {
+                error.Append("Introduzca cantidad");
+                error.Append("\n");
+                valido = false;
+
+
+            }
             if (repuesto.Destino == Destino._blank_)
             {
                 error.Append("Debe seleccionar un destino");
@@ -272,20 +281,13 @@ namespace AlmacenRepuestosXamarin
             }
             if (repuesto.Destino== Destino.Máquina && repuesto.Maquina == Maquina._blank_)
             {
-                error.Append("Debe seleccionar un maquina");
+                error.Append("Debe seleccionar una maquina");
                 error.Append("\n");
                 valido = false;
 
 
             }
-            if (repuesto.Cantidad<=0)
-            {
-                error.Append("Introduzca cantidad");
-                error.Append("\n");
-                valido = false;
-
-
-            }
+            
             if (!valido) {
                 Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
                 alert.SetTitle("Registro");

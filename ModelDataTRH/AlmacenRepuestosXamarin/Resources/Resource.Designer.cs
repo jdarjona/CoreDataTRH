@@ -1720,9 +1720,6 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b004a
 			public const int edit_query = 2131427402;
 			
-			// aapt resource value: 0x7f0b0082
-			public const int eliminar = 2131427458;
-			
 			// aapt resource value: 0x7f0b001a
 			public const int end = 2131427354;
 			
@@ -1957,8 +1954,8 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f0b0079
 			public const int textView3 = 2131427449;
 			
-			// aapt resource value: 0x7f0b0083
-			public const int textoRowRightFar = 2131427459;
+			// aapt resource value: 0x7f0b0082
+			public const int textoRowRightFar = 2131427458;
 			
 			// aapt resource value: 0x7f0b007b
 			public const int textoSpinner = 2131427451;
