@@ -162,6 +162,7 @@ namespace AlmacenRepuestosXamarin.Data
             {
 
                 throw new Exception("Se ha producido una excipcion no controlada", ex.InnerException);
+               
             }
            
 

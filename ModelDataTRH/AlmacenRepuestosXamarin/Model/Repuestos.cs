@@ -101,13 +101,14 @@ namespace AlmacenRepuestosXamarin.Model
            // ListEPISRepuestos.actualizarLista();
         }
         
-        public static async void registrarLista(string emple)
+        public static async Task<bool> registrarLista(string emple)
         {
            
             var ok=await datos.registerEntrega(emple);
             if (ok) {
                 repuestos.Clear();
             }
+            return ok;
            
         }
 

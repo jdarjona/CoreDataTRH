@@ -160,9 +160,8 @@ namespace AlmacenRepuestosXamarin
                     alert.SetMessage("Si la registras esos datos no podrán ser modificados");
                     alert.SetPositiveButton("SÍ", (s, e) =>
                     {
-                       
-                        ManagerRepuestos.registrarLista(empleado.No);
-                        base.OnBackPressed();
+
+                        RegistrarSalida();
                     });
                     alert.SetNegativeButton("NO", (s, e) =>
                     {
@@ -180,6 +179,34 @@ namespace AlmacenRepuestosXamarin
                     break;
             }
             return base.OnOptionsItemSelected(item);
+
+        }
+
+        private async Task<bool> RegistrarSalida()
+        {
+            bool ok = false;
+
+            Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+            alert.SetTitle("Registro");
+            alert.SetIcon(Android.Resource.Drawable.ButtonStar);
+
+
+            ok = await ManagerRepuestos.registrarLista(empleado.No);
+            if (ok)
+            {
+                alert.SetMessage("Registro correcto");
+                alert.SetNeutralButton("Ok", (s, e) => { base.OnBackPressed(); });
+
+                
+
+            }
+            else {
+                alert.SetMessage("Error al realizar el registro, pongase en contacto con el departamento informática");
+                alert.SetNeutralButton("Ok", (s, e) => {  });
+            }
+
+            alert.Show();
+            return ok;
 
         }
 
