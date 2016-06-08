@@ -182,17 +182,18 @@ namespace AlmacenRepuestosXamarin.Data
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
 
                 url = @"Archivos/Disteel sa-nv_DEV-V16_0332.pdf";
-                var response =  await clientFile.GetStreamAsync(url);
+                byte[] bytes =  await clientFile.GetByteArrayAsync(url);
 
-                var externalPath = global::Android.OS.Environment.ExternalStorageDirectory.Path + "/DEV-V16_0332.pdf";
-                byte[] bytes = new byte[response.Length];
-                response.Read(bytes, 0, (int)response.Length);
-
-
-                File.WriteAllBytes(externalPath, bytes);
+                var localPath = global::Android.OS.Environment.ExternalStorageDirectory.Path + "/DEV-V16_0332.pdf";
+                //byte[] bytes = new byte[response.Length];
+                //response.Read(bytes, 0, (int)response.Length);
 
 
-                return externalPath;
+                File.WriteAllBytes(localPath, bytes);
+
+               
+
+                return localPath;
             }
             catch (Exception ex)
             {

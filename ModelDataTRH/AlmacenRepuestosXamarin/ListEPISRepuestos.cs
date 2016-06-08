@@ -89,10 +89,32 @@ namespace AlmacenRepuestosXamarin
                 activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", ManagerRepuestos.getRepuestos()[e.Position].Key);
                 StartActivity(activityDetalleRepuestoActivity);
             };
+            //abrirPdf();
 
-           // ManagerRepuestos.getAlbaran(string.Empty);
+
 
         }
+
+        private async Task<bool> abrirPdf() {
+
+            string localPath = await ManagerRepuestos.getAlbaran(string.Empty);
+
+            var localImage = new Java.IO.File(localPath);
+            if (localImage.Exists())
+            {
+
+                global::Android.Net.Uri uri = global::Android.Net.Uri.FromFile(localImage);
+
+                var intent = new Intent(Intent.ActionView, uri);
+                //  intent.SetType ("application/pdf");
+
+                intent.SetDataAndType(global::Android.Net.Uri.FromFile(localImage), "application/pdf");
+
+                this.StartActivity(intent);
+            }
+            return true;
+        }
+
 
         protected override void OnDestroy()
         {
@@ -262,7 +284,7 @@ namespace AlmacenRepuestosXamarin
                 }
             }
             else
-                msg = "Scanning Canceled!";
+                msg = "Scaneo Cancelado";
 
             
             this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
