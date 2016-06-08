@@ -158,7 +158,7 @@ namespace AlmacenRepuestosXamarin
         private async void OnClik_btoAceptar(object sender, EventArgs e) {
 
             var _btoAceptar = (Button)sender;
-            if (repuesto.Cantidad > 0)
+            if (validar())
             {
 
                 repuesto=await ManagerRepuestos.updateRepuesto(repuesto);
