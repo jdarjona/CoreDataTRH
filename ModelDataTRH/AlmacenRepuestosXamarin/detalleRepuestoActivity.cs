@@ -292,6 +292,7 @@ namespace AlmacenRepuestosXamarin
                 alert.SetIcon(Android.Resource.Drawable.ButtonStar);
                 alert.SetMessage(error.ToString());
                 alert.SetNeutralButton("Ok", (s, e) => { });
+                alert.Show();
 
             }
 
