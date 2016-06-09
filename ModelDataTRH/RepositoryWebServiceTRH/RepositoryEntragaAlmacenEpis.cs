@@ -242,5 +242,24 @@ namespace RepositoryWebServiceTRH
         {
             throw new NotImplementedException();
         }
+
+        public string GetAlbaran(string codDocumento) {
+
+            try
+            {
+                return  Context.contextAlmacenesRepuestos.GetAlbaran(codDocumento);
+
+            }
+            catch (ArgumentNullException)
+            {
+                throw new ArgumentNullException("codDocumento", "El parametro 'codDocumento' no puede vernir vacio");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo getAlbaran] [codDocumento] ", ex.Message), ex.InnerException);
+
+            }
+
+        }
     }
 }

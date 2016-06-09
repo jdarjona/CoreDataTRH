@@ -91,6 +91,10 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="RepositorioPaTo.snk" />
+    <None Include="Service References\AlmacenRepuestosContext\AlmacenRepuestos1.wsdl" />
+    <None Include="Service References\AlmacenRepuestosContext\RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AlmacenRepuestosContext\RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -151,7 +155,6 @@
     <None Include="Service References\EntregaAlmacenEpisContext\RepositoryWebServiceTRH.EntregaAlmacenEpisContext.Update_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AlmacenRepuestosContext\AlmacenRepuestos.wsdl" />
     <None Include="Service References\ItemContext\NuevaListaProductos.wsdl" />
     <None Include="Service References\ItemContext\RepositoryWebServiceTRH.ItemContext.CreateMultiple_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

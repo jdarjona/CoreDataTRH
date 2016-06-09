@@ -21,6 +21,13 @@ namespace RepositoryWebServiceTRH.AlmacenRepuestosContext {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos:RegistrarEntrega", ReplyAction="*")]
         System.Threading.Tasks.Task<RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega_Result> RegistrarEntregaAsync(RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (GetAlbaran_Result) del mensaje GetAlbaran_Result no coincide con el valor predeterminado (GetAlbaran)
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos:GetAlbaran", ReplyAction="*")]
+        RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran_Result GetAlbaran(RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos:GetAlbaran", ReplyAction="*")]
+        System.Threading.Tasks.Task<RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran_Result> GetAlbaranAsync(RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -47,6 +54,40 @@ namespace RepositoryWebServiceTRH.AlmacenRepuestosContext {
     public partial class RegistrarEntrega_Result {
         
         public RegistrarEntrega_Result() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAlbaran", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos", IsWrapped=true)]
+    public partial class GetAlbaran {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos", Order=0)]
+        public string codDocumento;
+        
+        public GetAlbaran() {
+        }
+        
+        public GetAlbaran(string codDocumento) {
+            this.codDocumento = codDocumento;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAlbaran_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos", IsWrapped=true)]
+    public partial class GetAlbaran_Result {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos", Order=0)]
+        public string return_value;
+        
+        public GetAlbaran_Result() {
+        }
+        
+        public GetAlbaran_Result(string return_value) {
+            this.return_value = return_value;
         }
     }
     
@@ -97,6 +138,29 @@ namespace RepositoryWebServiceTRH.AlmacenRepuestosContext {
             RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega inValue = new RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega();
             inValue.codEmpleado = codEmpleado;
             return ((RepositoryWebServiceTRH.AlmacenRepuestosContext.AlmacenRepuestos_Port)(this)).RegistrarEntregaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran_Result RepositoryWebServiceTRH.AlmacenRepuestosContext.AlmacenRepuestos_Port.GetAlbaran(RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran request) {
+            return base.Channel.GetAlbaran(request);
+        }
+        
+        public string GetAlbaran(string codDocumento) {
+            RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran inValue = new RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran();
+            inValue.codDocumento = codDocumento;
+            RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran_Result retVal = ((RepositoryWebServiceTRH.AlmacenRepuestosContext.AlmacenRepuestos_Port)(this)).GetAlbaran(inValue);
+            return retVal.return_value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran_Result> RepositoryWebServiceTRH.AlmacenRepuestosContext.AlmacenRepuestos_Port.GetAlbaranAsync(RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran request) {
+            return base.Channel.GetAlbaranAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran_Result> GetAlbaranAsync(string codDocumento) {
+            RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran inValue = new RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran();
+            inValue.codDocumento = codDocumento;
+            return ((RepositoryWebServiceTRH.AlmacenRepuestosContext.AlmacenRepuestos_Port)(this)).GetAlbaranAsync(inValue);
         }
     }
 }
