@@ -37,6 +37,7 @@ namespace AlmacenRepuestosXamarin.Data
             client.DefaultRequestHeaders.Accept.Clear();
 
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
 
         }
 
@@ -176,10 +177,23 @@ namespace AlmacenRepuestosXamarin.Data
             {
                
 
-                url = string.Format(@"");
+
+                string url = string.Format(@"api/EntregaAlmacen?codDocumento={0}", codDocumento);
+                string nombreFichero=string.Empty;
+                var response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    nombreFichero = JsonConvert.DeserializeObject<string>(content);
+                    
+
+                }
+
+                url = string.Format(@"pdf/{0}", nombreFichero);
                 byte[] bytes =  await client.GetByteArrayAsync(url);
 
-                var localPath = global::Android.OS.Environment.ExternalStorageDirectory.Path + "/DEV-V16_0332.pdf";
+                var localPath =string.Format(@"{0}/{1}", global::Android.OS.Environment.ExternalStorageDirectory.Path , nombreFichero);
                 //byte[] bytes = new byte[response.Length];
                 //response.Read(bytes, 0, (int)response.Length);
 

@@ -30,9 +30,9 @@ namespace AlmacenRepuestosXamarin
         AdapterRepuestos adapterRepuestos;
         SwipeActionAdapter adaptarSwipe;
         ListView listViewEmpleados;
+        string numeroDocumento = string.Empty;
 
 
-        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -89,15 +89,15 @@ namespace AlmacenRepuestosXamarin
                 activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", ManagerRepuestos.getRepuestos()[e.Position].Key);
                 StartActivity(activityDetalleRepuestoActivity);
             };
-            //abrirPdf();
+           
 
 
 
         }
 
-        private async Task<bool> abrirPdf() {
+        private async Task<bool> abrirPdf(string codDocumento) {
 
-            string localPath = await ManagerRepuestos.getAlbaran(string.Empty);
+            string localPath = await ManagerRepuestos.getAlbaran(codDocumento);
 
             var localImage = new Java.IO.File(localPath);
             if (localImage.Exists())
@@ -212,7 +212,7 @@ namespace AlmacenRepuestosXamarin
 
         private async Task<bool> RegistrarSalida()
         {
-            string numeroDocumento = string.Empty;
+             numeroDocumento = string.Empty;
 
             Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
             alert.SetTitle("Registro");
@@ -223,12 +223,8 @@ namespace AlmacenRepuestosXamarin
             if (!string.IsNullOrEmpty(numeroDocumento))
             {
                 if (ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Liege) || ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Sevilla)) {
-                    alert.SetMessage("¿Desea enviar el Albarán a su correo?");
-                    alert.SetPositiveButton("SÍ", (s, e) =>
-                    {
-                        //enviarAlbaran();
-                        base.OnBackPressed();
-                    });
+                    alert.SetMessage("¿Desea descargar el albarán?");
+                    alert.SetPositiveButton("SÍ", alertAlbaran_Ok);
                     alert.SetNegativeButton("NO", (s, e) =>
                     {
                         base.OnBackPressed();
@@ -256,6 +252,22 @@ namespace AlmacenRepuestosXamarin
             
          
 
+        }
+
+        private async void alertAlbaran_Ok(object s, DialogClickEventArgs e)
+        {
+
+            if (!string.IsNullOrEmpty(numeroDocumento))
+            {
+                 bool ok = await abrirPdf(numeroDocumento);
+                if (ok)
+                {
+                    base.OnBackPressed();
+                }
+                else {
+                    Toast.MakeText(this, "No se encuentra albarán!!!", ToastLength.Long).Show();
+                }
+            }
         }
 
         private async Task launchScaner()
