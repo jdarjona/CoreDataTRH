@@ -91,7 +91,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="RepositorioPaTo.snk" />
-    <None Include="Service References\AlmacenRepuestosContext\AlmacenRepuestos1.wsdl" />
+    <None Include="Service References\AlmacenRepuestosContext\AlmacenRepuestos.wsdl" />
     <None Include="Service References\AlmacenRepuestosContext\RepositoryWebServiceTRH.AlmacenRepuestosContext.GetAlbaran_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

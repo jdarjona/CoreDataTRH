@@ -212,29 +212,32 @@ namespace AlmacenRepuestosXamarin
 
         private async Task<bool> RegistrarSalida()
         {
-            bool ok = false;
+            string numeroDocumento = string.Empty;
 
             Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
             alert.SetTitle("Registro");
             alert.SetIcon(Android.Resource.Drawable.ButtonStar);
 
 
-            ok = await ManagerRepuestos.registrarLista(empleado.No);
-            if (ok)
+            numeroDocumento = await ManagerRepuestos.registrarLista(empleado.No);
+            if (!string.IsNullOrEmpty(numeroDocumento))
             {
                 alert.SetMessage("Registro correcto");
                 alert.SetNeutralButton("Ok", (s, e) => { base.OnBackPressed(); });
-
+                alert.Show();
+                return true;
                 
 
             }
             else {
                 alert.SetMessage("Error al realizar el registro, pongase en contacto con el departamento informática");
                 alert.SetNeutralButton("Ok", (s, e) => {  });
+                alert.Show();
+                return false;
             }
 
-            alert.Show();
-            return ok;
+            
+         
 
         }
 

@@ -75,7 +75,7 @@
   </binding>
   <service name="AlmacenRepuestos">
     <port name="AlmacenRepuestos_Port" binding="tns:AlmacenRepuestos_Binding">
-      <address location="http://intranet.trh-es.com:7047/DynamicsNAV/WS/T.R.H./Codeunit/AlmacenRepuestos" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://192.168.1.2:7047/DynamicsNAV/WS/T.R.H./Codeunit/AlmacenRepuestos" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

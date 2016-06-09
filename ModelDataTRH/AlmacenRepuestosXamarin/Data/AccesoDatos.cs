@@ -140,8 +140,9 @@ namespace AlmacenRepuestosXamarin.Data
             return false;
         }
 
-        public async Task<bool> registerEntrega(string codEmpleado) {
+        public async Task<string> registerEntrega(string codEmpleado) {
 
+            string content = string.Empty;
             try
             {
                 
@@ -151,12 +152,12 @@ namespace AlmacenRepuestosXamarin.Data
                 var response = await client.PutAsync(url, contentPost);
                 if (response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    content = await response.Content.ReadAsStringAsync();
 
                    // var result = JsonConvert.DeserializeObject<bool>(content);
-                    return true;
+                    
                 }
-                return false;
+                return content;
             }
             catch (Exception ex)
             {
