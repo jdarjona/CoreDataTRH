@@ -16,15 +16,15 @@ namespace RepositoryWebServiceTRH
 
         }
 
-        public bool register(string codEmpleado) {
+        public string register(string codEmpleado) {
 
             try
             {
                 CultureInfo culture = new CultureInfo("es-US");
                 System.Threading.Thread.CurrentThread.CurrentCulture = culture;
 
-                Context.contextAlmacenesRepuestos.RegistrarEntrega(codEmpleado);
-                return true;
+                return Context.contextAlmacenesRepuestos.RegistrarEntrega(codEmpleado);
+                 
             }
             catch (ArgumentNullException)
             {

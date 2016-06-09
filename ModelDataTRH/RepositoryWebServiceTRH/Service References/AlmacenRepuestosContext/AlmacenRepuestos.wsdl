@@ -11,7 +11,9 @@
       </element>
       <element name="RegistrarEntrega_Result">
         <complexType>
-          <sequence />
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
         </complexType>
       </element>
       <element name="GetAlbaran">

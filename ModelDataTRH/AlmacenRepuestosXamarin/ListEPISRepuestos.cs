@@ -222,11 +222,28 @@ namespace AlmacenRepuestosXamarin
             numeroDocumento = await ManagerRepuestos.registrarLista(empleado.No);
             if (!string.IsNullOrEmpty(numeroDocumento))
             {
-                alert.SetMessage("Registro correcto");
-                alert.SetNeutralButton("Ok", (s, e) => { base.OnBackPressed(); });
-                alert.Show();
-                return true;
-                
+                if (ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Liege)) {
+                    alert.SetMessage("¿Desea enviar el Albarán a su correo?");
+                    alert.SetPositiveButton("SÍ", (s, e) =>
+                    {
+                        //enviarAlbaran();
+                        base.OnBackPressed();
+                    });
+                    alert.SetNegativeButton("NO", (s, e) =>
+                    {
+                        base.OnBackPressed();
+                    });
+                    alert.Show();
+                    return true;
+
+                }
+                else
+                { 
+                    alert.SetMessage("Registro correcto");
+                    alert.SetNeutralButton("Ok", (s, e) => { base.OnBackPressed(); });
+                    alert.Show();
+                    return true;
+                }
 
             }
             else {

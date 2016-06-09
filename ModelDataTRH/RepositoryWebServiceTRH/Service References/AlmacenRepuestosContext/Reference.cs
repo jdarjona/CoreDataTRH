@@ -53,7 +53,14 @@ namespace RepositoryWebServiceTRH.AlmacenRepuestosContext {
     [System.ServiceModel.MessageContractAttribute(WrapperName="RegistrarEntrega_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos", IsWrapped=true)]
     public partial class RegistrarEntrega_Result {
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/AlmacenRepuestos", Order=0)]
+        public string return_value;
+        
         public RegistrarEntrega_Result() {
+        }
+        
+        public RegistrarEntrega_Result(string return_value) {
+            this.return_value = return_value;
         }
     }
     
@@ -123,10 +130,11 @@ namespace RepositoryWebServiceTRH.AlmacenRepuestosContext {
             return base.Channel.RegistrarEntrega(request);
         }
         
-        public void RegistrarEntrega(string codEmpleado) {
+        public string RegistrarEntrega(string codEmpleado) {
             RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega inValue = new RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega();
             inValue.codEmpleado = codEmpleado;
             RepositoryWebServiceTRH.AlmacenRepuestosContext.RegistrarEntrega_Result retVal = ((RepositoryWebServiceTRH.AlmacenRepuestosContext.AlmacenRepuestos_Port)(this)).RegistrarEntrega(inValue);
+            return retVal.return_value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
