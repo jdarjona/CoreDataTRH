@@ -222,7 +222,7 @@ namespace AlmacenRepuestosXamarin
             numeroDocumento = await ManagerRepuestos.registrarLista(empleado.No);
             if (!string.IsNullOrEmpty(numeroDocumento))
             {
-                if (ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Liege)) {
+                if (ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Liege) || ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Sevilla)) {
                     alert.SetMessage("¿Desea enviar el Albarán a su correo?");
                     alert.SetPositiveButton("SÍ", (s, e) =>
                     {

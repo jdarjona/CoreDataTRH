@@ -169,21 +169,15 @@ namespace AlmacenRepuestosXamarin.Data
 
         }
 
-        public async Task<string> downloadFile(string url) {
+        public async Task<string> getAlbaranEntreEmpresas(string codDocumento) {
 
 
             try
             {
-                HttpClient  clientFile = new HttpClient(new NativeMessageHandler())
-                {
-                    BaseAddress = new Uri(@"http://192.168.1.2/Tablet/")
-                };
-                client.DefaultRequestHeaders.Accept.Clear();
+               
 
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
-
-                url = @"Archivos/Disteel sa-nv_DEV-V16_0332.pdf";
-                byte[] bytes =  await clientFile.GetByteArrayAsync(url);
+                url = string.Format(@"");
+                byte[] bytes =  await client.GetByteArrayAsync(url);
 
                 var localPath = global::Android.OS.Environment.ExternalStorageDirectory.Path + "/DEV-V16_0332.pdf";
                 //byte[] bytes = new byte[response.Length];
