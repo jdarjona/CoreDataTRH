@@ -222,6 +222,7 @@ namespace AlmacenRepuestosXamarin
             numeroDocumento = await ManagerRepuestos.registrarLista(empleado.No);
             if (!string.IsNullOrEmpty(numeroDocumento))
             {
+
                 if (ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Liege) || ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Sevilla)) {
                     alert.SetMessage("¿Desea descargar el albarán?");
                     alert.SetPositiveButton("SÍ", alertAlbaran_Ok);
@@ -230,7 +231,7 @@ namespace AlmacenRepuestosXamarin
                         base.OnBackPressed();
                     });
                     alert.Show();
-                    return true;
+                    
 
                 }
                 else
@@ -238,8 +239,11 @@ namespace AlmacenRepuestosXamarin
                     alert.SetMessage("Registro correcto");
                     alert.SetNeutralButton("Ok", (s, e) => { base.OnBackPressed(); });
                     alert.Show();
-                    return true;
+                    
                 }
+                
+                ManagerRepuestos.clearRepuestos();
+                return true;
 
             }
             else {

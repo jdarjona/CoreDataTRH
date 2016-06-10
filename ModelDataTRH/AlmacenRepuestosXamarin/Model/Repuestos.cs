@@ -34,6 +34,7 @@ namespace AlmacenRepuestosXamarin.Model
 
         private static int count;
         private static AccesoDatos datos = new AccesoDatos();
+
         public static async Task<EntregaAlmacen> addRepuesto(string codEmpleado, string codRepuesto) {
 
 
@@ -49,6 +50,7 @@ namespace AlmacenRepuestosXamarin.Model
 
 
         }
+
         public static List<EntregaAlmacen> getRepuestos() {
             return repuestos;
         }
@@ -68,11 +70,11 @@ namespace AlmacenRepuestosXamarin.Model
             return empleado;
         }
 
-        public static void limpiarRepuestos()
+        public static async void limpiarRepuestos()
         {
             foreach(EntregaAlmacen rep in repuestos)
             {
-                eliminarRepuesto(rep.Key);
+               await eliminarRepuesto(rep.Key);
             }
         }
 
@@ -105,17 +107,24 @@ namespace AlmacenRepuestosXamarin.Model
         {
            
             string numDocumento=await datos.registerEntrega(emple);
-            if (!string.IsNullOrEmpty(numDocumento)) {
-                repuestos.Clear();
-            }
+           
             return numDocumento;
            
         }
 
         public static async Task<string> getAlbaran(string codDocumento) {
 
-
             return await datos.getAlbaranEntreEmpresas(codDocumento);
+        }
+
+        public static void clearRepuestos() {
+
+            if (repuestos != null) {
+
+                repuestos.Clear();
+
+            }
+
         }
     }
 }

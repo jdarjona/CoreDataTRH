@@ -143,7 +143,8 @@ namespace AlmacenRepuestosXamarin.Data
 
         public async Task<string> registerEntrega(string codEmpleado) {
 
-            string content = string.Empty;
+
+            string codDocumento = string.Empty;
             try
             {
                 
@@ -153,12 +154,12 @@ namespace AlmacenRepuestosXamarin.Data
                 var response = await client.PutAsync(url, contentPost);
                 if (response.IsSuccessStatusCode)
                 {
-                    content = await response.Content.ReadAsStringAsync();
+                   var content = await response.Content.ReadAsStringAsync();
 
-                   // var result = JsonConvert.DeserializeObject<bool>(content);
-                    
+                    codDocumento = JsonConvert.DeserializeObject<string>(content);
+
                 }
-                return content;
+                return codDocumento;
             }
             catch (Exception ex)
             {
