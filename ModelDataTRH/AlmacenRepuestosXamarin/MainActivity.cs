@@ -39,7 +39,7 @@ namespace AlmacenRepuestosXamarin
 
             SetContentView(Resource.Layout.Main);
 
-            progressLayout = FindViewById<LinearLayout>(Resource.Id.progressLayout);
+            progressLayout = FindViewById<LinearLayout>(Resource.Id.progressBar);
             
             SupportActionBar.SetDisplayShowHomeEnabled(true);
 
