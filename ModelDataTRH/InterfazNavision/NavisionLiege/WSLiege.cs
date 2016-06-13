@@ -26,12 +26,7 @@ namespace InterfazNavision.NavisionLiege
         }
 
 
-        #region ITEM-PRODUCTOS
-
-        public int cuantoCuernosTenemos() {
-
-            return 0;
-        }
+        #region ITEM-PRODUCTOS        
 
         public  void getPrecioandInventarioByItem(string id,ref decimal price, ref decimal inventory) {
             
