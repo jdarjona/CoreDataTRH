@@ -41,7 +41,6 @@ namespace AlmacenRepuestosXamarin
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.detalleRepuesto);
-            // Create your application here
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -50,26 +49,18 @@ namespace AlmacenRepuestosXamarin
 
             SupportActionBar.Title = string.Format(@"{0} - {1}",repuesto.Cod_Producto,repuesto.Unit_of_Measure_Code);
 
-          
-           
-
-           
-
             edittext = FindViewById<EditText>(Resource.Id.textCantidad);
-           
-
-                //edittext.SetText(Int32.Parse(repuesto.Cantidad.ToString()));
             edittext.TextChanged += Edittext_TextChanged;
             if (repuesto.Cantidad != 0)
             {
                 edittext.Text = repuesto.Cantidad.ToString();
+                
             }
             else
             {
                 edittext.Text = string.Empty;
             }
 
-            //spinnerDestino.SetSelection(repuesto.) = 0;
             edittext.FocusChange += (sender, args) =>
             {
                 bool isFocused = args.HasFocus;
@@ -82,35 +73,23 @@ namespace AlmacenRepuestosXamarin
             spinnerDestino = (Spinner)FindViewById(Resource.Id.spinnerDestino);
 
             spinnerDestino.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerDestino_ItemSelected);
-            //spinnerDestino.ItemClick += spinner_OnClick;
-
 
             spinnerMaquina = (Spinner)FindViewById(Resource.Id.spinnerMaquina);
-
             spinnerMaquina.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinnerMaquina_ItemSelected);
             spinnerMaquina.Visibility = ViewStates.Invisible;
-            //spinnerMaquina.ItemClick += spinner_OnClick;
-
          
             var s = (Destino[])Enum.GetValues(typeof(Destino));
             
             adapterDestinos = new AdapterSpinner<Destino>(this, Android.Resource.Layout.SimpleSpinnerItem,s);
-            // Specify the layout to use when the list of choices appears
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            // Apply the adapter to the spinner
             spinnerDestino.Adapter=adapterDestinos;
-
             spinnerDestino.Focusable = true;
             spinnerDestino.FocusableInTouchMode = true;
             spinnerDestino.RequestFocus(FocusSearchDirection.Up);
 
-            //string[] Maquinas = new String[] { "M1", "M2", "M3", "M4", "R1", "R2", "R3", "R4", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8" };
-
             var arrayMaquinas = (Maquina[])Enum.GetValues(typeof(Maquina));
             adapterMaquinas = new AdapterSpinner<Maquina>(this, Android.Resource.Layout.SimpleSpinnerItem, arrayMaquinas); 
-            // Specify the layout to use when the list of choices appears
             adapterDestinos.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            // Apply the adapter to the spinner
             spinnerMaquina.Adapter = adapterMaquinas;
             spinnerMaquina.Focusable = true;
             spinnerMaquina.FocusableInTouchMode = true;
@@ -119,19 +98,13 @@ namespace AlmacenRepuestosXamarin
             TextView textDescription = FindViewById<TextView>(Resource.Id.textDescription);
             textDescription.Text = repuesto.Descripcion_Producto;
 
-
-            
-
             Resources.GetDrawable(Android.Resource.Drawable.AlertLightFrame);
-             warning = (Drawable)Resources.GetDrawable(Android.Resource.Drawable.AlertLightFrame);
+            warning = (Drawable)Resources.GetDrawable(Android.Resource.Drawable.AlertLightFrame);
 
-         
-            //spinnerDestino.Click += (object sender, EventArgs e) =>
-            //{
-            //    InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
-            //    imm.HideSoftInputFromWindow(edittext.WindowToken, 0);
-            //};
-
+            if (repuesto.Cantidad!=0) {
+                spinnerDestino.SetSelection((int)repuesto.Destino);
+                spinnerMaquina.SetSelection((int)repuesto.Maquina);
+            }
 
             Button btoAceptar = FindViewById<Button>(Resource.Id.btoAceptar);
 
@@ -182,10 +155,7 @@ namespace AlmacenRepuestosXamarin
                 case Resource.Id.eliminar:
 
                     eliminarRepuesto();
-                    //ManagerRepuestos.eliminarRepuesto(repuesto.Key);
 
-                    //Toast.MakeText(this, "Se eliminó el repuesto " + repuesto.Cod_Producto + " de la lista", ToastLength.Short).Show();
-                    //Finish();
                     break;
 
                 default:
@@ -223,7 +193,6 @@ namespace AlmacenRepuestosXamarin
             var editTextCantidad = (EditText)sender;
             int cantidad;
             int.TryParse(editTextCantidad.Text, out cantidad);
-            //GetResources().getDrawable(R.drawable.alert_icon);
             if (cantidad > repuesto.Inventory)
             {
                 editTextCantidad.SetError(string.Format(@"La cantidad es mayor que las existencias disponibles, Existencias disponible {0}",this.repuesto.Inventory.ToString("N2")), warning);

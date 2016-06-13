@@ -235,7 +235,16 @@ namespace RepositoryWebServiceTRH
 
         public void Remove(string key)
         {
-            Context.contextEntregaAlmacenEpis.Delete(key);
+            try
+            {
+                Context.contextEntregaAlmacenEpis.Delete(key);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("{0} mensaje: {1}", "[Metodo Remove] [entitties] ", ex.Message), ex.InnerException);
+
+            }
+            
         }
 
         public void RemoveAll()

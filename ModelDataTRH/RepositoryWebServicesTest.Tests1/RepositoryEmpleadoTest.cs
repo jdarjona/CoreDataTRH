@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RepositoryWebServiceTRH;
 using RepositoryWebServiceTRH.EntregaAlmacenEpisContext;
+using AlmacenRepuestosXamarin.Model;
 
 namespace RepositoryWebServicesTest.Tests1
 {
@@ -17,7 +18,7 @@ namespace RepositoryWebServicesTest.Tests1
         [SetUp]
         public void initEmpeladoContext() {
 
-            hostWs = new HostWebService(HostWebService.tipoIp.local, HostWebService.empresaWS.TRHLieja, HostWebService.tipoWebService.Page, "Empleados", @"TRH.LIEJA\administrador", "Paulagallardo2014");
+            hostWs = new HostWebService(HostWebService.tipoIp.local, HostWebService.empresaWS.TRHSevilla, HostWebService.tipoWebService.Page, "Empleados", @"TRHSEVILLA0\administrador", "Paulagallardo2014");
 
 
         }
@@ -88,20 +89,45 @@ namespace RepositoryWebServicesTest.Tests1
 
         }
 
+
         [Test]
-        public void Register_ReturnOk()
-        {
+        public void createUpdateDeleteRepuesto() {
+           
+                RepositoryEntragaAlmacenEpis repoEntregaEPI = new RepositoryEntragaAlmacenEpis(hostWs);
+                EntregaAlmacen nuevoItem = new EntregaAlmacen();
+                nuevoItem.Cod_Almacen = "PATIO";
+                nuevoItem.Cod_Empleado = "E0006";
+                nuevoItem.Cod_Producto = "REP000001";
 
-            RepositoryWebServiceTRH.RepositoryEntragaAlmacenEpis repoEntregaEPI = new RepositoryEntragaAlmacenEpis(hostWs);
-         
+                //CREATE
+                repoEntregaEPI.Add(ref nuevoItem);
 
-            repoEntregaEPI.register("E0021");
+                //UPDATE
+                nuevoItem.Cantidad = 2;
+                nuevoItem.Destino = Destino.Otros;
+                repoEntregaEPI.Update(ref nuevoItem);
 
+                //DELETE
+                repoEntregaEPI.Remove(nuevoItem.Key);
 
-
-            Assert.Pass();
+                Assert.Pass();          
 
         }
+
+        //[Test]
+        //public void Register_ReturnOk()
+        //{
+
+        //    RepositoryWebServiceTRH.RepositoryEntragaAlmacenEpis repoEntregaEPI = new RepositoryEntragaAlmacenEpis(hostWs);
+         
+
+        //    repoEntregaEPI.register("E0021");
+
+
+
+        //    Assert.Pass();
+
+        //}
 
         //[Test]
         //public void Find_Querry_ReturnAny()
