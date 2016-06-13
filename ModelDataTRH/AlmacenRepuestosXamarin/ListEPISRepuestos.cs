@@ -31,7 +31,7 @@ namespace AlmacenRepuestosXamarin
         SwipeActionAdapter adaptarSwipe;
         ListView listViewEmpleados;
         string numeroDocumento = string.Empty;
-
+        LinearLayout progressLayout;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -89,9 +89,10 @@ namespace AlmacenRepuestosXamarin
                 activityDetalleRepuestoActivity.PutExtra("idEntregaAlmacen", ManagerRepuestos.getRepuestos()[e.Position].Key);
                 StartActivity(activityDetalleRepuestoActivity);
             };
-           
 
 
+            progressLayout = FindViewById<LinearLayout>(Resource.Id.progressBar);
+            progressLayout.Visibility = ViewStates.Gone;
 
         }
 
@@ -212,7 +213,9 @@ namespace AlmacenRepuestosXamarin
 
         private async Task<bool> RegistrarSalida()
         {
-             numeroDocumento = string.Empty;
+
+            progressLayout.Visibility = ViewStates.Visible;
+            numeroDocumento = string.Empty;
 
             Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
             alert.SetTitle("Registro");
@@ -271,6 +274,7 @@ namespace AlmacenRepuestosXamarin
                 else {
                     Toast.MakeText(this, "No se encuentra albarán!!!", ToastLength.Long).Show();
                 }
+                progressLayout.Visibility = ViewStates.Gone;
             }
         }
 

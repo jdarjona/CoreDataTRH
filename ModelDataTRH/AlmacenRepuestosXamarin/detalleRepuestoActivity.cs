@@ -24,18 +24,16 @@ namespace AlmacenRepuestosXamarin
     {
 
 
-       
+
 
         //private DestinosEnum destinos;
-        private Destino destinos;
-        private Maquina maquinas;
+        LinearLayout progressLayout;
         AdapterSpinner<Destino> adapterDestinos;
         AdapterSpinner<Maquina> adapterMaquinas;
         EditText edittext;
         Drawable warning;
         private Spinner spinnerDestino;
         private Spinner spinnerMaquina;
-        private int id;
         private EntregaAlmacen repuesto;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -55,7 +53,7 @@ namespace AlmacenRepuestosXamarin
           
            
 
-            this.RunOnUiThread(() => Toast.MakeText(this, id.ToString(), ToastLength.Short).Show());
+           
 
             edittext = FindViewById<EditText>(Resource.Id.textCantidad);
            
@@ -139,19 +137,8 @@ namespace AlmacenRepuestosXamarin
 
             btoAceptar.Click += OnClik_btoAceptar;
 
-            //    (object sender, EventArgs e) =>
-            //{
-            //    var _btoAceptar = (Button)sender;
-            //    if (repuesto.Cantidad > 0)
-            //    {
-
-            //        Finish();
-            //    }
-            //    else {
-
-            //        _btoAceptar.SetError("Introduza una cantidad antes de aceptar", warning); 
-            //    }
-            //};
+            progressLayout = FindViewById<LinearLayout>(Resource.Id.progressBar);
+            progressLayout.Visibility = ViewStates.Gone;
 
 
         }
@@ -161,8 +148,9 @@ namespace AlmacenRepuestosXamarin
             var _btoAceptar = (Button)sender;
             if (validar())
             {
-
-                repuesto=await ManagerRepuestos.updateRepuesto(repuesto);
+                progressLayout.Visibility = ViewStates.Visible;
+                repuesto =await ManagerRepuestos.updateRepuesto(repuesto);
+                progressLayout.Visibility = ViewStates.Gone;
 
                 Finish();
             }
