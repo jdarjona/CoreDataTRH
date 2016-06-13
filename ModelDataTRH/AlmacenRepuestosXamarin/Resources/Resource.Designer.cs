@@ -2297,6 +2297,18 @@ namespace AlmacenRepuestosXamarin
 			// aapt resource value: 0x7f050016
 			public const int library_name = 2131034134;
 			
+			// aapt resource value: 0x7f05001a
+			public const int pref_summary_url_local = 2131034138;
+			
+			// aapt resource value: 0x7f05001c
+			public const int pref_summary_url_remota = 2131034140;
+			
+			// aapt resource value: 0x7f05001b
+			public const int pref_title_url_local = 2131034139;
+			
+			// aapt resource value: 0x7f05001d
+			public const int pref_title_url_remota = 2131034141;
+			
 			// aapt resource value: 0x7f050013
 			public const int status_bar_notification_info_overflow = 2131034131;
 			
