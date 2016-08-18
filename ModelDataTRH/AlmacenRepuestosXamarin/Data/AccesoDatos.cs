@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Android.App;
@@ -37,7 +38,7 @@ namespace AlmacenRepuestosXamarin.Data
             client.DefaultRequestHeaders.Accept.Clear();
 
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
+           // client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
 
         }
 
@@ -127,6 +128,7 @@ namespace AlmacenRepuestosXamarin.Data
             return null;
         }
 
+        
         public async Task<bool> deleteRepuesto(string key) {
 
             string url = string.Format(@"api/EntregaAlmacen?key={0}", key);

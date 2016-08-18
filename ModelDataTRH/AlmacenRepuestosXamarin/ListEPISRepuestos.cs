@@ -220,13 +220,12 @@ namespace AlmacenRepuestosXamarin
             Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
             alert.SetTitle("Registro");
             alert.SetIcon(Android.Resource.Drawable.ButtonStar);
-
-
             numeroDocumento = await ManagerRepuestos.registrarLista(empleado.No);
+
             if (!string.IsNullOrEmpty(numeroDocumento))
             {
 
-                if (1==1||ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Liege) || ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Sevilla)) {
+                if (ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Liege))  { //|| ManagerRepuestos.getRepuestos()[0].Destino.Equals(Destino.Sevilla)
                     alert.SetMessage("¿Desea descargar el albarán?");
                     alert.SetPositiveButton("SÍ", alertAlbaran_Ok);
                     alert.SetNegativeButton("NO", (s, e) =>
@@ -234,15 +233,12 @@ namespace AlmacenRepuestosXamarin
                         base.OnBackPressed();
                     });
                     alert.Show();
-                    
-
                 }
                 else
                 { 
                     alert.SetMessage("Registro correcto");
                     alert.SetNeutralButton("Ok", (s, e) => { base.OnBackPressed(); });
-                    alert.Show();
-                    
+                    alert.Show();                    
                 }
                 
                 ManagerRepuestos.clearRepuestos();
@@ -255,10 +251,6 @@ namespace AlmacenRepuestosXamarin
                 alert.Show();
                 return false;
             }
-
-            
-         
-
         }
 
         private async void alertAlbaran_Ok(object s, DialogClickEventArgs e)
